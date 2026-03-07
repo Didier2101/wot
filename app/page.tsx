@@ -188,7 +188,7 @@ function HomeContent() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {services.map((service, idx) => (
+              {services.map((service) => (
                 <article
                   key={service.slug}
                   className="group bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden flex flex-col h-full"
@@ -224,7 +224,7 @@ function HomeContent() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 relative">
-              {t.process.steps.map((step, idx) => (
+              {t.process.steps.map((step) => (
                 <div key={step.n} className="text-center bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:border-yellow-200 transition-all duration-300 hover:-translate-y-2 z-10">
                   <div className="w-16 h-16 rounded-full mx-auto bg-gradient-to-br from-[#1a3a6c] to-[#1e4a8a] text-white flex items-center justify-center font-serif text-2xl font-bold shadow-lg shadow-[#1a3a6c]/20 mb-6">
                     {step.n}
@@ -252,7 +252,7 @@ function HomeContent() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {TESTIMONIALS.map((t2) => (
                 <blockquote key={t2.id} className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md hover:border-yellow-300 hover:-translate-y-1 transition-all duration-300 relative flex flex-col h-full">
-                  <div className="absolute top-4 right-6 text-6xl text-blue-50 font-serif leading-none italic select-none">"</div>
+                  <div className="absolute top-4 right-6 text-6xl text-blue-50 font-serif leading-none italic select-none">&quot;</div>
                   <Stars count={t2.rating} />
                   <p className="text-slate-700 italic leading-relaxed mb-6 font-medium text-[0.95rem] grow">&ldquo;{t2.content}&rdquo;</p>
                   <footer className="mt-auto border-t border-slate-100 pt-5">
