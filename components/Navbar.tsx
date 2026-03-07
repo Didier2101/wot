@@ -69,7 +69,8 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
                         src="/logo-nuevo.png"
                         alt="WOT Traducciones"
                         width={90} height={90}
-                        priority
+                        priority={true}
+                        loading="eager"
                         className="w-[52px] h-[52px] md:w-[72px] md:h-[72px] xl:w-[80px] xl:h-[80px] rounded-md object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="text-[#0c1a35] font-serif text-[1.1rem] md:text-[1.45rem] font-extrabold leading-none tracking-tight">
@@ -169,27 +170,27 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
 
                         {/* Lang toggle */}
                         <li>
-                            <a
+                            <Link
                                 href={switchUrl}
                                 title={otherLocale === 'en' ? 'Switch to English' : 'Cambiar a Español'}
                                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border-2 border-blue-700 text-blue-700 text-[0.78rem] font-bold hover:bg-blue-700 hover:text-white transition-colors duration-200 no-underline whitespace-nowrap"
                             >
                                 <Globe size={13} />
                                 {otherLocale.toUpperCase()}
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
 
                 {/* Mobile hamburger */}
                 <div className="flex lg:hidden items-center gap-3">
-                    <a
+                    <Link
                         href={switchUrl}
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border-2 border-blue-700 text-blue-700 text-xs font-bold hover:bg-blue-700 hover:text-white transition-colors duration-200 no-underline whitespace-nowrap"
                     >
                         <Globe size={12} />
                         {otherLocale.toUpperCase()}
-                    </a>
+                    </Link>
                     <button
                         className="flex items-center justify-center p-1.5 bg-transparent border-2 border-gray-300 rounded-md text-blue-900 transition-colors hover:border-blue-700 hover:text-blue-700 cursor-pointer"
                         onClick={() => setMobileOpen((v) => !v)}
@@ -264,7 +265,7 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
                             </Link>
                         </div>
 
-                        <a
+                        <Link
                             href={`https://wa.me/573123902406`}
                             className="flex items-center justify-center gap-2 px-5 py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-semibold text-base transition-colors no-underline mt-auto"
                             target="_blank" rel="noopener noreferrer"
@@ -272,7 +273,7 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
                         >
                             <MessageCircle size={18} />
                             WhatsApp
-                        </a>
+                        </Link>
                     </nav>
                 </div>
             )}

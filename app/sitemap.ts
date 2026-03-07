@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
+        changeFrequency: 'daily' as const,
         priority: route === '' ? 1 : 0.8,
     }))
 
@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const serviceRoutes = content.servicios.map((servicio) => ({
         url: `${baseUrl}/servicios/${servicio.slug}`,
         lastModified: new Date(),
-        changeFrequency: 'yearly' as const,
+        changeFrequency: 'daily' as const,
         priority: 0.9,
     }))
 
@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const sectorRoutes = content.sectores.map((sector) => ({
         url: `${baseUrl}/sectores/${sector.slug}`,
         lastModified: new Date(),
-        changeFrequency: 'yearly' as const,
+        changeFrequency: 'daily' as const,
         priority: 0.8,
     }))
 
@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const blogRoutes = content.blog.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}`,
         lastModified: new Date(post.fecha),
-        changeFrequency: 'monthly' as const,
+        changeFrequency: 'daily' as const,
         priority: 0.7,
     }))
 

@@ -122,21 +122,21 @@ function HomeContent() {
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300 fill-mode-both">
-                <a
-                  href="#contacto"
+                <Link
+                  href={`/contacto?lang=${locale}`}
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-[0.85rem] uppercase tracking-wider transition-all shadow-[0_4px_14px_rgba(250,204,21,0.4)] hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(250,204,21,0.5)] whitespace-nowrap"
                 >
                   {t.hero.ctaPrimary}
                   <ArrowRight size={18} />
-                </a>
-                <a
+                </Link>
+                <Link
                   href={`https://wa.me/${PHONE_WA}?text=${t.shared.waHeroText}`}
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md bg-transparent hover:bg-white/10 text-white border-2 border-white/70 font-bold text-[0.85rem] uppercase tracking-wider transition-all hover:border-white whitespace-nowrap"
                   target="_blank" rel="noopener noreferrer"
                 >
                   <MessageCircle size={18} />
                   {t.hero.ctaWhatsapp}
-                </a>
+                </Link>
               </div>
 
               {/* Stats */}
@@ -201,7 +201,7 @@ function HomeContent() {
                   <h3 className="text-[#0c1a35] font-serif font-bold text-lg lg:text-xl mb-3">{service.title}</h3>
                   <p className="text-slate-600 text-sm md:text-[0.9rem] leading-relaxed mb-6 flex-grow">{service.description}</p>
 
-                  <Link href={`/servicios/${service.slug}?lang=${locale}`} className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1a3a6c] hover:text-yellow-600 uppercase tracking-wider transition-colors group/link mt-auto w-fit">
+                  <Link href={`/contacto?lang=${locale}&servicio=${service.title}`} className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1a3a6c] hover:text-yellow-600 uppercase tracking-wider transition-colors group/link mt-auto w-fit">
                     {t.services.cta}
                     <ChevronRight size={14} className="group-hover/link:translate-x-1.5 transition-transform" />
                   </Link>
@@ -292,14 +292,14 @@ function HomeContent() {
                 {locale === 'es' ? 'Ir al Formulario de Contacto' : 'Go to Contact Form'}
                 <ArrowRight size={18} />
               </Link>
-              <a
+              <Link
                 href={`https://wa.me/${PHONE_WA}?text=${t.shared.waText}`}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-md bg-[#25d366] hover:bg-[#1eb358] text-white font-bold text-sm uppercase tracking-wider transition-all shadow-[0_4px_14px_rgba(37,211,102,0.3)] hover:-translate-y-1 whitespace-nowrap"
                 target="_blank" rel="noopener noreferrer"
               >
                 <MessageCircle size={18} />
                 {t.contact.whatsappBtn}
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -307,17 +307,7 @@ function HomeContent() {
 
       <Footer locale={locale} />
 
-      {/* WhatsApp FAB */}
-      <a
-        href={`https://wa.me/${PHONE_WA}?text=${t.shared.waText}`}
-        className="fixed bottom-6 right-6 w-[60px] h-[60px] bg-[#25d366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:bg-[#1eb358] hover:-translate-y-1 transition-all z-50 group hover:scale-105"
-        target="_blank" rel="noopener noreferrer"
-        aria-label="WhatsApp"
-        id="whatsapp-fab"
-      >
-        <span className="absolute inset-0 bg-[#25d366] rounded-full animate-ping opacity-60 group-hover:hidden" style={{ animationDuration: '3s' }} />
-        <MessageCircle size={30} className="relative z-10" />
-      </a>
+
     </>
   )
 }

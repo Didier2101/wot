@@ -9,6 +9,22 @@ import Footer from '@/components/Footer'
 import contentData from '@/data/content.json'
 import type { Locale } from '@/lib/i18n'
 
+const SERVICE_FAQS: Record<string, { q: { es: string, en: string }, a: { es: string, en: string } }[]> = {
+    'traduccion-oficial': [
+        { q: { es: '¿Cuáles son los precios de una traducción oficial?', en: 'What are the prices for an official translation?' }, a: { es: 'Los precios dependen del número de palabras, idioma y urgencia. Contáctenos para una cotización inmediata y precisa.', en: 'Prices depend on word count, language, and urgency. Contact us for an immediate and accurate quote.' } },
+        { q: { es: '¿Llevan sello oficial y firma?', en: 'Do they have an official seal and signature?' }, a: { es: 'Sí, todas nuestras traducciones son entregadas con la firma y el sello de un traductor oficial avalado por el Ministerio de Relaciones Exteriores.', en: 'Yes, all our translations are delivered with the signature and seal of an official translator endorsed by the Ministry of Foreign Affairs.' } },
+        { q: { es: '¿Son válidas para trámites en embajadas?', en: 'Are they valid for procedures at embassies?' }, a: { es: 'Absolutamente. Estructuramos y certificamos cada documento para garantizar su aceptación en embajadas, consulados y entidades gubernamentales extranjeras.', en: 'Absolutely. We structure and certify each document to guarantee its acceptance at embassies, consulates, and foreign government entities.' } }
+    ],
+    'traduccion-legal': [
+        { q: { es: '¿Traducen contratos y poderes legales?', en: 'Do you translate contracts and legal powers?' }, a: { es: 'Sí, somos especialistas en la traducción de textos jurídicos con exactitud legal y confidencialidad.', en: 'Yes, we are specialists in the translation of legal texts with legal accuracy and confidentiality.' } }
+    ],
+};
+
+const defaultFaqs = [
+    { q: { es: '¿Cuánto tiempo toma la traducción?', en: 'How long does the translation take?' }, a: { es: 'El tiempo de entrega estándar es de 24 a 72 horas, dependiendo de la complejidad y el volumen del texto.', en: 'Standard delivery time is 24 to 72 hours, depending on the complexity and volume of the text.' } },
+    { q: { es: '¿Cómo puedo solicitar una cotización?', en: 'How can I request a quote?' }, a: { es: 'Puede enviarnos sus documentos por WhatsApp o correo electrónico y le enviaremos el presupuesto en minutos.', en: 'You can send us your documents via WhatsApp or email and we will send you the estimate in minutes.' } }
+];
+
 // ── SSG: generar todas las rutas estáticamente ─────────────────────────────
 export async function generateStaticParams() {
     return contentData.servicios.map(s => ({ slug: s.slug }))
@@ -99,11 +115,28 @@ export default async function ServicePage({
         url: `${siteUrl}/servicios/${slug}`,
     }
 
+    const faqs = SERVICE_FAQS[slug] || defaultFaqs
+
+    const faqSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(faq => ({
+            '@type': 'Question',
+            name: faq.q[locale],
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.a[locale]
+            }
+        }))
+    }
+
+    const schemas = [jsonLd, faqSchema]
+
     return (
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
             />
 
             <Navbar locale={locale} currentPath={`/servicios/${slug}`} />
@@ -140,11 +173,11 @@ export default async function ServicePage({
                         </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-                            <a href="#contacto" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-1">
+                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-1">
                                 {locale === 'es' ? 'Cotizar Servicio' : 'Get a Quote'}
                                 <ArrowRight size={18} />
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href={`https://wa.me/${phoneWa}?text=${encodeURIComponent(
                                     locale === 'es'
                                         ? `Hola, necesito una cotización para: ${service.title.es}`
@@ -155,7 +188,7 @@ export default async function ServicePage({
                             >
                                 <MessageCircle size={18} />
                                 WhatsApp
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </section>
@@ -183,6 +216,21 @@ export default async function ServicePage({
                     <article className="prose prose-lg prose-slate max-w-none prose-headings:font-serif prose-headings:text-[#0c1a35] prose-h3:text-2xl prose-a:text-blue-600">
                         <div dangerouslySetInnerHTML={{ __html: service.content_html[locale] }} />
 
+                        {/* ── Preguntas Frecuentes ──────────────────────────────────────── */}
+                        <div className="mt-12">
+                            <h3 className="text-2xl font-serif font-bold text-[#0c1a35] mb-6 border-b border-slate-200 pb-2">
+                                {locale === 'es' ? 'Preguntas Frecuentes' : 'Frequently Asked Questions'}
+                            </h3>
+                            <div className="space-y-6">
+                                {faqs.map((faq, idx) => (
+                                    <div key={idx} className="bg-slate-50 rounded-lg p-5 border border-slate-100">
+                                        <h4 className="text-[#0c1a35] font-bold mb-2 m-0 p-0 text-lg">{faq.q[locale]}</h4>
+                                        <p className="text-slate-600 m-0 p-0 leading-relaxed text-base">{faq.a[locale]}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
                         {/* CTA en el contenido */}
                         <div className="mt-16 bg-blue-50 border border-blue-100 rounded-2xl p-8 text-center" id="contacto">
                             <h3 className="text-2xl font-serif font-bold text-[#0c1a35] mb-4">
@@ -198,10 +246,10 @@ export default async function ServicePage({
                                     {locale === 'es' ? 'Ir al Formulario' : 'Go to Form'}
                                     <ArrowRight size={18} />
                                 </Link>
-                                <a href={`https://wa.me/${phoneWa}`} className="inline-flex items-center gap-2 px-6 py-3 rounded bg-transparent border-2 border-[#25d366] text-[#25d366] hover:bg-[#25d366] hover:text-white font-bold text-sm tracking-wider uppercase transition-colors" target="_blank" rel="noopener noreferrer">
+                                <Link href={`https://wa.me/${phoneWa}`} className="inline-flex items-center gap-2 px-6 py-3 rounded bg-transparent border-2 border-[#25d366] text-[#25d366] hover:bg-[#25d366] hover:text-white font-bold text-sm tracking-wider uppercase transition-colors" target="_blank" rel="noopener noreferrer">
                                     <MessageCircle size={18} />
                                     WhatsApp
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </article>
@@ -212,18 +260,18 @@ export default async function ServicePage({
                             <h4 className="text-[#0c1a35] font-bold uppercase tracking-wider text-sm mb-6 pb-4 border-b border-slate-100">
                                 {locale === 'es' ? 'Contacto directo' : 'Direct contact'}
                             </h4>
-                            <a href={`https://wa.me/${phoneWa}`} className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#25d366] hover:bg-[#1eb358] text-white rounded font-semibold transition-colors mb-3">
+                            <Link href={`https://wa.me/${phoneWa}`} className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#25d366] hover:bg-[#1eb358] text-white rounded font-semibold transition-colors mb-3" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={18} />
                                 WhatsApp
-                            </a>
-                            <a href={`tel:${phone}`} className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#1a3a6c] hover:bg-[#122040] text-white rounded font-semibold transition-colors mb-3">
+                            </Link>
+                            <Link href={`tel:${phone}`} className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#1a3a6c] hover:bg-[#122040] text-white rounded font-semibold transition-colors mb-3">
                                 <Phone size={18} />
                                 {phone}
-                            </a>
-                            <a href={`mailto:${email}`} className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-transparent border border-slate-300 hover:border-[#1a3a6c] text-slate-700 hover:text-[#1a3a6c] rounded font-semibold transition-colors text-sm">
+                            </Link>
+                            <Link href={`mailto:${email}`} className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-transparent border border-slate-300 hover:border-[#1a3a6c] text-slate-700 hover:text-[#1a3a6c] rounded font-semibold transition-colors text-sm">
                                 <Mail size={16} />
                                 {email}
-                            </a>
+                            </Link>
                         </div>
 
                         <div className="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-sm">

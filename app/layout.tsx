@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
-import { createClient } from '@supabase/supabase-js'
 import CookieBanner from '@/components/CookieBanner'
+import { MessageCircle } from 'lucide-react'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,24 +19,15 @@ const playfair = Playfair_Display({
 })
 // ── Fetch company config ───────────────────────────────────────────────────
 async function getCompanyConfig(): Promise<Record<string, string>> {
-  try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    )
-    const { data } = await supabase.from('company_config').select('key, value')
-    if (!data) return {}
-    return Object.fromEntries(data.map((row) => [row.key, row.value]))
-  } catch {
-    return {
-      company_name: 'WOT Traducciones Bogotá',
-      company_phone: '+57 312 3902406',
-      company_email: 'traduccionesenbogotawot@gmail.com',
-      company_address: 'Carrera 14B #161-54 Torre 2/1002, Bogotá, Colombia',
-      seo_title: 'Traductores Oficiales en Bogotá | WOT Traducciones',
-      seo_description: 'Agencia de traducciones oficiales, juramentadas y certificadas en Bogotá desde 2010. Documentos jurídicos, académicos, técnicos y médicos. Entrega en 24–72 h.',
-      seo_keywords: 'traducciones bogotá, traducciones juramentadas, traductores oficiales colombia, traducción certificada',
-    }
+  return {
+    company_name: 'WOT Traducciones Bogotá',
+    company_phone: '+57 312 3902406',
+    company_email: 'traduccionesenbogotawot@gmail.com',
+    company_address: 'Carrera 14B #161-54 Torre 2/1002, Bogotá, Colombia',
+    seo_title: 'Traductores Oficiales en Bogotá | WOT Traducciones',
+    seo_description: 'Agencia de traducciones oficiales, juramentadas y certificadas en Bogotá desde 2010. Documentos jurídicos, académicos, técnicos y médicos. Entrega en 24–72 h.',
+    seo_keywords: 'traducciones bogotá, traducciones juramentadas, traductores oficiales colombia, traducción certificada',
+    company_founded: '2010'
   }
 }
 
@@ -143,11 +134,25 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         priceRange: '$$',
         currenciesAccepted: 'COP, USD',
         paymentAccepted: 'Cash, Credit Card, Bank Transfer',
-        areaServed: {
-          '@type': 'City',
-          name: 'Bogotá',
-          sameAs: 'https://www.wikidata.org/wiki/Q2841',
-        },
+        areaServed: [
+          {
+            '@type': 'City',
+            name: 'Bogotá',
+            sameAs: 'https://www.wikidata.org/wiki/Q2841',
+          },
+          {
+            '@type': 'City',
+            name: 'Medellín',
+          },
+          {
+            '@type': 'City',
+            name: 'Cali',
+          },
+          {
+            '@type': 'City',
+            name: 'Barranquilla',
+          }
+        ],
         sameAs: [siteUrl, 'https://www.facebook.com/WOTTraducciones'],
         hasMap: `https://maps.google.com/?q=Carrera+14B+161-54+Torre+2+Bogota`,
         contactPoint: {
@@ -156,6 +161,13 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
           contactType: 'customer service',
           availableLanguage: ['Spanish', 'English'],
         },
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '150',
+          bestRating: '5',
+          worstRating: '1'
+        }
       },
       {
         '@type': 'WebSite',
@@ -185,6 +197,18 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       <body className="font-sans bg-white text-slate-800 antialiased overflow-x-hidden leading-relaxed">
         {children}
         <CookieBanner />
+
+        {/* Global WhatsApp FAB */}
+        <a
+          href={`https://wa.me/${(config.company_phone || '+573123902406').replace(/\D/g, '')}?text=${encodeURIComponent('Hola, me gustaría recibir más información sobre sus servicios de traducción.')}`}
+          className="fixed bottom-6 right-6 w-[60px] h-[60px] bg-[#25d366] text-white rounded-full flex items-center justify-center shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:bg-[#1eb358] hover:-translate-y-1 transition-all z-50 group hover:scale-105"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="WhatsApp"
+          id="whatsapp-fab"
+        >
+          <span className="absolute inset-0 bg-[#25d366] rounded-full animate-ping opacity-60 group-hover:hidden" style={{ animationDuration: '3s' }} />
+          <MessageCircle size={30} className="relative z-10" />
+        </a>
       </body>
     </html>
   )

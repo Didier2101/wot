@@ -122,10 +122,10 @@ export default async function SectoresPage({ searchParams }: { searchParams: Pro
                                 {locale === 'es' ? 'Ir al Formulario de Contacto' : 'Go to Contact Form'}
                                 <ArrowRight size={20} />
                             </Link>
-                            <a href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
                                 WhatsApp
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </section>

@@ -111,18 +111,18 @@ export default async function SectorDetailPage({ params, searchParams }: {
                         </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-                            <a href="#contacto" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-1">
-                                {locale === 'es' ? 'Cotizar Servicio' : 'Get a Quote'}
+                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-1">
+                                {locale === 'es' ? 'Cotizar Especialidad' : 'Get a Quote'}
                                 <ArrowRight size={18} />
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`}
                                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-[#25d366] hover:bg-[#1eb358] text-white font-extrabold text-sm tracking-wider transition-all shadow-lg hover:-translate-y-1"
                                 target="_blank" rel="noopener noreferrer"
                             >
                                 <MessageCircle size={18} />
                                 WhatsApp
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </section>
@@ -168,10 +168,10 @@ export default async function SectorDetailPage({ params, searchParams }: {
                                     </li>
                                 </ul>
                                 <div className="text-center">
-                                    <a href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`} className="inline-flex w-full items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#c9a227] hover:bg-[#b08d20] text-neutral-900 font-bold tracking-wider transition-colors shadow-lg">
-                                        <MessageCircle size={20} />
-                                        {locale === 'es' ? 'Cotizar por WhatsApp' : 'Get Quote via WhatsApp'}
-                                    </a>
+                                    <Link href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`} className="inline-flex w-full items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#c9a227] hover:bg-[#b08d20] text-neutral-900 font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
+                                        {locale === 'es' ? 'Contactar un Especialista' : 'Contact a Specialist'}
+                                        <ArrowRight size={20} />
+                                    </Link>
                                 </div>
                             </aside>
                         </div>
@@ -198,10 +198,10 @@ export default async function SectorDetailPage({ params, searchParams }: {
                         </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-4">
-                            <a href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg">
+                            <Link href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
-                                {locale === 'es' ? 'Consultar por WhatsApp' : 'Consult via WhatsApp'}
-                            </a>
+                                {locale === 'es' ? 'Escribir por WhatsApp' : 'Contact via WhatsApp'}
+                            </Link>
                             <Link href={`/?lang=${locale}#contacto`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#1a3a6c] hover:bg-[#122040] text-white font-bold tracking-wider transition-colors shadow-lg">
                                 {locale === 'es' ? 'Formulario de contacto' : 'Contact form'}
                                 <ArrowRight size={20} />

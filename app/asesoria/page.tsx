@@ -100,18 +100,18 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
                         </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-                            <Link href={`/?lang=${locale}#contacto`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-1">
-                                {locale === 'es' ? 'Formulario de consulta' : 'Inquiry form'}
+                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-1">
+                                {locale === 'es' ? 'Agendar Asesoría' : 'Schedule Consulting'}
                                 <ArrowRight size={18} />
                             </Link>
-                            <a
+                            <Link
                                 href={`https://wa.me/573123902406?text=${encodeURIComponent(locale === 'es' ? 'Hola, necesito asesoría sobre apostilla y traducción' : 'Hello, I need advisory on apostille and translation')}`}
                                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-[#25d366] hover:bg-[#1eb358] text-white font-extrabold text-sm tracking-wider transition-all shadow-lg hover:-translate-y-1"
                                 target="_blank" rel="noopener noreferrer"
                             >
                                 <MessageCircle size={18} />
                                 WhatsApp
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </section>
@@ -255,10 +255,10 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
                                 {locale === 'es' ? 'Ir al Formulario' : 'Go to Form'}
                                 <ArrowRight size={20} />
                             </Link>
-                            <a href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
                                 WhatsApp
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </section>

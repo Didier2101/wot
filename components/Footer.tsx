@@ -31,12 +31,12 @@ export default function Footer({ locale }: FooterProps) {
                                 : 'Leading agency for official and sworn translations in Bogotá. We support your international procedures with technical precision and legal validity since 2010.'}
                         </p>
                         <div className="flex gap-3">
-                            <a href="https://facebook.com/WOTTraducciones" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 hover:text-yellow-400 transition-colors">
+                            <Link href="https://facebook.com/WOTTraducciones" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 hover:text-yellow-400 transition-colors">
                                 <Facebook size={18} />
-                            </a>
-                            <a href="https://wa.me/573123902406" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 hover:text-yellow-400 transition-colors">
+                            </Link>
+                            <Link href="https://wa.me/573123902406" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 hover:text-yellow-400 transition-colors">
                                 <MessageCircle size={18} />
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
@@ -69,7 +69,7 @@ export default function Footer({ locale }: FooterProps) {
                             </li>
                             <li className="flex gap-3 items-center">
                                 <Mail size={18} className="text-yellow-400/90 shrink-0" />
-                                <a href="mailto:traduccionesenbogotawot@gmail.com" className="text-white/70 hover:text-yellow-400 text-sm transition-colors">traduccionesenbogotawot@gmail.com</a>
+                                <Link href="mailto:traduccionesenbogotawot@gmail.com" className="text-white/70 hover:text-yellow-400 text-sm transition-colors">traduccionesenbogotawot@gmail.com</Link>
                             </li>
                         </ul>
                     </div>

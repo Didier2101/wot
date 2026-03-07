@@ -140,10 +140,10 @@ export default async function BlogPostPage({ params, searchParams }: {
                                 ? 'Nuestros traductores oficiales están listos para revisar sus documentos y darle una cotización exacta.'
                                 : 'Our official translators are ready to review your documents and give you an exact quote.'}
                         </p>
-                        <a href="https://wa.me/573123902406" className="inline-flex items-center gap-2 px-8 py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-[0_4px_14px_rgba(37,211,102,0.3)] hover:-translate-y-1">
+                        <Link href="https://wa.me/573123902406" className="inline-flex items-center gap-2 px-8 py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-[0_4px_14px_rgba(37,211,102,0.3)] hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
                             <MessageCircle size={20} />
                             {locale === 'es' ? 'Escríbanos por WhatsApp' : 'Write us on WhatsApp'}
-                        </a>
+                        </Link>
                     </div>
                 </article>
             </main>

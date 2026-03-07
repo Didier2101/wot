@@ -125,9 +125,9 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                     <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-2 w-full py-4 bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-bold rounded-xl transition-all shadow-lg text-sm tracking-wider uppercase">
                                         {t.blog.sidebar.cta}
                                     </Link>
-                                    <a href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 w-full py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-lg text-sm tracking-wider uppercase" target="_blank" rel="noopener noreferrer">
+                                    <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 w-full py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-lg text-sm tracking-wider uppercase" target="_blank" rel="noopener noreferrer">
                                         <MessageCircle size={18} /> WhatsApp
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 

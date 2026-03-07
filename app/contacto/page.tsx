@@ -96,9 +96,9 @@ export default async function ContactoPage({ searchParams }: {
                                     </div>
                                     <div className="flex-1 mt-1">
                                         <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">WhatsApp</div>
-                                        <a href={`https://wa.me/${PHONE_WA}`} target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-[#0c1a35] hover:text-[#25d366] transition-colors inline-block">
+                                        <Link href={`https://wa.me/${PHONE_WA}`} target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-[#0c1a35] hover:text-[#25d366] transition-colors inline-block">
                                             {PHONE_DISPLAY}
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
 
@@ -109,9 +109,9 @@ export default async function ContactoPage({ searchParams }: {
                                     </div>
                                     <div className="flex-1 mt-1">
                                         <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">E-mail</div>
-                                        <a href={`mailto:${EMAIL}`} className="text-lg font-bold text-[#0c1a35] hover:text-[#c9a227] transition-colors">
+                                        <Link href={`mailto:${EMAIL}`} className="text-lg font-bold text-[#0c1a35] hover:text-[#c9a227] transition-colors">
                                             {EMAIL}
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
 
@@ -148,12 +148,12 @@ export default async function ContactoPage({ searchParams }: {
                                     {locale === 'es' ? 'Síguenos en redes' : 'Follow us'}
                                 </h4>
                                 <div className="flex gap-4">
-                                    <a href="https://facebook.com/WOTTraducciones" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-slate-300 text-slate-500 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all shadow-sm">
+                                    <Link href="https://facebook.com/WOTTraducciones" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-slate-300 text-slate-500 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all shadow-sm">
                                         <Facebook size={20} />
-                                    </a>
-                                    <a href="https://linkedin.com/company/wot-traducciones" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-slate-300 text-slate-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all shadow-sm">
+                                    </Link>
+                                    <Link href="https://linkedin.com/company/wot-traducciones" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-slate-300 text-slate-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all shadow-sm">
                                         <Linkedin size={20} />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

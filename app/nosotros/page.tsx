@@ -74,14 +74,14 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
                                 {locale === 'es' ? 'Solicitar cotización' : 'Request a quote'}
                                 <ArrowRight size={18} />
                             </Link>
-                            <a
+                            <Link
                                 href="https://wa.me/573123902406"
                                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-[#25d366] hover:bg-[#1eb358] text-white font-extrabold text-sm tracking-wider transition-all shadow-lg hover:-translate-y-1"
                                 target="_blank" rel="noopener noreferrer"
                             >
                                 <MessageCircle size={18} />
                                 WhatsApp
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </section>
@@ -194,10 +194,10 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
                                 {locale === 'es' ? 'Ir al Formulario' : 'Go to Form'}
                                 <ArrowRight size={20} />
                             </Link>
-                            <a href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
                                 WhatsApp
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </section>
