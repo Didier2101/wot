@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// WOT Traducciones — i18n Dictionary  (ES / EN)
+// Traducciones Oficiales — i18n Dictionary  (ES / EN)
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type Locale = 'es' | 'en'
@@ -8,7 +8,7 @@ export const TRANSLATIONS = {
     es: {
         // ── Meta ──────────────────────────────────────────────────────────────────
         meta: {
-            title: 'Traductores Oficiales en Bogotá | WOT Traducciones',
+            title: 'Traductores Oficiales en Bogotá | Traducciones Oficiales',
             description:
                 'Agencia de traducciones oficiales, juramentadas y certificadas en Bogotá desde 2010. Documentos jurídicos, académicos, técnicos y médicos. Entrega en 24–72 h.',
             keywords:
@@ -128,7 +128,7 @@ export const TRANSLATIONS = {
         testimonials: {
             sectionLabel: 'Lo Que Dicen Nuestros Clientes',
             h2: 'Confianza Respaldada por Resultados',
-            subtitle: 'Más de 5.000 clientes han confiado en WOT para sus documentos más importantes.',
+            subtitle: 'Más de 5.000 clientes han confiado en nosotros para sus documentos más importantes.',
         },
 
         // ── Contact ───────────────────────────────────────────────────────────────
@@ -178,7 +178,7 @@ export const TRANSLATIONS = {
 
         // ── Footer ────────────────────────────────────────────────────────────────
         footer: {
-            tagline: 'Agencia de traducciones oficiales con más de 14 años en Bogotá. Precisión, confianza y puntualidad en cada documento.',
+            tagline: 'Agencia de traducciones oficiales con más de 14 años. Precisión, confianza y puntualidad en cada documento.',
             colServices: 'Servicios',
             colContact: 'Contacto',
             whatsapp: 'WhatsApp Directo',
@@ -213,7 +213,7 @@ export const TRANSLATIONS = {
     // ════════════════════════════════════════════════════════════════════════════
     en: {
         meta: {
-            title: 'Official Translators in Bogotá | WOT Traducciones',
+            title: 'Official Translators in Bogotá | Official Translations',
             description:
                 'Official, sworn and certified translation agency in Bogotá since 2010. Legal, academic, technical and medical documents. Delivery in 24–72 h.',
             keywords:
@@ -287,7 +287,7 @@ export const TRANSLATIONS = {
         testimonials: {
             sectionLabel: 'What Our Clients Say',
             h2: 'Trust Backed by Results',
-            subtitle: 'More than 5,000 clients have trusted WOT for their most important documents.',
+            subtitle: 'More than 5,000 clients have trusted us for their most important documents.',
         },
 
         contact: {
@@ -334,7 +334,7 @@ export const TRANSLATIONS = {
         },
 
         footer: {
-            tagline: 'Official translation agency with over 14 years in Bogotá. Precision, trust and punctuality in every document.',
+            tagline: 'Official translation agency with over 14 years. Precision, trust and punctuality in every document.',
             colServices: 'Services',
             colContact: 'Contact',
             whatsapp: 'Direct WhatsApp',

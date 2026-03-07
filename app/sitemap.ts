@@ -1,35 +1,37 @@
 import { MetadataRoute } from 'next'
 import content from '@/data/content.json'
 
+/**
+ * Next.js sitemap generator optimized for kavvo.store.
+ * This file is automatically transformed into XML (application/xml) with the correct headers.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kavvo.store'
+    const baseUrl = 'https://kavvo.store'
 
-    // Definir las rutas estáticas principales
+    // 1. Static Routes (Primary business focus)
     const staticRoutes = [
-        '',
-        '/nosotros',
-        '/contacto',
-        '/asesoria',
-        '/sectores',
-        '/blog',
-        '/legal/privacidad',
-        '/legal/terminos'
+        { url: '', priority: 1.0 },
+        { url: '/nosotros', priority: 0.8 },
+        { url: '/contacto', priority: 0.8 },
+        { url: '/asesoria', priority: 0.8 },
+        { url: '/sectores', priority: 0.8 },
+        { url: '/blog', priority: 0.6 },
     ].map((route) => ({
-        url: `${baseUrl}${route}`,
+        url: `${baseUrl}${route.url}`,
         lastModified: new Date(),
         changeFrequency: 'daily' as const,
-        priority: route === '' ? 1 : 0.8,
+        priority: route.priority,
     }))
 
-    // Rutas dinámicas de Servicios
+    // 2. Dynamic Services (Critical business pages)
     const serviceRoutes = content.servicios.map((servicio) => ({
         url: `${baseUrl}/servicios/${servicio.slug}`,
         lastModified: new Date(),
         changeFrequency: 'daily' as const,
-        priority: 0.9,
+        priority: 0.8,
     }))
 
-    // Rutas dinámicas de Sectores
+    // 3. Dynamic Sectors
     const sectorRoutes = content.sectores.map((sector) => ({
         url: `${baseUrl}/sectores/${sector.slug}`,
         lastModified: new Date(),
@@ -37,13 +39,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
     }))
 
-    // Rutas dinámicas de Blog
-    const blogRoutes = content.blog.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.fecha),
-        changeFrequency: 'daily' as const,
-        priority: 0.7,
-    }))
+    // 4. Dynamic Blog (Informational, lower SEO selling priority)
+    const blogRoutes = content.blog.map((post) => {
+        // Ensure date is valid for XML sitemap standards
+        const postDate = post.fecha ? new Date(post.fecha) : new Date()
+        return {
+            url: `${baseUrl}/blog/${post.slug}`,
+            lastModified: postDate,
+            changeFrequency: 'weekly' as const,
+            priority: 0.5,
+        }
+    })
 
+    // Output unified sitemap (excluding legal/testing as requested for focus)
     return [...staticRoutes, ...serviceRoutes, ...sectorRoutes, ...blogRoutes]
 }

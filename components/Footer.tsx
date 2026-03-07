@@ -13,28 +13,28 @@ export default function Footer({ locale }: FooterProps) {
     const year = new Date().getFullYear()
 
     return (
-        <footer className="bg-[#0a1529] text-white pt-16">
+        <footer className="bg-[#0A192F] text-white pt-24 border-t border-[#D4AF37]/10">
             <div className="container mx-auto px-5 lg:px-16">
                 <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1.5fr] gap-12 mb-12">
                     {/* Brand */}
                     <div>
                         <Image
-                            src="/logo-servicio-traductores-bogota.jpg"
-                            alt="WOT Traducciones Logo"
+                            src="/logo-nuevo.png"
+                            alt="Traducciones Oficiales Logo"
                             width={160}
-                            height={45}
-                            className="mb-6 object-contain bg-white p-1.5 rounded-md"
+                            height={60}
+                            className="mb-8 object-contain"
                         />
-                        <p className="text-white/60 text-sm leading-[1.6] mb-6 max-w-sm">
+                        <p className="text-gray-400 text-sm leading-loose mb-8 max-w-sm font-light tracking-wide">
                             {locale === 'es'
-                                ? 'Agencia líder en traducciones oficiales y juramentadas en Bogotá. Respaldamos tus trámites internacionales con precisión técnica y validez legal desde 2010.'
-                                : 'Leading agency for official and sworn translations in Bogotá. We support your international procedures with technical precision and legal validity since 2010.'}
+                                ? 'Agencia líder en soluciones lingüísticas certificadas. Respaldamos sus trámites internacionales con rigor técnico, validez legal y un compromiso inquebrantable con la excelencia.'
+                                : 'Leading agency for certified linguistic solutions. We support your international procedures with technical rigor, legal validity, and an unwavering commitment to excellence.'}
                         </p>
-                        <div className="flex gap-3">
-                            <Link href="https://facebook.com/WOTTraducciones" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 hover:text-yellow-400 transition-colors">
+                        <div className="flex gap-4">
+                            <Link href="https://facebook.com/traduccionesoficiales" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all duration-300">
                                 <Facebook size={18} />
                             </Link>
-                            <Link href="https://wa.me/573123902406" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 hover:text-yellow-400 transition-colors">
+                            <Link href="https://wa.me/573123902406" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all duration-300">
                                 <MessageCircle size={18} />
                             </Link>
                         </div>
@@ -42,48 +42,48 @@ export default function Footer({ locale }: FooterProps) {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-yellow-400/90 text-base font-semibold mb-6 uppercase tracking-wider">
+                        <h4 className="text-[#D4AF37] text-[10px] font-bold mb-8 uppercase tracking-[0.3em]">
                             {locale === 'es' ? 'Secciones' : 'Sections'}
                         </h4>
-                        <ul className="flex flex-col gap-3">
-                            <li><Link href={`/sectores?lang=${locale}`} className="text-white/70 hover:text-yellow-400 text-sm transition-colors">{locale === 'es' ? 'Sectores' : 'Sectors'}</Link></li>
-                            <li><Link href={`/asesoria?lang=${locale}`} className="text-white/70 hover:text-yellow-400 text-sm transition-colors">{locale === 'es' ? 'Asesoría' : 'Advisory'}</Link></li>
-                            <li><Link href={`/nosotros?lang=${locale}`} className="text-white/70 hover:text-yellow-400 text-sm transition-colors">{locale === 'es' ? 'Nosotros' : 'About'}</Link></li>
-                            <li><Link href={`/blog?lang=${locale}`} className="text-white/70 hover:text-yellow-400 text-sm transition-colors">Blog</Link></li>
+                        <ul className="flex flex-col gap-4">
+                            <li><Link href={`/sectores?lang=${locale}`} className="text-gray-400 hover:text-[#D4AF37] text-sm transition-all duration-300 font-medium">{locale === 'es' ? 'Sectores' : 'Sectors'}</Link></li>
+                            <li><Link href={`/asesoria?lang=${locale}`} className="text-gray-400 hover:text-[#D4AF37] text-sm transition-all duration-300 font-medium">{locale === 'es' ? 'Asesoría' : 'Advisory'}</Link></li>
+                            <li><Link href={`/nosotros?lang=${locale}`} className="text-gray-400 hover:text-[#D4AF37] text-sm transition-all duration-300 font-medium">{locale === 'es' ? 'Nosotros' : 'About'}</Link></li>
+                            <li><Link href={`/blog?lang=${locale}`} className="text-gray-400 hover:text-[#D4AF37] text-sm transition-all duration-300 font-medium">Blog</Link></li>
                         </ul>
                     </div>
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-yellow-400/90 text-base font-semibold mb-6 uppercase tracking-wider">
+                        <h4 className="text-[#D4AF37] text-[10px] font-bold mb-8 uppercase tracking-[0.3em]">
                             {locale === 'es' ? 'Contacto' : 'Contact'}
                         </h4>
-                        <ul className="flex flex-col gap-4">
-                            <li className="flex gap-3 items-start">
-                                <MapPin size={18} className="text-yellow-400/90 shrink-0 mt-0.5" />
-                                <span className="text-white/70 text-sm">Carrera 14B #161-54 Torre 2/1002, Bogotá</span>
+                        <ul className="flex flex-col gap-6">
+                            <li className="flex gap-4 items-start">
+                                <MapPin size={20} className="text-[#D4AF37] shrink-0 opacity-80" />
+                                <span className="text-gray-400 text-sm font-medium leading-relaxed">Carrera 14B #161-54 Suite 1002<br />Centro Empresarial Atabanza</span>
                             </li>
-                            <li className="flex gap-3 items-center">
-                                <Phone size={18} className="text-yellow-400/90 shrink-0" />
-                                <span className="text-white/70 text-sm">+57 312 3902406</span>
+                            <li className="flex gap-4 items-center">
+                                <Phone size={20} className="text-[#D4AF37] shrink-0 opacity-80" />
+                                <span className="text-gray-400 text-sm font-medium">+57 312 390 2406</span>
                             </li>
-                            <li className="flex gap-3 items-center">
-                                <Mail size={18} className="text-yellow-400/90 shrink-0" />
-                                <Link href="mailto:traduccionesenbogotawot@gmail.com" className="text-white/70 hover:text-yellow-400 text-sm transition-colors">traduccionesenbogotawot@gmail.com</Link>
+                            <li className="flex gap-4 items-center">
+                                <Mail size={20} className="text-[#D4AF37] shrink-0 opacity-80" />
+                                <Link href="mailto:informacion@traduccionescertificadas.com" className="text-gray-400 hover:text-[#D4AF37] text-sm transition-all duration-300 font-medium">informacion@traduccionescertificadas.com</Link>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="border-t border-white/10 py-6 flex justify-between items-center flex-wrap gap-4">
-                    <p className="text-white/40 text-xs text-center md:text-left">
-                        © {year} <strong className="font-semibold text-white/50">WOT Traducciones Bogotá</strong> — WORLD OFFICIAL TRANSLATIONS S.A.S. {locale === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+                <div className="border-t border-white/5 py-10 flex justify-between items-center flex-wrap gap-6">
+                    <p className="text-gray-500 text-[11px] font-bold uppercase tracking-[0.2em]">
+                        © {year} <span className="text-gray-400">Traducciones Oficiales</span> — Excellence in linguistics
                     </p>
-                    <div className="flex gap-6 mx-auto md:mx-0">
-                        <Link href={`/legal/privacidad?lang=${locale}`} className="text-white/40 hover:text-white/70 text-xs transition-colors">
+                    <div className="flex gap-10">
+                        <Link href={`/legal/privacidad?lang=${locale}`} className="text-gray-500 hover:text-[#D4AF37] text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300">
                             {locale === 'es' ? 'Privacidad' : 'Privacy'}
                         </Link>
-                        <Link href={`/legal/terminos?lang=${locale}`} className="text-white/40 hover:text-white/70 text-xs transition-colors">
+                        <Link href={`/legal/terminos?lang=${locale}`} className="text-gray-500 hover:text-[#D4AF37] text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300">
                             {locale === 'es' ? 'Términos' : 'Terms'}
                         </Link>
                     </div>

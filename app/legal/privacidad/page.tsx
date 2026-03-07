@@ -9,10 +9,10 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     return {
-        title: locale === 'es' ? 'Política de Tratamiento de Datos Personales | WOT Traducciones' : 'Data Privacy Policy | WOT Translations',
+        title: locale === 'es' ? 'Política de Tratamiento de Datos Personales | Traducciones Oficiales' : 'Data Privacy Policy | Official Translations',
         description: locale === 'es'
-            ? 'Política de Tratamiento de Datos Personales y Privacidad (Ley 1581 de 2012) de WORLD OFFICIAL TRANSLATIONS S.A.S.'
-            : 'Data Treatment and Privacy Policy of WORLD OFFICIAL TRANSLATIONS S.A.S.'
+            ? 'Política de Tratamiento de Datos Personales y Privacidad (Ley 1581 de 2012) de Traducciones Oficiales S.A.S.'
+            : 'Data Treatment and Privacy Policy of Traducciones Oficiales S.A.S.'
     }
 }
 
@@ -25,104 +25,117 @@ export default async function PrivacidadPage({ searchParams }: { searchParams: P
             <Navbar locale={locale} currentPath="/legal/privacidad" />
             <main className="font-sans antialiased text-slate-800 bg-slate-50 min-h-screen pb-24">
                 {/* HERO LEGAL */}
-                <section className="bg-gradient-to-br from-[#0c1a35] via-[#1a3055] to-[#1e4a8a] py-16 lg:py-24" aria-label="Legal">
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center">
-                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8 font-medium">
-                            <Link href={`/?lang=${locale}`} className="text-white/80 hover:text-white transition-colors">Home</Link>
-                            <span className="text-white/40">/</span>
-                            <span className="text-white/95">Legal</span>
+                <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Legal">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-10">
+                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
+                            <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
+                            <span className="text-white/20">/</span>
+                            <span className="text-white/80">Legal</span>
                         </nav>
 
-                        <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400 mb-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+                        <div className="mx-auto w-16 h-16 rounded-sm bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] mb-8 shadow-2xl">
                             <Shield size={32} />
                         </div>
 
-                        <div className="inline-flex items-center gap-2 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-3 text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
                             <CheckCircle size={14} />
-                            {locale === 'es' ? 'Acuerdo Legal' : 'Legal Agreement'}
+                            {locale === 'es' ? 'Acuerdo Privacidad' : 'Privacy Agreement'}
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-bold mb-6 leading-tight">
-                            {locale === 'es' ? 'Política de Tratamiento de Datos Personales' : 'Personal Data Processing Policy'}
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-serif font-bold mb-10 leading-tight tracking-tight">
+                            {locale === 'es' ? 'Política de Privacidad' : 'Privacy Policy'}
                         </h1>
 
-                        <p className="text-yellow-400/90 text-xl font-medium mb-6">
-                            {locale === 'es' ? 'Cumplimiento estricto de la Ley 1581 de 2012.' : 'Strict compliance with Colombian Law 1581 of 2012.'}
+                        <p className="text-gray-400 text-xl font-light mb-6 tracking-wide max-w-2xl mx-auto">
+                            {locale === 'es' ? 'Tratamiento de datos personales y compromiso de confidencialidad absoluta.' : 'Personal data processing and commitment to absolute confidentiality.'}
                         </p>
                     </div>
                 </section>
 
-                <div className="container mx-auto px-5 lg:px-8 max-w-[800px] -mt-10 relative z-10">
-                    <div className="bg-white p-10 md:p-14 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100">
+                <div className="container mx-auto px-5 lg:px-8 max-w-[900px] -mt-20 relative z-20">
+                    <div className="bg-[#0A192F] p-10 md:p-20 rounded-sm shadow-2xl border border-[#D4AF37]/10 relative overflow-hidden">
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_100%_100%,rgba(212,175,55,0.02)_0%,transparent_50%)] pointer-events-none" />
 
-                        <div className="space-y-8 text-slate-600 leading-relaxed text-[1.05rem]">
+                        <div className="space-y-12 text-gray-400 leading-relaxed text-lg font-light tracking-wide relative z-10">
 
                             <section>
-                                <h2 className="text-xl font-bold text-[#0c1a35] mb-3">
+                                <h2 className="text-2xl font-serif font-bold text-[#D4AF37] mb-6 tracking-tight">
                                     {locale === 'es' ? '1. Identificación del Responsable' : '1. Controller Identification'}
                                 </h2>
                                 <p>
                                     {locale === 'es'
-                                        ? 'En cumplimiento de la Ley 1581 de 2012 y el Decreto Reglamentario 1377 de 2013, WORLD OFFICIAL TRANSLATIONS S.A.S., con domicilio en Bogotá, Colombia (Carrera 14B #161-54), actúa como responsable del tratamiento de los datos personales proporcionados por sus clientes y usuarios a través de sus canales digitales y físicos.'
-                                        : 'In compliance with Law 1581 of 2012 and Regulatory Decree 1377 of 2013, WORLD OFFICIAL TRANSLATIONS S.A.S., domiciled in Bogotá, Colombia (Carrera 14B #161-54), acts as the controller for the processing of personal data provided by its clients and users through its digital and physical channels.'}
+                                        ? 'En estricto cumplimiento de la Ley 1581 de 2012 e instrucciones de la SIC, Traducciones Oficiales S.A.S., con domicilio en Bogotá, actúa como el responsable del tratamiento de los datos personales proporcionados para servicios de traducción.'
+                                        : 'In strict compliance with Law 1581 of 2012 and SIC instructions, Traducciones Oficiales S.A.S., domiciled in Bogotá, acts as the controller for the processing of personal data provided for translation services.'}
                                 </p>
                             </section>
 
                             <section>
-                                <h2 className="text-xl font-bold text-[#0c1a35] mb-3">
-                                    {locale === 'es' ? '2. Finalidad del Tratamiento y Confidencialidad' : '2. Purpose of Processing and Confidentiality'}
+                                <h2 className="text-2xl font-serif font-bold text-[#D4AF37] mb-6 tracking-tight">
+                                    {locale === 'es' ? '2. Finalidad y Confidencialidad' : '2. Purpose and Confidentiality'}
                                 </h2>
-                                <p className="mb-3">
+                                <p className="mb-6">
                                     {locale === 'es'
-                                        ? 'Los datos sensibles (incluyendo pasaportes, registros civiles, actas de divorcio, historias clínicas, y cualquier otro documento de carácter privado) enviados para cotización o traducción están protegidos por el secreto profesional y estrictos Acuerdos de Confidencialidad (NDA).'
-                                        : 'Sensitive data (including passports, civil registries, divorce decrees, medical records, and any other private documents) sent for quotation or translation are protected by professional secrecy and strict Non-Disclosure Agreements (NDAs).'}
+                                        ? 'Los datos sensibles (pasaportes, actas, historias clínicas) están protegidos bajo el secreto profesional y protocolos de seguridad de grado corporativo.'
+                                        : 'Sensitive data (passports, certificates, medical records) are protected under professional secrecy and corporate-grade security protocols.'}
                                 </p>
                                 <p>
                                     {locale === 'es'
-                                        ? 'La recolección se limita exclusivamente a la prestación de servicios de traducción oficial, gestión de pagos, facturación electrónica y comunicación operativa con el titular.'
-                                        : 'Data collection is strictly limited to the provision of official translation services, payment processing, electronic billing, and operational communication with the data subject.'}
+                                        ? 'La recolección se limita a la prestación de servicios de traducción, gestión de pagos y facturación, garantizando que su información jamás será compartida sin autorización.'
+                                        : 'Data collection is limited to the provision of translation services, payment management, and billing, ensuring your information will never be shared without authorization.'}
                                 </p>
                             </section>
 
-                            <section className="bg-blue-50/50 p-6 rounded-xl border border-blue-100">
-                                <h2 className="text-lg font-bold text-[#1a3a6c] mb-3">
+                            <section className="bg-white/5 border border-white/5 p-10 rounded-sm">
+                                <h2 className="text-2xl font-serif font-bold text-[#D4AF37] mb-6 tracking-tight">
                                     {locale === 'es' ? '3. Derechos del Titular (Habeas Data)' : '3. Rights of the Data Subject (Habeas Data)'}
                                 </h2>
-                                <ul className="list-disc pl-5 space-y-2 text-slate-700">
-                                    <li>{locale === 'es' ? 'Conocer, actualizar y rectificar sus datos personales frente a WORLD OFFICIAL TRANSLATIONS S.A.S.' : 'Know, update, and rectify personal data before WORLD OFFICIAL TRANSLATIONS S.A.S.'}</li>
-                                    <li>{locale === 'es' ? 'Solicitar prueba de la autorización otorgada para el tratamiento de datos.' : 'Request proof of authorization granted for data processing.'}</li>
-                                    <li>{locale === 'es' ? 'Revocar la autorización y/o solicitar la supresión pura y simple del dato cuando en el tratamiento no se respeten los principios, derechos y garantías constitucionales y legales.' : 'Revoke authorization and/or request data deletion when constitutional and legal principles and guarantees are not respected during processing.'}</li>
-                                    <li>{locale === 'es' ? 'Acceder en forma gratuita a sus datos personales que hayan sido objeto de Tratamiento.' : 'Access for free personal data that have been processed.'}</li>
+                                <ul className="space-y-6">
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 shrink-0" />
+                                        <span>{locale === 'es' ? 'Conocer, actualizar y rectificar sus datos personales ante Traducciones Oficiales S.A.S.' : 'Know, update, and rectify personal data before Traducciones Oficiales S.A.S.'}</span>
+                                    </li>
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 shrink-0" />
+                                        <span>{locale === 'es' ? 'Solicitar prueba de la autorización otorgada para el tratamiento de su información.' : 'Request proof of authorization granted for the processing of your information.'}</span>
+                                    </li>
+                                    <li className="flex gap-4">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 shrink-0" />
+                                        <span>{locale === 'es' ? 'Revocar la autorización y/o solicitar la supresión del dato cuando así lo considere.' : 'Revoke authorization and/or request data deletion whenever deemed necessary.'}</span>
+                                    </li>
                                 </ul>
                             </section>
 
                             <section>
-                                <h2 className="text-xl font-bold text-[#0c1a35] mb-3">
-                                    {locale === 'es' ? '4. Destrucción de Archivos Temporales' : '4. Destruction of Temporary Files'}
+                                <h2 className="text-2xl font-serif font-bold text-[#D4AF37] mb-6 tracking-tight">
+                                    {locale === 'es' ? '4. Destrucción de Archivos' : '4. File Destruction'}
                                 </h2>
                                 <p>
                                     {locale === 'es'
-                                        ? 'Como agencia de traducciones juramentadas, entendemos el nivel de sensibilidad del material procesado. Tras la entrega conforme del archivo al cliente, los documentos físicos y réplicas digitales involucradas se mantendrán almacenadas de forma cifrada única y exclusivamente durante nuestro periodo temporal de garantía y eventualidad de soporte. Cumplida la etapa, los documentos confidenciales son eliminados de nuestros servidores para proteger su integridad.'
-                                        : 'As a sworn translation agency, we understand the sensitivity level of the processed material. Upon confirmed delivery to the client, physical documents and involved digital replicas will be stored encrypted uniquely and exclusively during our temporary warranty period for support eventualities. Once this stage concludes, confidential documents are permanently deleted from our servers to protect your integrity.'}
+                                        ? 'Tras la entrega conforme, los documentos fuente y copias se mantienen cifrados únicamente durante el periodo de garantía técnica. Posteriormente, son eliminados permanentemente.'
+                                        : 'Upon delivery, source documents and copies are kept encrypted only during the technical warranty period. Subsequently, they are permanently deleted.'}
                                 </p>
                             </section>
 
                             <section>
-                                <h2 className="text-xl font-bold text-[#0c1a35] mb-3">
-                                    {locale === 'es' ? '5. Contacto para Ejercicio de Derechos' : '5. Contact to Exercise Rights'}
+                                <h2 className="text-2xl font-serif font-bold text-[#D4AF37] mb-6 tracking-tight">
+                                    {locale === 'es' ? '5. Contacto Legal' : '5. Legal Contact'}
                                 </h2>
                                 <p>
                                     {locale === 'es'
-                                        ? 'Las peticiones, consultas y reclamos relacionados con la protección de datos personales pueden dirigirse al correo electrónico traduccionesenbogotawot@gmail.com o enviando correspondencia escrita a nuestras instalaciones en Bogotá.'
-                                        : 'Petitions, queries, and claims related to personal data protection can be directed to the email traduccionesenbogotawot@gmail.com or by sending written correspondence to our facilities in Bogotá.'}
+                                        ? 'Para Habeas Data, escriba a informacion@traduccionescertificadas.com o visite nuestras instalaciones en Bogotá.'
+                                        : 'For Habeas Data, write to informacion@traduccionescertificadas.com or visit our facilities in Bogotá.'}
                                 </p>
                             </section>
 
                         </div>
 
-                        <div className="mt-12 pt-6 border-t border-slate-100 flex items-center justify-between text-sm text-slate-400">
-                            <div>WORLD OFFICIAL TRANSLATIONS S.A.S.</div>
-                            <div>{locale === 'es' ? 'Actualizado: Marzo 2026' : 'Updated: March 2026'}</div>
+                        <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[11px] text-gray-500 uppercase tracking-[0.2em] font-bold">
+                            <div>Traducciones Oficiales S.A.S.</div>
+                            <div className="flex items-center gap-4">
+                                <div className="w-10 h-[1px] bg-[#D4AF37]/30" />
+                                <span>{locale === 'es' ? 'Actualizado: Marzo 2026' : 'Updated: March 2026'}</span>
+                            </div>
                         </div>
 
                     </div>

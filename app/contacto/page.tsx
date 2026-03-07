@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import {
-    Mail, MapPin, MessageCircle, Clock,
-    Facebook, Linkedin, CheckCircle
+    Mail, MapPin, CheckCircle, Facebook, Linkedin
 } from 'lucide-react'
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import LeadForm from '@/components/LeadForm'
-import { getDict, type Locale } from '@/lib/i18n'
+import { type Locale } from '@/lib/i18n'
 
 export async function generateMetadata({ searchParams }: {
     searchParams: Promise<{ lang?: string }>
@@ -16,7 +15,7 @@ export async function generateMetadata({ searchParams }: {
     const locale: Locale = lang === 'en' ? 'en' : 'es'
 
     return {
-        title: locale === 'es' ? 'Contacto | WOT Traducciones Bogotá' : 'Contact Us | WOT Translations Bogotá',
+        title: locale === 'es' ? 'Contacto | Traducciones Oficiales' : 'Contact Us | Official Translations',
         description: locale === 'es'
             ? 'Póngase en contacto con nosotros para sus necesidades de traducción oficial en Bogotá. Ofrecemos atención rápida por WhatsApp, email y formulario.'
             : 'Get in touch with us for your official translation needs in Bogota. We offer fast support via WhatsApp, email, and form.',
@@ -28,164 +27,157 @@ export default async function ContactoPage({ searchParams }: {
 }) {
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
-    const t = getDict(locale)
 
     const PHONE_WA = '573123902406'
     const PHONE_DISPLAY = '+57 312 3902406'
-    const EMAIL = 'traduccionesenbogotawot@gmail.com'
+    const EMAIL = 'informacion@traduccionescertificadas.com'
     const ADDRESS = 'Carrera 14B #161-54 Torre 2/1002, Bogotá'
 
     return (
         <>
             <Navbar locale={locale} currentPath="/contacto" />
 
-            <main className="font-sans text-slate-800 antialiased">
-                {/* HERO */}
-                <section className="bg-gradient-to-br from-[#0c1a35] via-[#1a3055] to-[#1e4a8a] py-16 lg:py-24" aria-label="Contacto">
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center">
-                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8 font-medium">
-                            <Link href={`/?lang=${locale}`} className="text-white/80 hover:text-white transition-colors">Home</Link>
-                            <span className="text-white/40">/</span>
-                            <span className="text-white/95">{locale === 'es' ? 'Contacto' : 'Contact'}</span>
+            <main className="font-sans text-white/90 antialiased bg-[#0A192F]">
+                {/* HERO CONTACT */}
+                <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Contacto">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-10">
+                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
+                            <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
+                            <span className="text-white/20">/</span>
+                            <span className="text-white/80">{locale === 'es' ? 'Contacto' : 'Contact'}</span>
                         </nav>
 
-                        <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400 mb-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+                        <div className="mx-auto w-16 h-16 rounded-sm bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] mb-8 shadow-2xl">
                             <Mail size={32} />
                         </div>
 
-                        <div className="inline-flex items-center gap-2 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-3 text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
                             <CheckCircle size={14} />
-                            {locale === 'es' ? 'Atención Inmediata' : 'Immediate Attention'}
+                            {locale === 'es' ? 'Atención Corporativa' : 'Corporate Support'}
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-bold mb-6 leading-tight">
-                            {locale === 'es' ? 'Contacto Directo' : 'Get in Touch'}
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-serif font-bold mb-10 leading-tight tracking-tight">
+                            {locale === 'es' ? 'Canales de Atención' : 'Executive Support'}
                         </h1>
 
-                        <p className="text-yellow-400/90 text-xl font-medium mb-6">
+                        <p className="text-gray-400 text-xl font-light mb-6 tracking-wide max-w-2xl mx-auto">
                             {locale === 'es'
-                                ? 'Estamos listos para asesorarlo en su proyecto de traducción. Elija el canal que prefiera.'
-                                : 'We are ready to assist you with your translation project. Choose your preferred channel.'}
+                                ? 'Asesoría especializada para sus proyectos de traducción oficial con la máxima rigurosidad.'
+                                : 'Specialized consultancy for your official translation projects with maximum rigor.'}
                         </p>
                     </div>
                 </section>
 
                 {/* CONTACT GRID */}
-                <section className="py-20 lg:py-28 bg-slate-50 relative overflow-hidden">
-                    {/* Background decoration */}
-                    <div className="absolute top-0 right-0 w-1/2 h-full bg-[#1a3a6c]/5 -skew-x-12 translate-x-32" />
+                <section className="py-24 lg:py-32 bg-[#0A192F] relative overflow-hidden border-t border-white/5">
+                    <div className="absolute top-0 right-0 w-1/3 h-full bg-[#D4AF37]/5 blur-[120px] rounded-full pointer-events-none" />
 
-                    <div className="container mx-auto px-5 lg:px-16 grid lg:grid-cols-2 gap-16 lg:gap-24 relative z-10 w-full max-w-screen-xl relative z-10 mx-auto">
+                    <div className="container mx-auto px-5 lg:px-16 grid lg:grid-cols-2 gap-20 lg:gap-32 relative z-10 max-w-screen-xl">
 
                         {/* INFO SIDE */}
-                        <div className="max-w-xl">
-                            <div className="inline-flex items-center gap-2 text-yellow-500 font-bold text-xs uppercase tracking-wider mb-4">
-                                <div className="w-8 h-0.5 bg-yellow-500" />
-                                {locale === 'es' ? 'Información' : 'Information'}
+                        <div className="flex flex-col">
+                            <div className="inline-flex items-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.3em] mb-10">
+                                <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
+                                {locale === 'es' ? 'Información de Contacto' : 'Contact Details'}
                             </div>
-                            <h2 className="text-4xl font-serif font-bold text-[#0c1a35] mb-12">
-                                {locale === 'es' ? 'Hablemos hoy mismo' : 'Let\'s talk today'}
+
+                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-16 leading-tight tracking-tight">
+                                {locale === 'es' ? 'Gestión de Proyectos Inmediata' : 'Direct Project Management'}
                             </h2>
 
-                            <div className="flex flex-col gap-10">
-
+                            <div className="space-y-16">
                                 {/* WhatsApp */}
-                                <div className="flex gap-6 group cursor-pointer hover:-translate-y-1 transition-transform">
-                                    <div className="w-14 h-14 bg-[#1a3a6c] rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-[#1a3a6c]/20 group-hover:bg-[#25d366] transition-colors">
-                                        <MessageCircle size={28} className="text-[#e2e8f0] group-hover:text-white transition-colors" />
+                                <div className="group">
+                                    <div className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-[0.4em] mb-4 flex items-center gap-4">
+                                        <div className="w-8 h-[1px] bg-[#D4AF37]/30" />
+                                        WhatsApp
                                     </div>
-                                    <div className="flex-1 mt-1">
-                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">WhatsApp</div>
-                                        <Link href={`https://wa.me/${PHONE_WA}`} target="_blank" rel="noopener noreferrer" className="text-2xl font-bold text-[#0c1a35] hover:text-[#25d366] transition-colors inline-block">
-                                            {PHONE_DISPLAY}
-                                        </Link>
-                                    </div>
+                                    <Link href={`https://wa.me/${PHONE_WA}`} target="_blank" rel="noopener noreferrer" className="text-3xl md:text-4xl font-serif font-bold text-white hover:pl-4 transition-all duration-500 block">
+                                        {PHONE_DISPLAY}
+                                    </Link>
                                 </div>
 
                                 {/* Correo */}
-                                <div className="flex gap-6 group pointer-events-none sm:pointer-events-auto">
-                                    <div className="w-14 h-14 bg-[#1a3a6c] rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-[#1a3a6c]/20">
-                                        <Mail size={28} className="text-[#e2e8f0]" />
+                                <div className="group">
+                                    <div className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-[0.4em] mb-4 flex items-center gap-4">
+                                        <div className="w-8 h-[1px] bg-[#D4AF37]/30" />
+                                        Email
                                     </div>
-                                    <div className="flex-1 mt-1">
-                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">E-mail</div>
-                                        <Link href={`mailto:${EMAIL}`} className="text-lg font-bold text-[#0c1a35] hover:text-[#c9a227] transition-colors">
-                                            {EMAIL}
-                                        </Link>
-                                    </div>
+                                    <Link href={`mailto:${EMAIL}`} className="text-2xl md:text-3xl font-serif font-bold text-white hover:pl-4 transition-all duration-500 block truncate">
+                                        {EMAIL}
+                                    </Link>
                                 </div>
 
                                 {/* Oficina */}
-                                <div className="flex gap-6">
-                                    <div className="w-14 h-14 bg-[#1a3a6c] rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-[#1a3a6c]/20">
-                                        <MapPin size={28} className="text-[#e2e8f0]" />
+                                <div className="group">
+                                    <div className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-[0.4em] mb-4 flex items-center gap-4">
+                                        <div className="w-8 h-[1px] bg-[#D4AF37]/30" />
+                                        {locale === 'es' ? 'Sede' : 'HQ'}
                                     </div>
-                                    <div className="flex-1 mt-1">
-                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">{locale === 'es' ? 'Oficina' : 'Office'}</div>
-                                        <div className="text-lg font-bold text-[#0c1a35] leading-relaxed">
-                                            {ADDRESS}
-                                        </div>
+                                    <div className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+                                        {ADDRESS}
                                     </div>
                                 </div>
 
                                 {/* Horario */}
-                                <div className="flex gap-6">
-                                    <div className="w-14 h-14 bg-[#1a3a6c] rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-[#1a3a6c]/20">
-                                        <Clock size={28} className="text-[#e2e8f0]" />
+                                <div className="group">
+                                    <div className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-[0.4em] mb-4 flex items-center gap-4">
+                                        <div className="w-8 h-[1px] bg-[#D4AF37]/30" />
+                                        {locale === 'es' ? 'Horario' : 'Hours'}
                                     </div>
-                                    <div className="flex-1 mt-1">
-                                        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">{locale === 'es' ? 'Horario' : 'Hours'}</div>
-                                        <div className="text-lg font-bold text-[#0c1a35]">
-                                            {locale === 'es' ? 'Lun - Vie: 8:00 AM - 6:00 PM' : 'Mon - Fri: 8:00 AM - 6:00 PM'}
-                                        </div>
+                                    <div className="text-2xl font-serif font-bold text-white/80">
+                                        {locale === 'es' ? 'Lun - Vie: 8am - 6pm' : 'Mon - Fri: 8am - 6pm'}
                                     </div>
                                 </div>
                             </div>
 
                             {/* SOCIALS */}
-                            <div className="mt-16 pt-8 border-t border-slate-200">
-                                <h4 className="text-lg font-serif font-bold text-[#0c1a35] mb-6">
-                                    {locale === 'es' ? 'Síguenos en redes' : 'Follow us'}
+                            <div className="mt-20 pt-10 border-t border-white/5">
+                                <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-500 mb-8">
+                                    {locale === 'es' ? 'Redes Institucionales' : 'Institutional Socials'}
                                 </h4>
-                                <div className="flex gap-4">
-                                    <Link href="https://facebook.com/WOTTraducciones" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-slate-300 text-slate-500 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50 transition-all shadow-sm">
-                                        <Facebook size={20} />
+                                <div className="flex gap-6">
+                                    <Link href="https://facebook.com/traduccionesoficiales" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center rounded-sm bg-white/5 border border-white/10 text-gray-400 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all">
+                                        <Facebook size={24} />
                                     </Link>
-                                    <Link href="https://linkedin.com/company/wot-traducciones" target="_blank" rel="noopener noreferrer" className="w-12 h-12 flex items-center justify-center rounded-full border border-slate-300 text-slate-500 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 transition-all shadow-sm">
-                                        <Linkedin size={20} />
+                                    <Link href="https://linkedin.com/company/traducciones-oficiales" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center rounded-sm bg-white/5 border border-white/10 text-gray-400 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all">
+                                        <Linkedin size={24} />
                                     </Link>
                                 </div>
                             </div>
                         </div>
 
                         {/* FORM SIDE */}
-                        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100/50">
-                            <div className="text-center mb-8">
-                                <div className="inline-block w-16 h-1 bg-yellow-400 rounded-full mb-6" />
-                                <h3 className="text-2xl md:text-3xl font-serif font-bold text-[#0c1a35] mb-3">
-                                    {locale === 'es' ? 'Envíenos un mensaje' : 'Send us a message'}
+                        <div className="relative pt-10 border-t lg:border-t-0 lg:border-l border-white/5 lg:pl-20">
+                            <div className="mb-14 relative z-10">
+                                <h3 className="text-4xl font-serif font-bold text-white mb-6 tracking-tight italic">
+                                    {locale === 'es' ? 'Presupuesto Formal' : 'Formal Quotation'}
                                 </h3>
-                                <p className="text-slate-500">
-                                    {locale === 'es' ? 'Nuestro equipo comercial se contactará con usted a la brevedad.' : 'Our sales team will contact you shortly.'}
+                                <p className="text-gray-500 font-light text-lg max-w-md leading-relaxed">
+                                    {locale === 'es' ? 'Nuestro equipo técnico analizará sus documentos de inmediato para brindarle una propuesta oficial.' : 'You will receive a detailed proposal in record time.'}
                                 </p>
                             </div>
 
-                            {/* Integramos el nuevo LeadForm que apunta al Server Action */}
-                            <LeadForm locale={locale} t={t.form} />
+                            <LeadForm locale={locale} />
                         </div>
 
                     </div>
                 </section>
 
                 {/* MAP PLACEHOLDER */}
-                <section className="h-[400px] bg-[#e2e8f0] flex items-center justify-center relative overflow-hidden">
-                    <div className="absolute inset-0 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=4.7397,-74.0401&zoom=15&size=1920x400&maptype=roadmap&markers=color:red%7C4.7397,-74.0401&key=PLACEHOLDER')] bg-cover bg-center opacity-40 mix-blend-multiply" />
-                    <div className="relative z-10 text-center text-[#0c1a35] bg-white/80 backdrop-blur-md px-10 py-8 rounded-2xl shadow-xl border border-white">
-                        <MapPin size={48} className="mx-auto mb-4 text-[#1a3a6c]" />
-                        <p className="font-serif font-bold text-2xl uppercase tracking-wider mb-2">
-                            {locale === 'es' ? 'Ubicación Premium' : 'Premium Location'}
+                <section className="h-[500px] bg-[#0A192F] flex items-center justify-center relative overflow-hidden border-t border-white/5">
+                    <div className="absolute inset-0 grayscale opacity-20 hover:opacity-40 transition-opacity duration-1000 bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=4.7397,-74.0401&zoom=15&size=1920x500&maptype=roadmap&markers=color:0xD4AF37%7C4.7397,-74.0401&key=PLACEHOLDER')] bg-cover bg-center" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-transparent to-[#0A192F]" />
+
+                    <div className="relative z-10 text-center max-w-lg mx-auto px-5">
+                        <div className="w-20 h-20 bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center mx-auto mb-10 shadow-3xl">
+                            <MapPin size={40} className="text-[#D4AF37]" />
+                        </div>
+                        <p className="font-serif font-bold text-3xl text-white mb-4 tracking-tight">
+                            {locale === 'es' ? 'Ubicación Estratégica' : 'Executive Location'}
                         </p>
-                        <p className="font-medium text-slate-600">{ADDRESS}</p>
+                        <p className="font-light text-gray-400 text-lg leading-relaxed">{ADDRESS}</p>
                     </div>
                 </section>
             </main>

@@ -28,6 +28,16 @@ export async function sendEmailAction(prevState: unknown, formData: FormData) {
         return { success: false, message: 'Falta configurar RESEND_API_KEY en el servidor.' }
     }
 
+    // --- HONEYPOT CHECK ---
+    const honey1 = formData.get('_website_honey')
+    const honey2 = formData.get('_extra_verify_email')
+    if (honey1 || honey2) {
+        // Silently fail for bots
+        console.warn('Bot detected by honeypot')
+        return { success: true, message: 'Tu mensaje ha sido enviado exitosamente. Te contactaremos pronto.' }
+    }
+    // --- FIN HONEYPOT ---
+
     // --- RATE LIMITING ---
     const headersList = await headers()
     const ip = headersList.get('x-forwarded-for') || 'unknown-ip'
@@ -71,14 +81,14 @@ export async function sendEmailAction(prevState: unknown, formData: FormData) {
 
     try {
         const data = await resend.emails.send({
-            from: 'WOT Cotizaciones <onboarding@resend.dev>', // Usaremos el dominio por defecto de pruebas
+            from: 'Cotizaciones <onboarding@resend.dev>', // Usaremos el dominio por defecto de pruebas
             to: email, // Enviar al correo ingresado en el formulario
             subject: `🔥 Nueva Cotización: ${servicio} - ${nombre}`,
             replyTo: email,
             html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #e2e8f0; border-radius: 10px;">
           <h2 style="color: #1a3a6c;">Nueva Solicitud de Cotización</h2>
-          <p>Has recibido un nuevo contacto desde traduccionesbogotawot.com</p>
+          <p>Has recibido un nuevo contacto desde tu sitio web de Traducciones Oficiales</p>
           <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 10px;">👤 <strong>Nombre:</strong> ${nombre}</li>

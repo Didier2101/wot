@@ -10,11 +10,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     return {
         title: locale === 'es'
-            ? 'Quiénes Somos | WOT Traducciones — Traductores Oficiales Bogotá'
-            : 'About Us | WOT Translations — Official Translators Bogotá',
+            ? 'Quiénes Somos | Traducciones Oficiales — Traductores Oficiales'
+            : 'About Us | Official Translations — Official Translators',
         description: locale === 'es'
-            ? 'WORLD OFFICIAL TRANSLATIONS S.A.S. — 14 años de experiencia. Traductores oficiales certificados ante el MRE. Bogotá, Colombia.'
-            : 'WORLD OFFICIAL TRANSLATIONS S.A.S. — 14 years of experience. Official translators certified before the Colombian Ministry of Foreign Affairs.',
+            ? 'Traducciones Oficiales S.A.S. — Más de una década de experiencia. Traductores oficiales certificados ante el Ministerio de Relaciones Exteriores. Bogotá, Colombia.'
+            : 'Traducciones Oficiales S.A.S. — Over a decade of experience. Official translators certified before the Colombian Ministry of Foreign Affairs.',
     }
 }
 
@@ -40,9 +40,10 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
         <>
             <Navbar locale={locale} currentPath="/nosotros" />
 
-            <main className="font-sans antialiased text-slate-800">
+            <main className="font-sans antialiased text-gray-400 bg-[#0A192F]">
                 {/* HERO */}
-                <section className="bg-gradient-to-br from-[#0c1a35] via-[#1a3055] to-[#1e4a8a] py-16 lg:py-24" aria-label="Nosotros">
+                <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Nosotros">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
                     <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8 font-medium">
                             <Link href={`/?lang=${locale}`} className="text-white/80 hover:text-white transition-colors">Home</Link>
@@ -50,51 +51,51 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
                             <span className="text-white/95">{locale === 'es' ? 'Nosotros' : 'About'}</span>
                         </nav>
 
-                        <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400 mb-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+                        <div className="mx-auto w-16 h-16 rounded-sm bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] mb-8 shadow-2xl">
                             <Users size={32} />
                         </div>
 
-                        <div className="inline-flex items-center gap-2 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-3 text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
                             <CheckCircle size={14} />
-                            WORLD OFFICIAL TRANSLATIONS S.A.S.
+                            TRADUCCIONES OFICIALES S.A.S.
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-serif font-bold mb-10 leading-tight tracking-tight">
                             {locale === 'es' ? 'Traductores oficiales en Bogotá desde 2010' : 'Official translators in Bogotá since 2010'}
                         </h1>
 
-                        <p className="text-yellow-400/90 text-xl font-medium mb-6">
+                        <p className="text-gray-400 text-xl md:text-2xl font-light mb-10 tracking-wide max-w-3xl mx-auto leading-relaxed">
                             {locale === 'es'
-                                ? 'Empresa colombiana especializada en traducciones certificadas y oficiales. Traductores juramentados habilitados por el MRE, con enfoque en calidad, puntualidad y atención personalizada.'
-                                : 'Colombian company specialized in certified and official translations. Sworn translators authorized by the MFA, focused on quality, punctuality and personalized service.'}
+                                ? 'Agencia líder especializada en soluciones lingüísticas certificadas. Traductores juramentados habilitados por el Ministerio de Relaciones Exteriores, con un enfoque inquebrantable en la excelencia.'
+                                : 'Leading agency specialized in certified linguistic solutions. Sworn translators authorized by the Ministry of Foreign Affairs, with an unwavering focus on excellence.'}
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-                            <Link href={`/?lang=${locale}#contacto`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-1">
+                        <div className="flex flex-wrap items-center justify-center gap-6 mt-14">
+                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-[#0A192F] shadow-2xl">
                                 {locale === 'es' ? 'Solicitar cotización' : 'Request a quote'}
                                 <ArrowRight size={18} />
                             </Link>
                             <Link
                                 href="https://wa.me/573123902406"
-                                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-[#25d366] hover:bg-[#1eb358] text-white font-extrabold text-sm tracking-wider transition-all shadow-lg hover:-translate-y-1"
+                                className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]"
                                 target="_blank" rel="noopener noreferrer"
                             >
                                 <MessageCircle size={18} />
-                                WhatsApp
+                                WhatsApp Directo
                             </Link>
                         </div>
                     </div>
                 </section>
 
                 {/* Stats */}
-                <section className="bg-[#0c1a35] py-12 border-t border-white/10 relative z-20">
+                <section className="bg-[#0A192F] py-14 border-y border-[#D4AF37]/10 relative z-20">
                     <div className="container mx-auto px-5 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center max-w-screen-xl mx-auto">
                         {STATS.map((s, index) => (
                             <div key={index} className="flex flex-col items-center justify-center">
-                                <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-yellow-400 leading-none mb-2">
+                                <div className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#D4AF37] leading-none mb-3">
                                     {s.value}
                                 </div>
-                                <div className="text-white/80 text-sm md:text-base font-medium uppercase tracking-wider">
+                                <div className="text-gray-400 text-[10px] font-bold uppercase tracking-[0.2em]">
                                     {locale === 'es' ? s.es : s.en}
                                 </div>
                             </div>
@@ -103,69 +104,70 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
                 </section>
 
                 {/* Historia */}
-                <section className="py-24 bg-white">
-                    <div className="container mx-auto px-5 lg:px-16 max-w-3xl text-center">
-                        <div className="text-[#0c1a35] font-bold text-sm uppercase tracking-[0.15em] mb-4 flex items-center justify-center gap-2">
-                            <div className="w-8 h-[2px] bg-[#c9a227] rounded-full" />
-                            {locale === 'es' ? 'Nuestra historia' : 'Our story'}
-                            <div className="w-8 h-[2px] bg-[#c9a227] rounded-full" />
-                        </div>
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0c1a35] mb-10">
-                            {locale === 'es' ? 'Más de una década traduciendo Colombia al mundo' : 'Over a decade translating Colombia to the world'}
-                        </h2>
+                <section className="py-24 lg:py-32 bg-[#0A192F] border-t border-white/5">
+                    <div className="container mx-auto px-5 lg:px-16 max-w-4xl">
+                        <div className="grid lg:grid-cols-2 gap-20 items-start">
+                            <div className="text-left">
+                                <div className="inline-flex items-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.4em] mb-10">
+                                    <div className="w-8 h-[1px] bg-[#D4AF37]/30" />
+                                    {locale === 'es' ? 'Legado' : 'Legacy'}
+                                </div>
+                                <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-12 tracking-tight leading-[1.1]">
+                                    {locale === 'es' ? 'Más de una década traduciendo Colombia al mundo' : 'Over a decade translating Colombia to the world'}
+                                </h2>
+                            </div>
 
-                        <div className="space-y-6 text-slate-600 text-lg leading-relaxed text-left">
-                            <p>
-                                {locale === 'es'
-                                    ? 'WOT Traducciones nació en Bogotá como respuesta a una necesidad real: colombianos que requerían traducciones confiables para trámites migratorios, académicos y legales. Hemos traducido más de 50.000 documentos para clientes en Colombia y el exterior.'
-                                    : 'WOT Translations was born in Bogotá in response to a real need: Colombians who needed reliable translations for immigration, academic and legal procedures. We have translated over 50,000 documents for clients in Colombia and abroad.'}
-                            </p>
-                            <p>
-                                {locale === 'es'
-                                    ? 'Hoy somos un equipo de traductores juramentados especializados por área: derecho, medicina, finanzas, tecnología y marketing. Cada documento pasa por dos revisiones antes de ser entregado.'
-                                    : 'Today we are a team of sworn translators specialized by area: law, medicine, finance, technology and marketing. Every document goes through two reviews before delivery.'}
-                            </p>
+                            <div className="space-y-10 text-gray-400 text-lg leading-relaxed font-light tracking-wide">
+                                <p>
+                                    {locale === 'es'
+                                        ? 'Nuestra agencia nació bajo una premisa fundamental: la excelencia no es negociable cuando se trata de trámites legales e internacionales. Durante más de 10 años, hemos sido el aliado estratégico de personas y corporaciones que requieren precisión técnica absoluta.'
+                                        : 'Our agency was born under a fundamental premise: excellence is non-negotiable when it comes to legal and international procedures. For over 10 years, we have been the strategic ally of individuals and corporations requiring absolute technical precision.'}
+                                </p>
+                                <p>
+                                    {locale === 'es'
+                                        ? 'Contamos con un equipo de traductores juramentados especializados en áreas críticas. Cada documento es sometido a un riguroso proceso de control de calidad bajo estándares internacionales antes de su entrega oficial.'
+                                        : 'We have a team of sworn translators specialized in critical areas. Every document undergoes a rigorous quality control process under international standards before its official delivery.'}
+                                </p>
 
-                            <div className="mt-8 bg-blue-50 border border-blue-100 rounded-2xl p-6 text-center shadow-sm">
-                                <p className="font-bold text-[#0c1a35] mb-2 flex items-center justify-center gap-2">
-                                    📍 Carrera 14B #161-54, Torre 2, Oficina 1002 — Bogotá, Colombia
-                                </p>
-                                <p className="text-[#1a3a6c] text-sm">
-                                    🕐 {locale === 'es' ? 'Lun–Vie 8am–6pm | Sáb 9am–1pm' : 'Mon–Fri 8am–6pm | Sat 9am–1pm'}
-                                </p>
+                                <div className="pt-10 border-t border-white/5">
+                                    <p className="font-serif font-bold text-white text-xl mb-3">
+                                        Centro Empresarial Atabanza
+                                    </p>
+                                    <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.2em]">
+                                        Carrera 14B #161-54 Suite 1002 — Bogotá
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* Valores */}
-                <section className="py-24 bg-slate-50 border-t border-slate-200">
+                <section className="py-24 lg:py-32 bg-[#0A192F]">
                     <div className="container mx-auto px-5 lg:px-16 max-w-screen-xl mx-auto">
-                        <div className="text-center max-w-2xl mx-auto mb-16">
-                            <div className="text-[#0c1a35] font-bold text-sm uppercase tracking-[0.15em] mb-4 flex items-center justify-center gap-2">
-                                <div className="w-8 h-[2px] bg-[#c9a227] rounded-full" />
+                        <div className="text-center max-w-2xl mx-auto mb-20">
+                            <div className="inline-flex items-center justify-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.3em] mb-6">
+                                <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                                 {locale === 'es' ? 'Por qué elegirnos' : 'Why choose us'}
-                                <div className="w-8 h-[2px] bg-[#c9a227] rounded-full" />
+                                <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0c1a35] mb-6">
+                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8 tracking-tight">
                                 {locale === 'es' ? 'Nuestros pilares de calidad' : 'Our quality pillars'}
                             </h2>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24">
                             {VALUES.map((v, i) => (
-                                <div key={i} className="bg-white border border-slate-200 rounded-2xl p-8 flex gap-6 hover:shadow-lg transition-shadow">
-                                    <div className="w-14 h-14 rounded-xl bg-blue-50 text-[#1a3a6c] flex items-center justify-center shrink-0 border border-blue-100">
+                                <div key={i} className="group flex flex-col items-start transition-all duration-500">
+                                    <div className="text-[#D4AF37] mb-8 transition-transform duration-500 group-hover:-translate-y-2">
                                         {v.icon}
                                     </div>
-                                    <div>
-                                        <h3 className="text-lg font-bold text-[#0c1a35] mb-2">
-                                            {locale === 'es' ? v.es.t : v.en.t}
-                                        </h3>
-                                        <p className="text-slate-600 leading-relaxed">
-                                            {locale === 'es' ? v.es.d : v.en.d}
-                                        </p>
-                                    </div>
+                                    <h3 className="text-2xl font-bold font-serif text-white mb-6 tracking-tight group-hover:text-[#D4AF37] transition-colors duration-500">
+                                        {locale === 'es' ? v.es.t : v.en.t}
+                                    </h3>
+                                    <p className="text-gray-500 leading-relaxed font-light tracking-wide group-hover:text-gray-300 transition-colors duration-500 text-lg">
+                                        {locale === 'es' ? v.es.d : v.en.d}
+                                    </p>
                                 </div>
                             ))}
                         </div>
@@ -173,30 +175,31 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
                 </section>
 
                 {/* CTA final simplificado */}
-                <section className="bg-blue-50 py-24 border-y border-blue-100" id="contacto">
-                    <div className="container mx-auto px-5 lg:px-16 text-center max-w-3xl">
-                        <div className="text-[#0c1a35] font-bold text-sm uppercase tracking-[0.15em] mb-6 inline-flex items-center gap-3">
-                            <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
+                <section className="bg-[#0A192F] py-32 lg:py-40 relative overflow-hidden" id="contacto">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="container mx-auto px-5 lg:px-16 text-center max-w-4xl relative z-10">
+                        <div className="inline-flex items-center justify-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.3em] mb-10">
+                            <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                             {locale === 'es' ? 'Contacto' : 'Contact'}
-                            <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
+                            <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                         </div>
-                        <h2 className="text-[#0c1a35] font-serif font-bold text-3xl md:text-4xl leading-tight mb-8">
+                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-10 leading-tight tracking-tight">
                             {locale === 'es' ? '¿Listo para empezar?' : 'Ready to start?'}
                         </h2>
-                        <p className="text-slate-600 text-lg md:text-xl mb-12 leading-relaxed">
+                        <p className="text-gray-400 text-xl font-light mb-16 max-w-2xl mx-auto leading-relaxed tracking-wide">
                             {locale === 'es'
-                                ? 'Permítenos ayudarte con tus trámites. Contáctenos para recibir una cotización formal en minutos.'
-                                : 'Let us help you with your procedures. Contact us to receive a formal quote in minutes.'}
+                                ? 'Permítenos acompañarte en tus trámites internacionales con el nivel de rigor que mereces. Obtén una cotización formal ahora.'
+                                : 'Let us accompany you in your international procedures with the level of rigor you deserve. Get a formal quote now.'}
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-4">
-                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#1a3a6c] hover:bg-[#122040] text-white font-bold tracking-wider transition-colors shadow-lg">
+                        <div className="flex flex-wrap items-center justify-center gap-6">
+                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-[#0A192F]">
                                 {locale === 'es' ? 'Ir al Formulario' : 'Go to Form'}
                                 <ArrowRight size={20} />
                             </Link>
-                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
-                                WhatsApp
+                                WhatsApp Directo
                             </Link>
                         </div>
                     </div>

@@ -27,7 +27,7 @@ export async function generateMetadata({ params, searchParams }: {
         description: post.description[locale],
         keywords: post.metadata.keywords,
         alternates: {
-            canonical: `https://www.traduccionesbogotawot.com/blog/${slug}?lang=${locale}`
+            canonical: `https://www.traduccionescertificadas.com.co/blog/${slug}?lang=${locale}`
         }
     }
 }
@@ -57,20 +57,20 @@ export default async function BlogPostPage({ params, searchParams }: {
         "@type": "BlogPosting",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://www.traduccionesbogotawot.com/blog/${slug}?lang=${locale}`
+            "@id": `https://www.traduccionescertificadas.com.co/blog/${slug}?lang=${locale}`
         },
         "headline": title,
         "description": description,
         "author": {
             "@type": "Organization",
-            "name": "WOT Traducciones Bogotá"
+            "name": "Traducciones Oficiales"
         },
         "publisher": {
             "@type": "Organization",
-            "name": "WOT Traducciones Bogotá",
+            "name": "Traducciones Oficiales",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.traduccionesbogotawot.com/logo-nuevo.png"
+                "url": "https://www.traduccionescertificadas.com.co/logo-nuevo.png"
             }
         },
         "datePublished": post.fecha
@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params, searchParams }: {
 
                     <div className="mt-16 pt-10 border-t border-slate-100 flex flex-col items-center text-center">
                         <div className="w-16 h-16 bg-[#1a3a6c] text-white rounded-full flex items-center justify-center mb-6 shadow-lg">
-                            <span className="font-serif font-bold text-xl">WOT</span>
+                            <span className="font-serif font-bold text-xl">TR</span>
                         </div>
                         <h3 className="font-serif font-bold text-[#0c1a35] text-2xl mb-4">
                             {locale === 'es' ? '¿Necesita asesoría con este trámite?' : 'Do you need advice with this procedure?'}

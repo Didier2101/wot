@@ -20,11 +20,11 @@ const playfair = Playfair_Display({
 // ── Fetch company config ───────────────────────────────────────────────────
 async function getCompanyConfig(): Promise<Record<string, string>> {
   return {
-    company_name: 'WOT Traducciones Bogotá',
+    company_name: 'Traducciones Oficiales',
     company_phone: '+57 312 3902406',
-    company_email: 'traduccionesenbogotawot@gmail.com',
+    company_email: 'informacion@traduccionescertificadas.com',
     company_address: 'Carrera 14B #161-54 Torre 2/1002, Bogotá, Colombia',
-    seo_title: 'Traductores Oficiales en Bogotá | WOT Traducciones',
+    seo_title: 'Traductores Oficiales en Bogotá | Traducciones Oficiales',
     seo_description: 'Agencia de traducciones oficiales, juramentadas y certificadas en Bogotá desde 2010. Documentos jurídicos, académicos, técnicos y médicos. Entrega en 24–72 h.',
     seo_keywords: 'traducciones bogotá, traducciones juramentadas, traductores oficiales colombia, traducción certificada',
     company_founded: '2010'
@@ -38,14 +38,14 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     title: {
-      default: config.seo_title ?? 'Traductores Oficiales en Bogotá | WOT Traducciones',
-      template: '%s | WOT Traducciones Bogotá',
+      default: config.seo_title ?? 'Traductores Oficiales en Bogotá | Traducciones Oficiales',
+      template: '%s | Traducciones Oficiales',
     },
     description: config.seo_description,
     keywords: config.seo_keywords,
-    authors: [{ name: 'WOT Traducciones Bogotá' }],
-    creator: 'WOT Traducciones Bogotá',
-    publisher: 'WOT Traducciones Bogotá',
+    authors: [{ name: 'Traducciones Oficiales' }],
+    creator: 'Traducciones Oficiales',
+    publisher: 'Traducciones Oficiales',
     metadataBase: new URL(siteUrl),
     robots: {
       index: true, follow: true,
@@ -58,13 +58,13 @@ export async function generateMetadata(): Promise<Metadata> {
       url: siteUrl,
       title: config.seo_title,
       description: config.seo_description,
-      siteName: 'WOT Traducciones Bogotá',
+      siteName: 'Traducciones Oficiales',
       images: [
         {
           url: `${siteUrl}/logo-nuevo.png`,
           width: 800,
           height: 600,
-          alt: 'WOT Traducciones Logo'
+          alt: 'Traducciones Oficiales Logo'
         }
       ]
     },
@@ -96,13 +96,13 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       {
         '@type': ['LocalBusiness', 'ProfessionalService'],
         '@id': `${siteUrl}/#organization`,
-        name: config.company_name ?? 'WOT Traducciones Bogotá',
+        name: config.company_name ?? 'Traducciones Oficiales',
         description: config.seo_description,
         url: siteUrl,
-        logo: `${siteUrl}/logo-servicio-traductores-bogota.jpg`,
-        image: `${siteUrl}/logo-servicio-traductores-bogota.jpg`,
+        logo: `${siteUrl}/logo-nuevo.png`,
+        image: `${siteUrl}/logo-nuevo.png`,
         telephone: config.company_phone ?? '+57 312 3902406',
-        email: config.company_email ?? 'traduccionesenbogotawot@gmail.com',
+        email: config.company_email ?? 'informacion@traduccionescertificadas.com',
         foundingDate: config.company_founded ?? '2010',
         address: {
           '@type': 'PostalAddress',
@@ -153,7 +153,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
             name: 'Barranquilla',
           }
         ],
-        sameAs: [siteUrl, 'https://www.facebook.com/WOTTraducciones'],
+        sameAs: [siteUrl, 'https://www.facebook.com/traduccionesoficiales'],
         hasMap: `https://maps.google.com/?q=Carrera+14B+161-54+Torre+2+Bogota`,
         contactPoint: {
           '@type': 'ContactPoint',
@@ -194,7 +194,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         />
         <link rel="icon" type="image/png" href="/logo-nuevo.png" />
       </head>
-      <body className="font-sans bg-white text-slate-800 antialiased overflow-x-hidden leading-relaxed">
+      <body className="font-sans bg-[#0A192F] text-white/90 antialiased overflow-x-hidden leading-relaxed">
         {children}
         <CookieBanner />
 

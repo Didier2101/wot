@@ -8,14 +8,14 @@ export default function CookieBanner() {
     const [isVisible, setIsVisible] = useState(false)
 
     useEffect(() => {
-        const consent = localStorage.getItem('wot_cookie_consent')
+        const consent = localStorage.getItem('cookie_consent_accepted')
         if (!consent) {
             setTimeout(() => setIsVisible(true), 0)
         }
     }, [])
 
     const handleAccept = () => {
-        localStorage.setItem('wot_cookie_consent', 'true')
+        localStorage.setItem('cookie_consent_accepted', 'true')
         setIsVisible(false)
     }
 

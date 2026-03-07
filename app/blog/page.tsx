@@ -13,7 +13,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const t = getDict(locale)
 
     return {
-        title: t.blog.h2 + ' | WOT Traducciones Bogotá',
+        title: t.blog.h2 + ' | Traducciones Oficiales',
         description: t.blog.subtitle,
     }
 }

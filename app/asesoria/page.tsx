@@ -9,7 +9,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     return {
-        title: locale === 'es' ? 'Asesoría en Apostilla y Legalización | WOT Traducciones Bogotá' : 'Apostille & Legalization Advisory | WOT Translations Bogotá',
+        title: locale === 'es' ? 'Asesoría en Apostilla y Legalización | Traducciones Oficiales' : 'Apostille & Legalization Advisory | Official Translations',
         description: locale === 'es'
             ? 'Asesoría gratuita sobre apostilla, legalización y proceso de traducción oficial en Colombia. Te guiamos paso a paso para embajadas, notarías y trámites internacionales.'
             : 'Free advisory on apostille, legalization and official translation process in Colombia. We guide you step by step for embassies, notaries and international procedures.',
@@ -72,79 +72,80 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
 
             <main className="font-sans antialiased text-slate-800">
                 {/* HERO */}
-                <section className="bg-gradient-to-br from-[#0c1a35] via-[#1a3055] to-[#1e4a8a] py-16 lg:py-24" aria-label="Asesoría">
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center">
-                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8 font-medium">
-                            <Link href={`/?lang=${locale}`} className="text-white/80 hover:text-white transition-colors">Home</Link>
-                            <span className="text-white/40">/</span>
-                            <span className="text-white/95">{locale === 'es' ? 'Asesoría' : 'Advisory'}</span>
+                <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Asesoría">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-10">
+                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
+                            <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
+                            <span className="text-white/20">/</span>
+                            <span className="text-white/80">{locale === 'es' ? 'Asesoría' : 'Advisory'}</span>
                         </nav>
 
-                        <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400 mb-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+                        <div className="mx-auto w-16 h-16 rounded-sm bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] mb-8 shadow-2xl">
                             <BadgeHelp size={32} />
                         </div>
 
-                        <div className="inline-flex items-center gap-2 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-3 text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
                             <CheckCircle size={14} />
-                            {locale === 'es' ? 'Asesoría gratuita sin compromiso' : 'Free advisory, no commitment'}
+                            {locale === 'es' ? 'Asesoría gratuita especializada' : 'Specialized free advisory'}
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-serif font-bold mb-10 leading-tight tracking-tight">
                             {locale === 'es' ? 'Asesoría en Apostilla y Legalización' : 'Apostille & Legalization Advisory'}
                         </h1>
 
-                        <p className="text-yellow-400/90 text-xl font-medium mb-6">
+                        <p className="text-gray-400 text-xl md:text-2xl font-light mb-10 tracking-wide max-w-3xl mx-auto leading-relaxed">
                             {locale === 'es'
-                                ? 'No todos los documentos siguen el mismo proceso. Te guiamos paso a paso: ¿necesitas apostilla primero? ¿legalización consular? ¿traducir directamente? Resolvemos tu duda en minutos.'
-                                : 'Not all documents follow the same process. We guide you step by step: do you need an apostille first? Consular legalization? Translate directly? We resolve your question in minutes.'}
+                                ? 'No todos los documentos siguen el mismo proceso. Te guiamos con rigor técnico: ¿necesitas apostilla primero? ¿legalización consular? ¿traducir directamente? Resolvemos tu duda con precisión.'
+                                : 'Not all documents follow the same process. We guide you with technical rigor: do you need an apostille first? Consular legalization? Translate directly? We resolve your question with precision.'}
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-1">
+                        <div className="flex flex-wrap items-center justify-center gap-6 mt-14">
+                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-[#0A192F] shadow-2xl">
                                 {locale === 'es' ? 'Agendar Asesoría' : 'Schedule Consulting'}
                                 <ArrowRight size={18} />
                             </Link>
                             <Link
                                 href={`https://wa.me/573123902406?text=${encodeURIComponent(locale === 'es' ? 'Hola, necesito asesoría sobre apostilla y traducción' : 'Hello, I need advisory on apostille and translation')}`}
-                                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-[#25d366] hover:bg-[#1eb358] text-white font-extrabold text-sm tracking-wider transition-all shadow-lg hover:-translate-y-1"
+                                className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]"
                                 target="_blank" rel="noopener noreferrer"
                             >
                                 <MessageCircle size={18} />
-                                WhatsApp
+                                WhatsApp Directo
                             </Link>
                         </div>
                     </div>
                 </section>
 
                 {/* Proceso paso a paso */}
-                <section className="py-24 bg-white">
+                <section className="py-24 lg:py-32 bg-white">
                     <div className="container mx-auto px-5 lg:px-16">
-                        <div className="text-center max-w-2xl mx-auto mb-16">
-                            <div className="text-[#0c1a35] font-bold text-sm uppercase tracking-[0.15em] mb-4 flex items-center justify-center gap-2">
-                                <div className="w-8 h-[2px] bg-[#c9a227] rounded-full" />
+                        <div className="text-center max-w-2xl mx-auto mb-20">
+                            <div className="inline-flex items-center justify-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.3em] mb-6">
+                                <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                                 {locale === 'es' ? 'Nuestro proceso' : 'Our process'}
-                                <div className="w-8 h-[2px] bg-[#c9a227] rounded-full" />
+                                <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0c1a35] mb-6">
+                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#0A192F] mb-8 tracking-tight">
                                 {locale === 'es' ? 'Cómo funciona la traducción oficial' : 'How official translation works'}
                             </h2>
-                            <p className="text-slate-600 text-lg">
+                            <p className="text-gray-600 text-xl font-light tracking-wide leading-relaxed">
                                 {locale === 'es'
-                                    ? 'Un proceso transparente, rápido y con control de calidad en cada etapa.'
-                                    : 'A transparent, fast process with quality control at every stage.'}
+                                    ? 'Un proceso transparente, rápido y con control de calidad bajo estándares internacionales.'
+                                    : 'A transparent, fast process with quality control under international standards.'}
                             </p>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {PROCESO.map((p) => (
-                                <div key={p.step} className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                                    <div className="w-12 h-12 rounded-xl bg-[#1a3a6c] text-yellow-400 font-bold flex items-center justify-center mb-6 shadow-md">
+                                <div key={p.step} className="bg-[#0A192F] group rounded-sm p-10 border border-[#D4AF37]/10 shadow-2xl hover:border-[#D4AF37]/30 transition-all duration-500">
+                                    <div className="w-12 h-12 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-xl flex items-center justify-center mb-8 shadow-2xl transition-transform group-hover:scale-110">
                                         {p.step}
                                     </div>
-                                    <h3 className="text-xl font-bold text-[#0c1a35] mb-3">
+                                    <h3 className="text-xl font-serif font-bold text-white mb-5 tracking-tight group-hover:text-[#D4AF37] transition-colors">
                                         {p[locale].title}
                                     </h3>
-                                    <p className="text-slate-600 leading-relaxed">
+                                    <p className="text-gray-400 font-light leading-relaxed tracking-wide">
                                         {p[locale].desc}
                                     </p>
                                 </div>
@@ -154,35 +155,35 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
                 </section>
 
                 {/* Tips para el cliente */}
-                <section className="py-24 bg-blue-50 border-y border-blue-100">
+                <section className="py-24 lg:py-32 bg-[#0A192F]">
                     <div className="container mx-auto px-5 lg:px-16">
-                        <div className="text-center max-w-2xl mx-auto mb-16">
-                            <div className="text-[#0c1a35] font-bold text-sm uppercase tracking-[0.15em] mb-4 flex items-center justify-center gap-2">
-                                <div className="w-8 h-[2px] bg-[#c9a227] rounded-full" />
+                        <div className="text-center max-w-2xl mx-auto mb-20">
+                            <div className="inline-flex items-center justify-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.3em] mb-6">
+                                <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                                 {locale === 'es' ? 'Recomendaciones' : 'Recommendations'}
-                                <div className="w-8 h-[2px] bg-[#c9a227] rounded-full" />
+                                <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                             </div>
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0c1a35] mb-6">
+                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8 tracking-tight">
                                 {locale === 'es' ? 'Cómo preparar tu documento' : 'How to prepare your document'}
                             </h2>
-                            <p className="text-slate-600 text-lg">
+                            <p className="text-gray-400 text-xl font-light tracking-wide leading-relaxed">
                                 {locale === 'es'
-                                    ? 'Sigue estas recomendaciones para que tu traducción sea más rápida y sin contratiempos.'
-                                    : 'Follow these recommendations to make your translation faster and without setbacks.'}
+                                    ? 'Sigue estas recomendaciones técnicas para garantizar la máxima agilidad en su trámite.'
+                                    : 'Follow these technical recommendations to ensure maximum agility in your procedure.'}
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                             {TIPS.map((tip, i) => (
-                                <div key={i} className="bg-white border border-slate-200 rounded-2xl p-8 flex gap-6 hover:shadow-md transition-shadow">
-                                    <div className="w-14 h-14 rounded-xl bg-yellow-100 text-[#b08d20] flex items-center justify-center shrink-0">
+                                <div key={i} className="bg-white/5 border border-white/5 rounded-sm p-10 flex gap-8 hover:border-[#D4AF37]/30 transition-all duration-500 group">
+                                    <div className="w-16 h-16 rounded-sm bg-[#D4AF37] text-[#0A192F] flex items-center justify-center shrink-0 shadow-2xl transition-transform group-hover:scale-110">
                                         {tip.icon}
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-bold text-[#0c1a35] mb-2">
+                                        <h3 className="text-xl font-serif font-bold text-white mb-4 tracking-tight group-hover:text-[#D4AF37] transition-colors">
                                             {tip[locale].title}
                                         </h3>
-                                        <p className="text-slate-600">
+                                        <p className="text-gray-400 leading-relaxed font-light tracking-wide">
                                             {tip[locale].desc}
                                         </p>
                                     </div>
@@ -193,38 +194,45 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
                 </section>
 
                 {/* FAQ Apostilla */}
-                <section className="py-24 bg-white">
-                    <div className="container mx-auto px-5 lg:px-16 max-w-3xl">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0c1a35] mb-12 text-center">
-                            {locale === 'es' ? '¿Apostilla o legalización?' : 'Apostille or legalization?'}
-                        </h2>
-                        <div className="space-y-4">
+                <section className="py-24 lg:py-32 bg-white">
+                    <div className="container mx-auto px-5 lg:px-16 max-w-4xl">
+                        <div className="text-center max-w-2xl mx-auto mb-20">
+                            <div className="inline-flex items-center justify-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.3em] mb-6">
+                                <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
+                                FAQ
+                                <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#0A192F] mb-8 tracking-tight">
+                                {locale === 'es' ? '¿Apostilla o legalización?' : 'Apostille or legalization?'}
+                            </h2>
+                        </div>
+                        <div className="space-y-6">
                             {[
                                 {
                                     q: locale === 'es' ? '¿Qué es la apostilla y cuándo la necesito?' : 'What is an apostille and when do I need it?',
                                     a: locale === 'es'
-                                        ? 'La apostilla es un sello que valida documentos públicos entre países firmantes del Convenio de La Haya (más de 120 países). Si el país destino hace parte del convenio, necesitas apostilla. Si no, necesitas legalización consular. La tramita la Cancillería colombiana.'
-                                        : 'The apostille is a seal that validates public documents between countries that have signed the Hague Convention (over 120 countries). If the destination country is part of the convention, you need an apostille. If not, you need consular legalization. It is processed by the Colombian Foreign Ministry.',
+                                        ? 'La apostilla es un sello que valida documentos públicos entre países firmantes del Convenio de La Haya. Si el país destino hace parte del convenio, necesitas apostilla. Si no, necesitas legalización consular ante el Ministerio de Relaciones Exteriores de Colombia.'
+                                        : 'The apostille is a seal that validates public documents between countries that have signed the Hague Convention. If the destination country is part of the convention, you need an apostille. If not, you need consular legalization before the Colombian Ministry of Foreign Affairs.',
                                 },
                                 {
                                     q: locale === 'es' ? '¿Primero apostilla o primero traducción?' : 'Apostille first or translation first?',
                                     a: locale === 'es'
-                                        ? 'Generalmente: primero apostilla el documento original, luego nosotros lo traducimos. Algunos países aceptan apostillar la traducción; en ese caso primero traducimos y después apostillan la traducción. Te asesoramos caso por caso.'
-                                        : 'Generally: first apostille the original document, then we translate it. Some countries accept apostilling the translation; in that case we first translate and then the translation is apostilled. We advise case by case.',
+                                        ? 'Generalmente el rigor técnico dicta que primero se apostilla el documento original y luego se traduce todo el conjunto. Sin embargo, algunos países aceptan apostillar la traducción oficial. Analizamos su caso específico según el país de destino.'
+                                        : 'Generally, technical rigor dictates that the original document is apostilled first and then the entire set is translated. However, some countries accept apostilling the official translation. We analyze your specific case according to the destination country.',
                                 },
                                 {
                                     q: locale === 'es' ? '¿La Cancillería da apostilla a cualquier documento?' : 'Does the Foreign Ministry issue apostilles for any document?',
                                     a: locale === 'es'
-                                        ? 'Solo apostillan documentos públicos expedidos en Colombia: registros civiles, diplomas, documentos notariales y judiciales. Los documentos privados (contratos, cartas) no pueden apostillarse directamente; deben elevarse a escritura pública antes.'
-                                        : 'They only apostille public documents issued in Colombia: civil records, diplomas, notarial and judicial documents. Private documents (contracts, letters) cannot be apostilled directly; they must first be elevated to a public deed.',
+                                        ? 'Solo documentos públicos: registros civiles, diplomas, actas notariales y judiciales. Los documentos privados (contratos, cartas) primero deben ser reconocidos ante notario para convertirse en documentos públicos y así poder ser apostillados.'
+                                        : 'Only public documents: civil records, diplomas, notarial and judicial records. Private documents (contracts, letters) must first be recognized before a notary to become public documents and thus be able to be apostilled.',
                                 },
                             ].map((item, i) => (
-                                <details key={i} className="group bg-slate-50 border border-slate-200 rounded-xl overflow-hidden cursor-pointer">
-                                    <summary className="flex items-center justify-between p-6 font-bold text-[#0c1a35] hover:text-[#1a3a6c] select-none">
+                                <details key={i} className="group bg-[#0A192F] rounded-sm border border-[#D4AF37]/10 overflow-hidden cursor-pointer transition-all hover:border-[#D4AF37]/30">
+                                    <summary className="flex items-center justify-between p-8 font-serif font-bold text-lg text-white group-hover:text-[#D4AF37] select-none transition-colors">
                                         <span>{item.q}</span>
-                                        <ArrowRight size={20} className="text-slate-400 group-open:rotate-90 transition-transform" />
+                                        <ArrowRight size={20} className="text-[#D4AF37] group-open:rotate-90 transition-transform duration-500" />
                                     </summary>
-                                    <div className="px-6 pb-6 text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                                    <div className="px-8 pb-8 text-gray-400 leading-relaxed font-light tracking-wide border-t border-[#D4AF37]/5 pt-6 animate-in fade-in slide-in-from-top-4 duration-500">
                                         {item.a}
                                     </div>
                                 </details>
@@ -233,31 +241,32 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
                     </div>
                 </section>
 
-                {/* CTA Final */}
-                <section className="bg-gradient-to-br from-[#1a3a6c] to-[#0c1a35] py-24" id="contacto">
-                    <div className="container mx-auto px-5 lg:px-16 text-center max-w-3xl">
-                        <div className="text-yellow-400 font-bold text-sm uppercase tracking-[0.15em] mb-6 inline-flex items-center gap-3">
-                            <div className="w-8 h-[2px] bg-yellow-400/50 rounded-full" />
+                {/* CTA final simplificado */}
+                <section className="bg-[#0A192F] py-32 lg:py-40 relative overflow-hidden" id="contacto">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="container mx-auto px-5 lg:px-16 text-center max-w-4xl relative z-10">
+                        <div className="inline-flex items-center justify-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.3em] mb-10">
+                            <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                             {locale === 'es' ? 'Contacto' : 'Contact'}
-                            <div className="w-8 h-[2px] bg-yellow-400/50 rounded-full" />
+                            <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                         </div>
-                        <h2 className="text-white font-serif font-bold text-3xl md:text-4xl leading-tight mb-8">
+                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-10 leading-tight tracking-tight">
                             {locale === 'es' ? '¿Tiene dudas? Escríbanos ahora' : 'Have questions? Write us now'}
                         </h2>
-                        <p className="text-white/80 text-lg md:text-xl mb-12 leading-relaxed">
+                        <p className="text-gray-400 text-xl font-light mb-16 max-w-2xl mx-auto leading-relaxed tracking-wide">
                             {locale === 'es'
-                                ? 'Asesoría profesional sin costo. Contáctenos para recibir orientación experta sobre su proceso.'
-                                : 'Professional free advisory. Contact us for expert guidance on your process.'}
+                                ? 'Reciba asesoría profesional sin costo. Nuestros expertos están listos para orientarlo en el proceso correcto según su trámite.'
+                                : 'Receive professional free advisory. Our experts are ready to guide you in the correct process according to your procedure.'}
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-4">
-                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-bold tracking-wider transition-colors shadow-lg">
+                        <div className="flex flex-wrap items-center justify-center gap-6">
+                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-[#0A192F]">
                                 {locale === 'es' ? 'Ir al Formulario' : 'Go to Form'}
                                 <ArrowRight size={20} />
                             </Link>
-                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
-                                WhatsApp
+                                WhatsApp Directo
                             </Link>
                         </div>
                     </div>

@@ -10,7 +10,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     return {
-        title: locale === 'es' ? 'Sectores que Atendemos | WOT Traducciones Bogotá' : 'Sectors We Serve | WOT Translations Bogotá',
+        title: locale === 'es' ? 'Sectores que Atendemos | Traducciones Oficiales' : 'Sectors We Serve | Official Translations',
         description: locale === 'es'
             ? 'Traducción certificada para el sector jurídico, médico, académico, financiero, tecnológico y empresarial en Bogotá. Traductores especializados por industria.'
             : 'Certified translation for the legal, medical, academic, financial, tech and business sector in Bogotá. Industry-specialized translators.',
@@ -35,96 +35,95 @@ export default async function SectoresPage({ searchParams }: { searchParams: Pro
         <>
             <Navbar locale={locale} currentPath="/sectores" />
 
-            <main className="font-sans antialiased text-slate-800">
+            <main className="font-sans antialiased text-gray-400 bg-[#0A192F]">
                 {/* HERO */}
-                <section className="bg-gradient-to-br from-[#0c1a35] via-[#1a3055] to-[#1e4a8a] py-16 lg:py-24" aria-label="Sectores">
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center">
-                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8 font-medium">
-                            <Link href={`/?lang=${locale}`} className="text-white/80 hover:text-white transition-colors">Home</Link>
-                            <span className="text-white/40">/</span>
-                            <span className="text-white/95">{locale === 'es' ? 'Sectores' : 'Sectors'}</span>
+                <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Sectores">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-10">
+                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
+                            <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
+                            <span className="text-white/20">/</span>
+                            <span className="text-white/80">{locale === 'es' ? 'Sectores' : 'Sectors'}</span>
                         </nav>
 
-                        <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400 mb-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+                        <div className="mx-auto w-16 h-16 rounded-sm bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] mb-8 shadow-2xl">
                             <Globe size={32} />
                         </div>
 
-                        <div className="inline-flex items-center gap-2 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-3 text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
                             <CheckCircle size={14} />
                             {locale === 'es' ? 'Precisión Técnica' : 'Technical Precision'}
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-serif font-bold mb-10 leading-tight tracking-tight">
                             {locale === 'es' ? 'Sectores que atendemos' : 'Sectors we serve'}
                         </h1>
 
-                        <p className="text-yellow-400/90 text-xl font-medium mb-6">
+                        <p className="text-gray-400 text-xl md:text-2xl font-light mb-10 tracking-wide max-w-3xl mx-auto leading-relaxed">
                             {locale === 'es'
-                                ? 'Traductores especializados por industria. Cada sector tiene su propio vocabulario técnico y nosotros lo dominamos.'
-                                : 'Industry-specialized translators. Each sector has its own technical vocabulary, and we master it.'}
+                                ? 'Traductores especializados por industria. Cada sector tiene su propio vocabulario técnico y nosotros lo dominamos con rigor.'
+                                : 'Industry-specialized translators. Each sector has its own technical vocabulary, and we master it with rigor.'}
                         </p>
                     </div>
                 </section>
 
                 {/* Sectores grid */}
-                <section className="bg-slate-50 py-20 lg:py-28">
+                <section className="bg-[#0A192F] py-24 lg:py-32 border-t border-white/5">
                     <div className="container mx-auto px-5 lg:px-16">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {contentData.sectores.map((sector) => {
-                                const Icon = ICON_MAP[sector.slug] || <Globe size={28} />
-                                return (
-                                    <div key={sector.slug} className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 relative group overflow-hidden flex flex-col h-full border-t-4 border-t-[#c9a227]">
-                                        <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#1a3a6c] to-[#1e4a8a] text-[#c9a227] flex items-center justify-center mb-6 shadow-md transition-transform group-hover:scale-110 shrink-0">
-                                            {Icon}
-                                        </div>
-                                        <h2 className="text-2xl font-serif font-bold text-[#0c1a35] mb-3">
-                                            {sector.title[locale]}
-                                        </h2>
-                                        <p className="text-slate-600 text-[0.95rem] leading-relaxed mb-8 flex-grow">
-                                            {sector.description[locale]}
-                                        </p>
-
-                                        <div className="pt-6 border-t border-slate-100 mt-auto">
-                                            <Link
-                                                href={`/sectores/${sector.slug}?lang=${locale}`}
-                                                className="inline-flex items-center gap-2 text-[#1a3a6c] font-bold uppercase tracking-wider text-xs hover:text-[#c9a227] transition-colors"
-                                            >
-                                                {locale === 'es' ? 'Ver detalles del sector' : 'View sector details'}
-                                                <ArrowRight size={16} />
-                                            </Link>
-                                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 lg:gap-32">
+                            {contentData.sectores.map((sector) => (
+                                <div key={sector.slug} className="group relative flex flex-col items-start transition-all duration-500">
+                                    <div className="text-[#D4AF37] mb-8 transition-transform duration-500 group-hover:-translate-y-2">
+                                        {ICON_MAP[sector.slug] || <Globe size={28} />}
                                     </div>
-                                )
-                            })}
+                                    <h2 className="text-2xl font-serif font-bold text-white mb-6 tracking-tight group-hover:text-[#D4AF37] transition-colors duration-500">
+                                        {sector.title[locale]}
+                                    </h2>
+                                    <p className="text-gray-500 text-lg leading-relaxed mb-10 font-light tracking-wide group-hover:text-gray-300 transition-colors duration-500">
+                                        {sector.description[locale]}
+                                    </p>
+
+                                    <div className="mt-auto">
+                                        <Link
+                                            href={`/sectores/${sector.slug}?lang=${locale}`}
+                                            className="inline-flex items-center gap-4 text-[#D4AF37] font-bold uppercase tracking-[0.4em] text-[10px] hover:text-white transition-all group/link"
+                                        >
+                                            {locale === 'es' ? 'Ver detalles' : 'View details'}
+                                            <div className="w-8 h-[1px] bg-white transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>
 
                 {/* CTA final simplificado */}
-                <section className="bg-blue-50 py-24 border-y border-blue-100" id="contacto">
-                    <div className="container mx-auto px-5 lg:px-16 text-center max-w-3xl">
-                        <div className="text-[#0c1a35] font-bold text-sm uppercase tracking-[0.15em] mb-6 inline-flex items-center gap-3">
-                            <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
+                <section className="bg-[#0A192F] py-32 lg:py-40 relative overflow-hidden" id="contacto">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="container mx-auto px-5 lg:px-16 text-center max-w-4xl relative z-10">
+                        <div className="inline-flex items-center justify-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.3em] mb-10">
+                            <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                             {locale === 'es' ? 'Contacto' : 'Contact'}
-                            <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
+                            <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                         </div>
-                        <h2 className="text-[#0c1a35] font-serif font-bold text-3xl md:text-4xl leading-tight mb-8">
+                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-10 leading-tight tracking-tight">
                             {locale === 'es' ? '¿Su sector no aparece aquí?' : "Doesn't your sector appear here?"}
                         </h2>
-                        <p className="text-slate-600 text-lg md:text-xl mb-12 leading-relaxed">
+                        <p className="text-gray-400 text-xl font-light mb-16 max-w-2xl mx-auto leading-relaxed tracking-wide">
                             {locale === 'es'
-                                ? 'Tenemos traductores para casi cualquier industria. Contáctenos para recibir una asesoría técnica gratuita sobre su proyecto.'
+                                ? 'Tenemos traductores para casi cualquier industria. Contáctenos para recibir una asesoría técnica sin costo sobre su proyecto.'
                                 : 'We have translators for almost any industry. Contact us for a free technical advisory on your project.'}
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-4">
-                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#c9a227] hover:bg-[#b08d20] text-neutral-900 font-bold tracking-wider transition-colors shadow-lg">
-                                {locale === 'es' ? 'Ir al Formulario de Contacto' : 'Go to Contact Form'}
+                        <div className="flex flex-wrap items-center justify-center gap-6">
+                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-[#0A192F]">
+                                {locale === 'es' ? 'Ir al Formulario' : 'Go to Form'}
                                 <ArrowRight size={20} />
                             </Link>
-                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
-                                WhatsApp
+                                WhatsApp Directo
                             </Link>
                         </div>
                     </div>

@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// WOT Traducciones — Contenido estático de servicios (fallback + SSG)
+// Traducciones Oficiales — Contenido estático de servicios (fallback + SSG)
 // Ampliado con: Registro Civil, Médica/Farmacéutica, Documentos Personales
 // ─────────────────────────────────────────────────────────────────────────────
 

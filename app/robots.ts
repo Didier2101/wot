@@ -1,14 +1,14 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kavvo.store'
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kavvo.store'
 
     return {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: ['/api/', '/actions/'],
+            disallow: ['/api/', '/_next/'],
         },
-        sitemap: `${baseUrl}/sitemap.xml`,
+        sitemap: `${siteUrl}/sitemap.xml`,
     }
 }

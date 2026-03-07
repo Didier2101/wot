@@ -31,7 +31,7 @@ export async function generateMetadata({ params, searchParams }: {
         description: sector.description[locale],
         keywords: sector.metadata.keywords,
         alternates: {
-            canonical: `https://www.traduccionesbogotawot.com/sectores/${slug}?lang=${locale}`
+            canonical: `https://www.traduccionescertificadas.com.co/sectores/${slug}?lang=${locale}`
         }
     }
 }
@@ -59,7 +59,7 @@ export default async function SectorDetailPage({ params, searchParams }: {
         "description": description,
         "provider": {
             "@type": "LocalBusiness",
-            "name": "WOT Traducciones Bogotá",
+            "name": "Traducciones Oficiales",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Carrera 14B #161-54 Torre 2/1002",
@@ -81,47 +81,48 @@ export default async function SectorDetailPage({ params, searchParams }: {
 
             <main className="font-sans antialiased text-slate-800">
                 {/* HERO SECTOR */}
-                <section className="bg-gradient-to-br from-[#0c1a35] via-[#1a3055] to-[#1e4a8a] py-16 lg:py-24" aria-label={title}>
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center">
-                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8 font-medium">
-                            <Link href={`/?lang=${locale}`} className="text-white/80 hover:text-white transition-colors">Home</Link>
-                            <span className="text-white/40">/</span>
-                            <Link href={`/sectores?lang=${locale}`} className="text-white/80 hover:text-white transition-colors">
+                <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label={title}>
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-10">
+                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
+                            <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
+                            <span className="text-white/20">/</span>
+                            <Link href={`/sectores?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">
                                 {locale === 'es' ? 'Sectores' : 'Sectors'}
                             </Link>
-                            <span className="text-white/40">/</span>
-                            <span className="text-white/95">{title}</span>
+                            <span className="text-white/20">/</span>
+                            <span className="text-white/80">{title}</span>
                         </nav>
 
-                        <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400 mb-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+                        <div className="mx-auto w-16 h-16 rounded-sm bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] mb-8 shadow-2xl">
                             <Globe size={32} />
                         </div>
 
-                        <div className="inline-flex items-center gap-2 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-3 text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
                             <CheckCircle size={14} />
                             {locale === 'es' ? 'Traducción Especializada' : 'Specialized Translation'}
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-serif font-bold mb-10 leading-tight tracking-tight">
                             {title}
                         </h1>
 
-                        <p className="text-yellow-400/90 text-xl font-medium mb-6">
+                        <p className="text-gray-400 text-xl md:text-2xl font-light mb-10 tracking-wide max-w-3xl mx-auto leading-relaxed">
                             {description}
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
-                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-extrabold text-sm tracking-wider uppercase transition-all shadow-lg hover:-translate-y-1">
+                        <div className="flex flex-wrap items-center justify-center gap-6 mt-14">
+                            <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-[#0A192F] shadow-2xl">
                                 {locale === 'es' ? 'Cotizar Especialidad' : 'Get a Quote'}
                                 <ArrowRight size={18} />
                             </Link>
                             <Link
                                 href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`}
-                                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md bg-[#25d366] hover:bg-[#1eb358] text-white font-extrabold text-sm tracking-wider transition-all shadow-lg hover:-translate-y-1"
+                                className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]"
                                 target="_blank" rel="noopener noreferrer"
                             >
                                 <MessageCircle size={18} />
-                                WhatsApp
+                                WhatsApp Directo
                             </Link>
                         </div>
                     </div>
@@ -143,34 +144,34 @@ export default async function SectorDetailPage({ params, searchParams }: {
                                 </div>
                             </article>
 
-                            {/* Panel lateral - Garantía WOT */}
-                            <aside className="bg-slate-50 p-10 rounded-3xl border border-slate-200 shadow-sm h-fit">
+                            {/* Panel lateral - Garantía de Calidad */}
+                            <aside className="bg-[#0A192F] p-8 lg:p-10 rounded-sm border border-[#D4AF37]/10 shadow-2xl h-fit">
                                 <div className="text-center mb-10">
-                                    <div className="w-16 h-16 bg-[#1a3a6c] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#1a3a6c]/20">
-                                        <Shield size={32} className="text-[#c9a227]" />
+                                    <div className="w-16 h-16 bg-[#D4AF37]/10 border border-[#D4AF37]/20 rounded-sm flex items-center justify-center mx-auto mb-6 shadow-2xl">
+                                        <Shield size={32} className="text-[#D4AF37]" />
                                     </div>
-                                    <h3 className="text-2xl font-serif font-bold text-[#0c1a35]">{locale === 'es' ? 'Garantía WOT' : 'WOT Guarantee'}</h3>
+                                    <h3 className="text-2xl font-serif font-bold text-white tracking-tight">{locale === 'es' ? 'Garantía de Calidad' : 'Quality Guarantee'}</h3>
                                 </div>
-                                <ul className="flex flex-col gap-6 mb-10">
-                                    <li className="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                                        <CheckCircle size={24} className="text-[#c9a227] shrink-0" />
+                                <ul className="flex flex-col gap-6 mb-12">
+                                    <li className="flex gap-4 p-5 bg-white/5 rounded-sm border border-white/5 transition-all hover:border-[#D4AF37]/20 group">
+                                        <CheckCircle size={24} className="text-[#D4AF37] shrink-0 opacity-80" />
                                         <div>
-                                            <div className="font-bold text-[#0c1a35] mb-1">{locale === 'es' ? 'Traductores Expertos' : 'Expert Translators'}</div>
-                                            <div className="text-sm text-slate-600">{locale === 'es' ? 'Nativos y certificados ante el Ministerio.' : 'Native and certified before the Ministry.'}</div>
+                                            <div className="font-bold text-white mb-1 tracking-tight group-hover:text-[#D4AF37] transition-colors">{locale === 'es' ? 'Traductores Expertos' : 'Expert Translators'}</div>
+                                            <div className="text-sm text-gray-400 font-light leading-relaxed">{locale === 'es' ? 'Nativos y certificados ante el Ministerio.' : 'Native and certified before the Ministry.'}</div>
                                         </div>
                                     </li>
-                                    <li className="flex gap-4 p-4 bg-white rounded-xl shadow-sm border border-slate-100">
-                                        <Clock size={24} className="text-[#c9a227] shrink-0" />
+                                    <li className="flex gap-4 p-5 bg-white/5 rounded-sm border border-white/5 transition-all hover:border-[#D4AF37]/20 group">
+                                        <Clock size={24} className="text-[#D4AF37] shrink-0 opacity-80" />
                                         <div>
-                                            <div className="font-bold text-[#0c1a35] mb-1">{locale === 'es' ? 'Entrega Puntual' : 'Punctual Delivery'}</div>
-                                            <div className="text-sm text-slate-600">{locale === 'es' ? 'Plazos ajustados a su necesidad empresarial.' : 'Deadlines tailored to your business needs.'}</div>
+                                            <div className="font-bold text-white mb-1 tracking-tight group-hover:text-[#D4AF37] transition-colors">{locale === 'es' ? 'Entrega Puntual' : 'Punctual Delivery'}</div>
+                                            <div className="text-sm text-gray-400 font-light leading-relaxed">{locale === 'es' ? 'Plazos ajustados a su necesidad empresarial.' : 'Deadlines tailored to your business needs.'}</div>
                                         </div>
                                     </li>
                                 </ul>
                                 <div className="text-center">
-                                    <Link href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`} className="inline-flex w-full items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#c9a227] hover:bg-[#b08d20] text-neutral-900 font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
-                                        {locale === 'es' ? 'Contactar un Especialista' : 'Contact a Specialist'}
-                                        <ArrowRight size={20} />
+                                    <Link href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`} className="inline-flex w-full items-center justify-center gap-3 px-8 py-4 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-[12px] uppercase tracking-widest transition-all hover:bg-white shadow-2xl">
+                                        {locale === 'es' ? 'Halar con un Especialista' : 'Talk with a Specialist'}
+                                        <ArrowRight size={18} />
                                     </Link>
                                 </div>
                             </aside>
@@ -179,31 +180,32 @@ export default async function SectorDetailPage({ params, searchParams }: {
                 </section>
 
                 {/* CTA FINAL - SIN FORMULARIO */}
-                <section className="bg-blue-50 py-24 border-y border-blue-100" id="contacto">
-                    <div className="container mx-auto px-5 lg:px-16 text-center max-w-3xl">
-                        <div className="text-[#0c1a35] font-bold text-sm uppercase tracking-[0.15em] mb-6 inline-flex items-center gap-3">
-                            <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
+                <section className="bg-[#0A192F] py-32 lg:py-40 relative overflow-hidden" id="contacto">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
+                    <div className="container mx-auto px-5 lg:px-16 text-center max-w-4xl relative z-10">
+                        <div className="inline-flex items-center justify-center gap-4 text-[#D4AF37] font-bold text-[10px] uppercase tracking-[0.3em] mb-10">
+                            <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                             {locale === 'es' ? 'Cotización Inmediata' : 'Instant Quote'}
-                            <div className="w-8 h-[2px] bg-yellow-400 rounded-full" />
+                            <div className="w-12 h-[1px] bg-[#D4AF37]/30" />
                         </div>
-                        <h2 className="text-[#0c1a35] font-serif font-bold text-3xl md:text-4xl lg:text-[2.5rem] leading-tight mb-8">
+                        <h2 className="text-4xl md:text-6xl font-serif font-bold text-white mb-10 tracking-tight leading-tight">
                             {locale === 'es'
                                 ? `¿Listo para traducir sus documentos del sector ${title.toLowerCase()}?`
                                 : `Ready to translate your ${title.toLowerCase()} sector documents?`}
                         </h2>
-                        <p className="text-slate-600 text-lg md:text-xl mb-12 leading-relaxed">
+                        <p className="text-gray-400 text-xl font-light mb-16 max-w-2xl mx-auto leading-relaxed tracking-wide">
                             {locale === 'es'
-                                ? 'Obtenga una respuesta en menos de 24 horas con la precisión técnica que su empresa requiere.'
-                                : 'Get a response in less than 24 hours with the technical precision your company requires.'}
+                                ? 'Obtenga una respuesta en menos de 24 horas con el rigor técnico y la confidencialidad que su empresa requiere.'
+                                : 'Get a response in less than 24 hours with the technical rigor and confidentiality your company requires.'}
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-4">
-                            <Link href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#25d366] hover:bg-[#1eb358] text-white font-bold tracking-wider transition-colors shadow-lg" target="_blank" rel="noopener noreferrer">
+                        <div className="flex flex-wrap items-center justify-center gap-6">
+                            <Link href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`} className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-white hover:text-[#0A192F] shadow-2xl" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
-                                {locale === 'es' ? 'Escribir por WhatsApp' : 'Contact via WhatsApp'}
+                                {locale === 'es' ? 'WhatsApp Directo' : 'Direct WhatsApp'}
                             </Link>
-                            <Link href={`/?lang=${locale}#contacto`} className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#1a3a6c] hover:bg-[#122040] text-white font-bold tracking-wider transition-colors shadow-lg">
-                                {locale === 'es' ? 'Formulario de contacto' : 'Contact form'}
+                            <Link href={`/?lang=${locale}#contacto`} className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]">
+                                {locale === 'es' ? 'Ir al Formulario' : 'Go to Form'}
                                 <ArrowRight size={20} />
                             </Link>
                         </div>
