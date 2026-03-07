@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
+/* 
+  Global base reseteo y clases de utilidad en Tailwind 
+  El 100% de las clases personalizadas fueron removidas siguiendo
+  metodología Utility-First de Tailwind CSS.
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Tailwind v4 hereda fuentes automáticamente por variables.
+     Definimos las variables base de Google Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #1e293b;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base de tipografía corporativa */
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
 }

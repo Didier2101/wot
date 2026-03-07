@@ -1,0 +1,304 @@
+{
+  "servicios": [
+    {
+      "slug": "traduccion-oficial",
+      "title": {
+        "es": "Traducción Oficial y Juramentada",
+        "en": "Official and Sworn Translation"
+      },
+      "description": {
+        "es": "Traducciones con respaldo formal para trámites, visas, estudios y documentación empresarial. Incluye traducción jurídica y legal.",
+        "en": "Formal translations for procedures, visas, studies, and business documentation. Includes legal translation."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Nuestras traducciones oficiales están certificadas y llevan la firma y sello de un traductor oficial habilitado por el Ministerio de Relaciones Exteriores de Colombia. Garantizamos validez internacional.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Documentos clave que traducimos:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Registros civiles de nacimiento, matrimonio y defunción.</li><li>Actas y diplomas.</li><li>Documentos de identificación (pasaportes, cédulas).</li><li>Poderes notariales y certificados de antecedentes.</li></ul>",
+        "en": "<p className='mb-4'>Our official translations are certified and bear the signature and seal of an official translator authorized by the Colombian Ministry of Foreign Affairs. We guarantee international validity.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Key documents we translate:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Civil registries of birth, marriage, and death.</li><li>Certificates and diplomas.</li><li>Identification documents (passports, ID cards).</li><li>Power of attorney and police clearance certificates.</li></ul>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción Oficial en Bogotá | WOT Traducciones",
+          "en": "Official Translation in Bogota | WOT Translations"
+        },
+        "keywords": ["traducción oficial", "traductor juramentado", "bogota", "certified translation"]
+      }
+    },
+    {
+      "slug": "traduccion-academica",
+      "title": {
+        "es": "Traducción Académica",
+        "en": "Academic Translation"
+      },
+      "description": {
+        "es": "Traducción de diplomas, actas de grado, certificados de notas y programas de estudio.",
+        "en": "Translation of diplomas, graduation certificates, transcripts, and study programs."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Traducciones especializadas para la validación de títulos ante el Ministerio de Educación, ICETEX, o para aplicar a universidades extranjeras. Brindamos el respaldo formal que necesitas para procesos de becas y movilidad académica.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Documentos que traducimos:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Diplomas y actas de grado universitarias.</li><li>Certificados de notas (sabanas de notas).</li><li>Programas curriculares y analíticos.</li><li>Certificados de estudio colegiales.</li></ul>",
+        "en": "<p className='mb-4'>Specialized translations for degree validation with the Ministry of Education, ICETEX, or to apply to foreign universities. We provide the formal backing you need for scholarship processes and academic mobility.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Documents we translate:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>University diplomas and graduation acts.</li><li>Transcripts.</li><li>Curricular and analytical programs.</li><li>High school study certificates.</li></ul>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción Académica Certificada | WOT Traducciones",
+          "en": "Certified Academic Translation | WOT Translations"
+        },
+        "keywords": ["traduccion academica", "traduccion diplomas", "traduccion notas", "academic translation"]
+      }
+    },
+    {
+      "slug": "traduccion-registro-civil",
+      "title": {
+        "es": "Traducción de Registros Civiles",
+        "en": "Civil Registry Translation"
+      },
+      "description": {
+        "es": "Traducciones certificadas para trámites de visa, matrimonio en el exterior o procesos notariales.",
+        "en": "Certified translations for visa procedures, marriage abroad, or notarial processes."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Realizamos una verificación exhaustiva de nombres, fechas, sellos y números de folio para asegurar que sus documentos cumplan con los más estrictos estándares internacionales exigidos por embajadas (Estados Unidos, Canadá, Australia, Europa).</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Tipos de registros:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Registro Civil de Nacimiento.</li><li>Registro Civil de Matrimonio.</li><li>Registro Civil de Defunción.</li></ul>",
+        "en": "<p className='mb-4'>We carry out an exhaustive verification of names, dates, seals, and folio numbers to ensure your documents meet the strictest international standards required by embassies (USA, Canada, Australia, Europe).</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Types of registries:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Civil Registry of Birth.</li><li>Civil Registry of Marriage.</li><li>Civil Registry of Death.</li></ul>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción de Registro Civil en Bogotá | WOT",
+          "en": "Civil Registry Translation in Bogota | WOT"
+        },
+        "keywords": ["traduccion registro civil", "traduccion acta nacimiento", "visa"]
+      }
+    },
+    {
+      "slug": "traduccion-legal",
+      "title": {
+        "es": "Traducción Legal y Jurídica",
+        "en": "Legal Translation"
+      },
+      "description": {
+        "es": "Textos legales sumamente precisos, contratos, poderes y resoluciones judiciales.",
+        "en": "Highly precise legal texts, contracts, power of attorneys, and court resolutions."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Nuestros traductores dominan la hermenéutica jurídica, permitiendo trasladar conceptos del Common Law al Derecho Civil (y viceversa) sin perder la fuerza vinculante del documento original.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Documentos jurídicos:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Contratos privados y acuerdos comerciales.</li><li>Poderes notariales (POA).</li><li>Sentencias de divorcio y fallos judiciales.</li><li>Estatutos sociales de empresas y leyes.</li></ul>",
+        "en": "<p className='mb-4'>Our translators master legal hermeneutics, allowing them to transfer concepts from Common Law to Civil Law (and vice versa) without losing the binding force of the original document.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Legal documents:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Private contracts and commercial agreements.</li><li>Power of Attorney (POA).</li><li>Divorce decrees and court rulings.</li><li>Corporate bylaws and laws.</li></ul>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción Legal y Jurídica | WOT",
+          "en": "Legal Translation | WOT"
+        },
+        "keywords": ["traduccion legal", "traduccion de contratos", "traductor juridico"]
+      }
+    },
+    {
+      "slug": "traduccion-financiera",
+      "title": {
+        "es": "Traducción Financiera y de Seguros",
+        "en": "Financial and Insurance Translation"
+      },
+      "description": {
+        "es": "Garantizamos la correcta interpretación de NIIF, balances y pólizas de seguros.",
+        "en": "We guarantee the correct interpretation of IFRS, balance sheets, and insurance policies."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Nos aseguramos de que los estados financieros, pólizas y balances conserven toda su exactitud técnica y numérica. La precisión es vital para la presentación de informes a juntas directivas o entidades reguladoras internacionales.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Tipos de documentos:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Balances generales y estados de resultados.</li><li>Pólizas de seguro y siniestros.</li><li>Informes financieros anuales.</li><li>Documentación bancaria.</li></ul>",
+        "en": "<p className='mb-4'>We ensure that financial statements, policies, and balance sheets retain all their technical and numerical accuracy. Precision is vital for reporting to boards of directors or international regulatory entities.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Types of documents:</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Balance sheets and income statements.</li><li>Insurance policies and claims.</li><li>Annual financial reports.</li><li>Banking documentation.</li></ul>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción Financiera | WOT",
+          "en": "Financial Translation | WOT"
+        },
+        "keywords": ["traduccion financiera", "traduccion de balances", "traduccion polizas"]
+      }
+    }
+  ],
+  "sectores": [
+    {
+      "slug": "juridico",
+      "title": {
+        "es": "Sector Jurídico",
+        "en": "Legal Sector"
+      },
+      "description": {
+        "es": "Traducción jurídica para evitar malentendidos que resulten en conflictos legales.",
+        "en": "Legal translation to avoid misunderstandings that result in legal conflicts."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>La industria legal moderna requiere operar globalmente. Ya sea para litigios transfronterizos, adquisiciones corporativas internacionales o trámites de migración, nuestro equipo asignará un traductor experto en terminología legal.</p><p>Aseguramos el cumplimiento de normativas y facilitamos la comunicación jurisdiccional con fidelidad legal absoluta.</p>",
+        "en": "<p className='mb-4'>The modern legal industry requires operating globally. Whether for cross-border litigation, international corporate acquisitions, or migration procedures, our team will assign an expert translator in legal terminology.</p><p>We ensure compliance with regulations and facilitate jurisdictional communication with absolute legal fidelity.</p>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción para Sector Jurídico en Bogotá",
+          "en": "Translation for Legal Sector in Bogota"
+        },
+        "keywords": ["traduccion juridica bogota", "traduccion sector legal"]
+      }
+    },
+    {
+      "slug": "medico",
+      "title": {
+        "es": "Sector Médico y Farmacéutico",
+        "en": "Medical and Pharmaceutical Sector"
+      },
+      "description": {
+        "es": "Cero margen de error en historiales clínicos, posologías y manuales de biotecnología.",
+        "en": "Zero margin of error in clinical histories, posology, and biotechnology manuals."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>En la medicina, una traducción exacta puede salvar vidas. Exigimos rigor absoluto en la traducción de documentos donde la terminología médica y farmacológica no permite ambigüedades.</p><p>Traducimos prospectos de medicamentos, historiales clínicos, resultados de estudios clínicos y manuales de equipos hospitalarios complejos.</p>",
+        "en": "<p className='mb-4'>In medicine, an exact translation can save lives. We demand absolute rigor in the translation of documents where medical and pharmacological terminology allows no ambiguities.</p><p>We translate package leaflets, medical records, clinical trial results, and complex hospital equipment manuals.</p>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción Médica Certificada en Bogotá",
+          "en": "Certified Medical Translation in Bogota"
+        },
+        "keywords": ["traduccion medica", "traduccion historiales", "sector farmaceutico"]
+      }
+    },
+    {
+      "slug": "academico",
+      "title": {
+        "es": "Sector Académico y Universitario",
+        "en": "Academic and University Sector"
+      },
+      "description": {
+        "es": "Respaldo y soporte de traducciones oficiales para procesos migratorios estudiantiles y artículos de investigación.",
+        "en": "Support and official translations for student migration processes and research articles."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Apoyamos a estudiantes, docentes e investigadores a cruzar las barreras del idioma. Trabajamos con decenas de instituciones para proveer la documentación oficial exigida por entidades extranjeras.</p>",
+        "en": "<p className='mb-4'>We support students, teachers, and researchers to cross language barriers. We work with dozens of institutions to provide the official documentation required by foreign entities.</p>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción Universitaria en Bogotá",
+          "en": "University Translation in Bogota"
+        },
+        "keywords": ["traductor universidad", "traduccion papers", "traduccion oficial estudiantes"]
+      }
+    },
+    {
+      "slug": "financiero-seguros",
+      "title": {
+        "es": "Financiero y Seguros",
+        "en": "Financial and Insurance"
+      },
+      "description": {
+        "es": "Precisión y confidencialidad en el manejo de cifras, riesgos e informes de auditoría.",
+        "en": "Precision and confidentiality in managing figures, risks, and audit reports."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Tranquilidad transaccional. Brindamos servicios a bancos, aseguradoras e inversores, donde una coma mal ubicada puede tener un impacto millonario. Cada número y término financiero es auditado metodológicamente.</p>",
+        "en": "<p className='mb-4'>Transactional peace of mind. We provide services to banks, insurers, and investors, where a misplaced comma can have a millionaire impact. Every number and financial term is methodologically audited.</p>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción Financiera | Cifras y Pólizas Exactas",
+          "en": "Financial Translation | Exact Figures and Policies"
+        },
+        "keywords": ["traduccion financiera", "traductor informes de auditoria"]
+      }
+    },
+    {
+      "slug": "it-software",
+      "title": {
+        "es": "Tecnológico (IT & Software)",
+        "en": "Technological (IT & Software)"
+      },
+      "description": {
+        "es": "Localización de software, interfaces, manuales de usuario de alta tecnología.",
+        "en": "Software localization, interfaces, high-technology user manuals."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Vamos más allá de la simple traducción; aplicamos localización y adaptación cultural para interfaces de software, manuales técnicos de ingeniería y documentación de APIs, usando un lenguaje actual en el ecosistema Tech.</p>",
+        "en": "<p className='mb-4'>We go beyond simple translation; we apply localization and cultural adaptation for software interfaces, technical engineering manuals, and API documentation, using current language in the Tech ecosystem.</p>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción Tecnológica y de Software Bogotá",
+          "en": "Technology and Software Translation Bogota"
+        },
+        "keywords": ["traduccion codigo", "localizacion software", "traduccion manuales"]
+      }
+    },
+    {
+      "slug": "cientifico",
+      "title": {
+        "es": "Científico e Investigación",
+        "en": "Scientific and Research"
+      },
+      "description": {
+        "es": "Exactitud en revistas indexadas, papers técnicos y divulgación de hallazgos globales.",
+        "en": "Accuracy in indexed journals, technical papers, and dissemination of global findings."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Ayudamos a la comunidad científica a publicar su trabajo en las revistas indexadas más prestigiosas del mundo. Rigor idiomático para documentar metodologías, abstracts y conclusiones científicas complejas sin desvirtuar el sentido del experimento original.</p>",
+        "en": "<p className='mb-4'>We help the scientific community publish their work in the most prestigious indexed journals in the world. Idiomatic rigor to document methodologies, abstracts, and complex scientific conclusions without distorting the sense of the original experiment.</p>"
+      },
+      "metadata": {
+        "seo_title": {
+          "es": "Traducción de Documentación Científica y Papers",
+          "en": "Scientific Documentation and Papers Translation"
+        },
+        "keywords": ["traduccion cientifica", "traduccion tesis", "traducir paper a ingles"]
+      }
+    }
+  ],
+  "blog": [
+    {
+      "slug": "diferencias-en-traducciones",
+      "title": {
+        "es": "Diferencias Clave: Traducción Estándar vs Oficial vs Certificada",
+        "en": "Key Differences: Standard vs Official vs Certified Translation"
+      },
+      "description": {
+        "es": "Conoce los requisitos y diferencias para saber qué tipo de traducción requiere tu documento.",
+        "en": "Know the requirements and differences to find out what type of translation your document needs."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>A menudo, nuestros clientes se preguntan por qué un trámite administrativo o legal requiere una \"traducción oficial\" y no basta con la firma de un traductor con dominio avanzado de un idioma. En Colombia, el Ministerio de Relaciones Exteriores es el encargado de habilitar formalmente a los traductores para que sus firmas y sellos den constancia legal (fe pública) a la veracidad de la traducción.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Traducción Informativa o Estándar</h3><p className='mb-4'>Se utiliza estrictamente para conocimiento interno. Un artículo web, un manual de producto no regulado, o una carta informal. No lleva sello y no es válida para trámites legales o de migración.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Traducción Oficial (Certificada/Juramentada)</h3><p className='mb-4'>Requerida cuando el documento origen emana de una autoridad o va a ser presentado ante una. (Universidades extranjeras, Cancillería, Notarías, Embajadas). Un traductor oficial asume la responsabilidad legal de que el texto traducido es fiel, íntegro y exacto. Siempre va firmada y sellada.</p><p className='bg-blue-50 border-l-4 border-yellow-500 p-4 rounded text-slate-700 mt-6 font-medium'>Si no estás seguro de qué tipo necesitas, envía un mensaje en nuestro formulario de contacto y te asesoraremos sin compromiso.</p>",
+        "en": "<p className='mb-4'>Often, our clients wonder why an administrative or legal procedure requires an \"official translation\" and merely the signature of a translator fluent in the language isn't enough. In Colombia, the Ministry of Foreign Affairs is in charge of formally enabling translators so that their signatures and seals provide legal certainty (public faith) to the truthfulness of the translation.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Informative or Standard Translation</h3><p className='mb-4'>Used strictly for internal knowledge. A web article, an unregulated product manual, or an informal letter. It doesn't carry a seal and is not valid for legal or migration procedures.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Official Translation (Certified/Sworn)</h3><p className='mb-4'>Required when the source document emanates from an authority or will be presented to one. (Foreign universities, Ministry of Foreign Affairs, Notaries, Embassies). An official translator assumes the legal responsibility that the translated text is faithful, complete, and accurate. It is always signed and sealed.</p><p className='bg-blue-50 border-l-4 border-yellow-500 p-4 rounded text-slate-700 mt-6 font-medium'>If you are not sure which type you need, send a message through our contact form and we will advise you without obligation.</p>"
+      },
+      "categoria": {
+        "es": "Guías Oficiales",
+        "en": "Official Guides"
+      },
+      "fecha": "2024-03-01",
+      "metadata": {
+        "seo_title": {
+          "es": "¿Traducción Oficial o Estándar? | Guía Completa",
+          "en": "Official vs Standard Translation | Full Guide"
+        },
+        "keywords": ["traduccion oficial vs certificada", "diferencias traduccion", "que es traduccion oficial"]
+      }
+    },
+    {
+      "slug": "guia-documentos-visa",
+      "title": {
+        "es": "Los Documentos más Solicitados para Trámites de Visa",
+        "en": "The Most Requested Documents for Visa Procedures"
+      },
+      "description": {
+        "es": "No retrases tu sueño de viajar o estudiar. Conoce qué documentos sí o sí deberás traducir oficialmente.",
+        "en": "Don't delay your dream of traveling or studying. Know which documents you must officially translate."
+      },
+      "content_html": {
+        "es": "<p className='mb-4'>Prepararse para aplicar a una visa, ya sea de estudiante, turismo o trabajo (por ejemplo para Canadá, Australia, Reino Unido, o Estados Unidos) requiere una planeación minuciosa de la documentación soporte.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Soportes de Identidad y Civiles</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Registros Civiles de Nacimiento y Matrimonio.</li><li>Libreta Militar y antecedentes de policía / procuraduría / contraloría.</li></ul><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Soportes Financieros</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Extractos bancarios de los últimos 3-6 meses.</li><li>Cartas laborales donde se especifique cargo, salario y antigüedad.</li><li>Declaraciones de renta.</li></ul><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Soportes Académicos</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Diploma del último grado o título obtenido.</li><li>Acta de grado.</li><li>Sábana consolidada de notas y promedios.</li></ul><p className='mt-6'>Recuerda: Cualquier anomalía en los sellos de la notaría, apostillas, o de la traducción, será motivo de requerimientos adicionales por parte del oficial consular e incluso la negación del visado. Confía tu expediente únicamente a Traductores Oficiales registrados en Cancillería.</p>",
+        "en": "<p className='mb-4'>Preparing to apply for a visa, whether student, tourist, or work (for example to Canada, Australia, the UK, or the US) requires meticulous planning of the supporting documentation.</p><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Identity and Civil Supports</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Civil Registries of Birth and Marriage.</li><li>Military card and police / procuracy background certificates.</li></ul><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Financial Supports</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Bank statements from the last 3-6 months.</li><li>Employment letters stating position, salary, and seniority.</li><li>Income tax returns.</li></ul><h3 className='text-xl font-serif font-bold text-[#0c1a35] mt-8 mb-4'>Academic Supports</h3><ul className='list-disc pl-5 mb-6 text-slate-700 space-y-2'><li>Diploma of the last degree obtained.</li><li>Graduation certificate.</li><li>Consolidated transcript and averages.</li></ul><p className='mt-6'>Remember: Any anomaly in the notary seals, apostilles, or translation will be grounds for additional requests by the consular officer and even visa denial. Entrust your file only to Official Translators registered with the Ministry of Foreign Affairs.</p>"
+      },
+      "categoria": {
+        "es": "Visas y Migración",
+        "en": "Visas and Migration"
+      },
+      "fecha": "2024-03-05",
+      "metadata": {
+        "seo_title": {
+          "es": "Traducciones para Visas | Documentos y Requisitos",
+          "en": "Translations for Visas | Documents and Requirements"
+        },
+        "keywords": ["traduccion visa canadá", "traduccion visa uk", "documentos para visa estudiantes"]
+      }
+    }
+  ]
+}
