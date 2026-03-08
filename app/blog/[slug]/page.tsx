@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import NextImage from 'next/image'
 import { BookOpen, Calendar, Tag, MessageCircle } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
@@ -126,24 +127,49 @@ export default async function BlogPostPage({ params, searchParams }: {
                 <article className="container mx-auto px-5 lg:px-16 max-w-3xl mt-16 bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100">
                     <div className="prose prose-lg prose-slate prose-headings:font-serif prose-headings:text-[#0c1a35] prose-h3:text-2xl prose-a:text-blue-600 max-w-none">
                         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+
+                        {/* Post Visual Support */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16 not-prose">
+                            <div className="relative h-64 rounded-xl overflow-hidden shadow-md">
+                                <NextImage
+                                    src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=800"
+                                    alt="Detail 1"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="relative h-64 rounded-xl overflow-hidden shadow-md">
+                                <NextImage
+                                    src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800"
+                                    alt="Detail 2"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        </div>
                     </div>
 
                     <div className="mt-16 pt-10 border-t border-slate-100 flex flex-col items-center text-center">
-                        <div className="w-16 h-16 bg-[#1a3a6c] text-white rounded-full flex items-center justify-center mb-6 shadow-lg">
-                            <span className="font-serif font-bold text-xl">TR</span>
+                        <div className="w-20 h-20 bg-gradient-to-br from-[#1a3a6c] to-[#0c1a35] text-white rounded-2xl flex items-center justify-center mb-6 shadow-xl rotate-3 translate-y-[-10px]">
+                            <span className="font-serif font-bold text-2xl">LEX</span>
                         </div>
-                        <h3 className="font-serif font-bold text-[#0c1a35] text-2xl mb-4">
-                            {locale === 'es' ? '¿Necesita asesoría con este trámite?' : 'Do you need advice with this procedure?'}
+                        <h3 className="font-serif font-bold text-[#0c1a35] text-3xl mb-4">
+                            {locale === 'es' ? '¿Listo para dar el siguiente paso?' : 'Ready to take the next step?'}
                         </h3>
-                        <p className="text-slate-600 mb-8 max-w-lg">
+                        <p className="text-slate-600 mb-8 max-w-lg text-lg">
                             {locale === 'es'
-                                ? 'Nuestros traductores oficiales están listos para revisar sus documentos y darle una cotización exacta.'
-                                : 'Our official translators are ready to review your documents and give you an exact quote.'}
+                                ? 'Nuestros expertos en traducción oficial garantizan resultados impecables para su documentación técnica y legal.'
+                                : 'Our official translation experts guarantee flawless results for your technical and legal documentation.'}
                         </p>
-                        <Link href="https://wa.me/573028645014" className="inline-flex items-center gap-2 px-8 py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-[0_4px_14px_rgba(37,211,102,0.3)] hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
-                            <MessageCircle size={20} />
-                            {locale === 'es' ? 'Escríbanos por WhatsApp' : 'Write us on WhatsApp'}
-                        </Link>
+                        <div className="flex flex-wrap justify-center gap-4">
+                            <Link href="/contacto" className="inline-flex items-center gap-2 px-10 py-4 bg-[#D4AF37] hover:bg-[#0A192F] text-[#0A192F] hover:text-white font-bold rounded-sm transition-all shadow-xl uppercase tracking-widest text-[11px]">
+                                {locale === 'es' ? 'Cotizar Documento' : 'Quote Document'}
+                            </Link>
+                            <Link href="https://wa.me/573028645014" className="inline-flex items-center gap-2 px-10 py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-sm transition-all shadow-xl uppercase tracking-widest text-[11px]" target="_blank" rel="noopener noreferrer">
+                                <MessageCircle size={18} />
+                                {locale === 'es' ? 'WhatsApp Directo' : 'Direct WhatsApp'}
+                            </Link>
+                        </div>
                     </div>
                 </article>
             </main>

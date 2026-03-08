@@ -38,13 +38,13 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                 {/* HERO DEL BLOG */}
                 <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Blog">
                     <Image
-                        src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=2070&auto=format&fit=crop"
+                        src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop"
                         alt="Lex Translations Insights"
                         fill
                         priority
-                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                        className="object-cover object-center z-0 opacity-40 grayscale-[0.2]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/70 to-[#0A192F] z-10" />
 
                     <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
@@ -86,11 +86,17 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                 <div className="grid gap-10">
                                     {posts.map((post) => (
                                         <article key={post.slug} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 transition-all duration-300 group flex flex-col sm:flex-row">
-                                            <div className="relative min-h-[240px] sm:w-[320px] shrink-0 bg-[#0c1a35] flex items-center justify-center overflow-hidden">
-                                                {/* Fallback image o logo en caso de que no haya imagen real */}
-                                                <div className="absolute inset-0 bg-gradient-to-br from-[#1a3a6c] to-[#0c1a35] opacity-90 group-hover:scale-105 transition-transform duration-500" />
-                                                <BookOpen size={64} className="text-white/20 relative z-10" />
-                                                <div className="absolute top-4 left-4 z-20 bg-yellow-400 text-[#0c1a35] px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider shadow-sm">
+                                            <div className="relative min-h-[240px] sm:w-[320px] shrink-0 bg-[#0c1a35] overflow-hidden">
+                                                <Image
+                                                    src={post.categoria[locale] === 'Visas y Migración' || post.categoria[locale] === 'Visas and Migration'
+                                                        ? "https://images.unsplash.com/photo-1544027993-37dbfe43562a?q=80&w=800"
+                                                        : "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800"}
+                                                    alt={post.title[locale]}
+                                                    fill
+                                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                                />
+                                                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a35]/60 to-transparent" />
+                                                <div className="absolute top-4 left-4 z-20 bg-[#D4AF37] text-[#0A192F] px-4 py-1.5 rounded-sm text-[10px] font-bold uppercase tracking-[0.2em] shadow-xl">
                                                     {post.categoria[locale]}
                                                 </div>
                                             </div>
@@ -133,13 +139,47 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                     {t.blog.sidebar.desc}
                                 </p>
                                 <div className="grid gap-4">
-                                    <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-2 w-full py-4 bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-bold rounded-xl transition-all shadow-lg text-sm tracking-wider uppercase">
+                                    <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-2 w-full py-4 bg-[#D4AF37] hover:bg-white text-[#0A192F] font-bold rounded-sm transition-all shadow-lg text-sm tracking-widest uppercase">
                                         {t.blog.sidebar.cta}
                                     </Link>
-                                    <Link href="https://wa.me/573028645014" className="inline-flex items-center justify-center gap-2 w-full py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-lg text-sm tracking-wider uppercase" target="_blank" rel="noopener noreferrer">
+                                    <Link href="https://wa.me/573028645014" className="inline-flex items-center justify-center gap-2 w-full py-4 bg-transparent border border-white/20 hover:border-[#D4AF37] text-white font-bold rounded-sm transition-all text-sm tracking-widest uppercase" target="_blank" rel="noopener noreferrer">
                                         <MessageCircle size={18} /> WhatsApp
                                     </Link>
                                 </div>
+                            </div>
+
+                            {/* Exploration Section */}
+                            <div className="space-y-4">
+                                <Link
+                                    href={`/#servicios?lang=${locale}`}
+                                    className="block relative h-40 rounded-xl overflow-hidden group border border-white/5"
+                                >
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1454165833222-d1d44a60ea4b?q=80&w=600"
+                                        alt="Servicios"
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-[#0A192F]/60 group-hover:bg-[#0A192F]/40 transition-colors" />
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <span className="text-white font-serif font-bold text-xl tracking-widest uppercase">Nuestros Servicios</span>
+                                    </div>
+                                </Link>
+                                <Link
+                                    href={`/sectores?lang=${locale}`}
+                                    className="block relative h-40 rounded-xl overflow-hidden group border border-white/5"
+                                >
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600"
+                                        alt="Sectores"
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-[#0A192F]/60 group-hover:bg-[#0A192F]/40 transition-colors" />
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <span className="text-white font-serif font-bold text-xl tracking-widest uppercase">Sectores Clave</span>
+                                    </div>
+                                </Link>
                             </div>
 
                             {/* Categorías (Opcional) */}
@@ -156,6 +196,50 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                 </div>
                             </div>
                         </aside>
+                    </div>
+                </section>
+
+                {/* Perspective Visuals */}
+                <section className="py-24 bg-[#0A192F] border-t border-white/5">
+                    <div className="container mx-auto px-5 lg:px-16">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div className="relative h-[400px] group overflow-hidden border border-white/5 rounded-sm">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Deep Focus"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-all duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-10 left-10">
+                                    <h4 className="text-white font-serif text-2xl font-bold">Rigor Editorial</h4>
+                                </div>
+                            </div>
+                            <div className="relative h-[400px] group overflow-hidden border border-white/5 rounded-sm">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Content Creation"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-all duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-10 left-10">
+                                    <h4 className="text-white font-serif text-2xl font-bold">Actualidad Global</h4>
+                                </div>
+                            </div>
+                            <div className="relative h-[400px] group overflow-hidden border border-white/5 rounded-sm">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Analysis"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-all duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-10 left-10">
+                                    <h4 className="text-white font-serif text-2xl font-bold">Análisis Técnico</h4>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>

@@ -76,13 +76,13 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
                 {/* HERO */}
                 <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Asesoría">
                     <Image
-                        src="https://images.unsplash.com/photo-1507679799987-c7377ec48696?q=80&w=2071&auto=format&fit=crop"
+                        src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2070&auto=format&fit=crop"
                         alt="Lex Translations Advisory"
                         fill
                         priority
-                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                        className="object-cover object-center z-0 opacity-40 grayscale-[0.2]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/70 to-[#0A192F] z-10" />
                     <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
                             <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
@@ -246,6 +246,38 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
                                     </div>
                                 </details>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Visual Showcase */}
+                <section className="py-24 lg:py-32 bg-[#0A192F] border-t border-white/5">
+                    <div className="container mx-auto px-5 lg:px-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="relative h-[400px] group overflow-hidden border border-white/5 rounded-sm">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Technical Rigor"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-all duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-10 left-10">
+                                    <h4 className="text-white font-serif text-2xl font-bold">Rigor Técnico</h4>
+                                </div>
+                            </div>
+                            <div className="relative h-[400px] group overflow-hidden border border-white/5 rounded-sm">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1521791055366-0d553872125f?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Strategic Alliance"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-all duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-10 left-10">
+                                    <h4 className="text-white font-serif text-2xl font-bold">Alianza Estratégica</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

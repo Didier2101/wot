@@ -47,9 +47,9 @@ export default async function ContactoPage({ searchParams }: {
                         alt="Lex Translations Contact"
                         fill
                         priority
-                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                        className="object-cover object-center z-0 opacity-35 grayscale-[0.3]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/70 to-[#0A192F] z-10" />
                     <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
                             <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>

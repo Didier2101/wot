@@ -29,6 +29,15 @@ const ICON_MAP: Record<string, React.ReactNode> = {
     'cientifico': <Microscope size={28} />
 }
 
+const SECTOR_IMAGES: Record<string, string> = {
+    'juridico': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800',
+    'medico': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800',
+    'academico': 'https://images.unsplash.com/photo-1523050338691-c1e53d076efd?q=80&w=800',
+    'financiero-seguros': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800',
+    'it-software': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800',
+    'cientifico': 'https://images.unsplash.com/photo-1532187863486-abf51ad982d7?q=80&w=800'
+}
+
 export default async function SectoresPage({ searchParams }: { searchParams: Promise<{ lang?: string }> }) {
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
@@ -45,9 +54,9 @@ export default async function SectoresPage({ searchParams }: { searchParams: Pro
                         alt="Lex Translations Sectors"
                         fill
                         priority
-                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                        className="object-cover object-center z-0 opacity-40 grayscale-[0.2]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/70 to-[#0A192F] z-10" />
                     <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
                             <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
@@ -82,8 +91,17 @@ export default async function SectoresPage({ searchParams }: { searchParams: Pro
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 lg:gap-32">
                             {contentData.sectores.map((sector) => (
                                 <div key={sector.slug} className="group relative flex flex-col items-start transition-all duration-500">
-                                    <div className="text-[#D4AF37] mb-8 transition-transform duration-500 group-hover:-translate-y-2">
-                                        {ICON_MAP[sector.slug] || <Globe size={28} />}
+                                    <div className="relative w-full aspect-[16/9] mb-10 overflow-hidden rounded-sm border border-white/5">
+                                        <Image
+                                            src={SECTOR_IMAGES[sector.slug] || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800"}
+                                            alt={sector.title[locale]}
+                                            fill
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-110 grayscale-[0.5] group-hover:grayscale-0"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/80 via-transparent to-transparent" />
+                                        <div className="absolute bottom-4 left-4 text-[#D4AF37] transition-transform duration-500 group-hover:-translate-y-1">
+                                            {ICON_MAP[sector.slug] || <Globe size={28} />}
+                                        </div>
                                     </div>
                                     <h2 className="text-2xl font-serif font-bold text-white mb-6 tracking-tight group-hover:text-[#D4AF37] transition-colors duration-500">
                                         {sector.title[locale]}
@@ -103,6 +121,92 @@ export default async function SectoresPage({ searchParams }: { searchParams: Pro
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Industry Visuals */}
+                <section className="py-24 bg-[#0A192F] overflow-hidden border-t border-white/5">
+                    <div className="container mx-auto px-5 lg:px-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <div className="relative h-[400px] rounded-sm overflow-hidden group border border-white/5">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1532187863486-abf51ad982d7?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Science Sector"
+                                    fill
+                                    className="object-cover transition-all duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-8 left-8">
+                                    <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.4em] mb-2">Científico</p>
+                                    <h4 className="text-white font-serif text-xl font-bold">Investigación Especializada</h4>
+                                </div>
+                            </div>
+                            <div className="relative h-[400px] rounded-sm overflow-hidden group border border-white/5">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop"
+                                    alt="IT Sector"
+                                    fill
+                                    className="object-cover transition-all duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-8 left-8">
+                                    <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.4em] mb-2">Tecnológico</p>
+                                    <h4 className="text-white font-serif text-xl font-bold">Localización de Software</h4>
+                                </div>
+                            </div>
+                            <div className="relative h-[400px] rounded-sm overflow-hidden group border border-white/5">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Legal Sector"
+                                    fill
+                                    className="object-cover transition-all duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-8 left-8">
+                                    <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.4em] mb-2">Jurídico</p>
+                                    <h4 className="text-white font-serif text-xl font-bold">Rigor Normativo</h4>
+                                </div>
+                            </div>
+                            <div className="relative h-[400px] rounded-sm overflow-hidden group border border-white/5">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Medical Sector"
+                                    fill
+                                    className="object-cover transition-all duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-8 left-8">
+                                    <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.4em] mb-2">Médico</p>
+                                    <h4 className="text-white font-serif text-xl font-bold">Salud Global</h4>
+                                </div>
+                            </div>
+                            <div className="relative h-[400px] rounded-sm overflow-hidden group border border-white/5">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Financial Sector"
+                                    fill
+                                    className="object-cover transition-all duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-8 left-8">
+                                    <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.4em] mb-2">Financiero</p>
+                                    <h4 className="text-white font-serif text-xl font-bold">Análisis de Mercados</h4>
+                                </div>
+                            </div>
+                            <div className="relative h-[400px] rounded-sm overflow-hidden group border border-white/5">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1523050338691-c1e53d076efd?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Academic Sector"
+                                    fill
+                                    className="object-cover transition-all duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent" />
+                                <div className="absolute bottom-8 left-8">
+                                    <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.4em] mb-2">Académico</p>
+                                    <h4 className="text-white font-serif text-xl font-bold">Excelencia Educativa</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>

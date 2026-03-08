@@ -27,14 +27,35 @@ const defaultFaqs = [
 ];
 
 // ── Service image mapper ──────────────────────────────────────────────────
-const SERVICE_IMAGES: Record<string, string> = {
-    'traduccion-oficial': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1400&auto=format&fit=crop',
-    'traduccion-academica': 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1400&auto=format&fit=crop',
-    'traduccion-registro-civil': 'https://images.unsplash.com/photo-1593113503874-42fcd69947ae?q=80&w=1400&auto=format&fit=crop',
-    'traduccion-legal': 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1400&auto=format&fit=crop',
-    'traduccion-financiera': 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400&auto=format&fit=crop',
-    'traduccion-tecnica-legal': 'https://images.unsplash.com/photo-1521791136064-7986c2959663?q=80&w=1400&auto=format&fit=crop',
-    'traduccion-sitios-web': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400&auto=format&fit=crop'
+const SERVICE_IMAGES: Record<string, { hero: string; secondary: string[] }> = {
+    'traduccion-oficial': {
+        hero: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1400',
+        secondary: ['https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=800', 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800']
+    },
+    'traduccion-academica': {
+        hero: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1400',
+        secondary: ['https://images.unsplash.com/photo-1523050338691-c1e53d076efd?q=80&w=800', 'https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=800']
+    },
+    'traduccion-registro-civil': {
+        hero: 'https://images.unsplash.com/photo-1593113503874-42fcd69947ae?q=80&w=1400',
+        secondary: ['https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800', 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=800']
+    },
+    'traduccion-legal': {
+        hero: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1400',
+        secondary: ['https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=800', 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800']
+    },
+    'traduccion-financiera': {
+        hero: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400',
+        secondary: ['https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=800', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800']
+    },
+    'traduccion-tecnica-legal': {
+        hero: 'https://images.unsplash.com/photo-1521791136064-7986c2959663?q=80&w=1400',
+        secondary: ['https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800', 'https://images.unsplash.com/photo-1532187863486-abf51ad982d7?q=80&w=800']
+    },
+    'traduccion-sitios-web': {
+        hero: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1400',
+        secondary: ['https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800', 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800']
+    }
 }
 
 // ── SSG: generar todas las rutas estáticamente ─────────────────────────────
@@ -157,13 +178,13 @@ export default async function ServicePage({
                 {/* ── HERO del servicio ──────────────────────────────────────── */}
                 <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label={service.title[locale]}>
                     <Image
-                        src={SERVICE_IMAGES[slug] || "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1400&auto=format&fit=crop"}
+                        src={SERVICE_IMAGES[slug]?.hero || "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1400&auto=format&fit=crop"}
                         alt={service.title[locale]}
                         fill
                         priority
-                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                        className="object-cover object-center z-0 opacity-35 grayscale-[0.3]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/90 to-[#0A192F] z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/70 to-[#0A192F] z-10" />
 
                     <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 mb-10">
@@ -236,6 +257,24 @@ export default async function ServicePage({
                     {/* Main content directly from JSON */}
                     <article className="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:text-white prose-h3:text-3xl prose-h3:border-b prose-h3:border-[#D4AF37]/10 prose-h3:pb-4 prose-p:text-gray-400 prose-p:font-light prose-p:leading-relaxed prose-a:text-[#D4AF37] prose-a:no-underline hover:prose-a:underline">
                         <div dangerouslySetInnerHTML={{ __html: service.content_html[locale] }} />
+
+                        {/* Characterized Visuals */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20 not-prose">
+                            {(SERVICE_IMAGES[slug]?.secondary || [
+                                "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000",
+                                "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1000"
+                            ]).map((img, i) => (
+                                <div key={i} className="relative h-[300px] rounded-sm overflow-hidden border border-white/10 group">
+                                    <Image
+                                        src={img}
+                                        alt={`${service.title[locale]} - detail ${i + 1}`}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] opacity-40" />
+                                </div>
+                            ))}
+                        </div>
 
                         {/* ── Preguntas Frecuentes ──────────────────────────────────────── */}
                         <div className="mt-24 not-prose">

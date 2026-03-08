@@ -26,13 +26,14 @@ const ICON_MAP: Record<string, React.ReactNode> = {
 
 // ── Service image mapper ──────────────────────────────────────────────────
 const SERVICE_IMAGES: Record<string, string> = {
-  'traduccion-oficial': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop',
-  'traduccion-academica': 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop',
-  'traduccion-registro-civil': 'https://images.unsplash.com/photo-1593113503874-42fcd69947ae?q=80&w=1000&auto=format&fit=crop',
-  'traduccion-legal': 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1000&auto=format&fit=crop',
-  'traduccion-financiera': 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop',
-  'traduccion-tecnica-legal': 'https://images.unsplash.com/photo-1521791136064-7986c2959663?q=80&w=1000&auto=format&fit=crop',
-  'traduccion-sitios-web': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop'
+  'juridicos': 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1000&auto=format&fit=crop',
+  'juramentados': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop',
+  'academicos': 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop',
+  'identificacion': 'https://images.unsplash.com/photo-1593113503874-42fcd69947ae?q=80&w=1000&auto=format&fit=crop',
+  'tecnicos': 'https://images.unsplash.com/photo-1532187863486-abf51ad982d7?q=80&w=1000&auto=format&fit=crop',
+  'medicos': 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1000&auto=format&fit=crop',
+  'financieros': 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop',
+  'publicitarios': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop'
 }
 
 // ── Testimonials (static data) ─────────────────────────────────────────────
@@ -106,9 +107,9 @@ function HomeContent() {
             alt="Lex Translations Corporate"
             fill
             priority
-            className="object-cover object-center z-0 opacity-40 grayscale-[0.5]"
+            className="object-cover object-center z-0 opacity-50 grayscale-[0.3]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/70 to-[#0A192F] z-10" />
 
           <div className="container mx-auto px-5 lg:px-16 relative z-20">
             <div className="text-center max-w-[900px] mx-auto flex flex-col items-center">

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import NextImage from 'next/image'
 import {
     ArrowRight, MessageCircle, CheckCircle, Shield, Clock, Globe
 } from 'lucide-react'
@@ -8,6 +9,34 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import type { Locale } from '@/lib/i18n'
 import contentData from '@/data/content.json'
+
+// Image mapper for sectors
+const SECTOR_IMAGES: Record<string, { hero: string; secondary: string[] }> = {
+    'juridico': {
+        hero: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop',
+        secondary: ['https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1000&auto=format&fit=crop', 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1000&auto=format&fit=crop']
+    },
+    'medico': {
+        hero: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop',
+        secondary: ['https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=1000&auto=format&fit=crop', 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1000&auto=format&fit=crop']
+    },
+    'academico': {
+        hero: 'https://images.unsplash.com/photo-1523050338691-c1e53d076efd?q=80&w=2070&auto=format&fit=crop',
+        secondary: ['https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=1000&auto=format&fit=crop', 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1000&auto=format&fit=crop']
+    },
+    'financiero-seguros': {
+        hero: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop',
+        secondary: ['https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1000&auto=format&fit=crop', 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1000&auto=format&fit=crop']
+    },
+    'it-software': {
+        hero: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+        secondary: ['https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop']
+    },
+    'cientifico': {
+        hero: 'https://images.unsplash.com/photo-1532187863486-abf51ad982d7?q=80&w=2070&auto=format&fit=crop',
+        secondary: ['https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=1000&auto=format&fit=crop', 'https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=1000&auto=format&fit=crop']
+    }
+}
 
 // ── SSG: generar estáticamente ─────────────────────────────
 export async function generateStaticParams() {
@@ -82,8 +111,15 @@ export default async function SectorDetailPage({ params, searchParams }: {
             <main className="font-sans antialiased text-slate-800">
                 {/* HERO SECTOR */}
                 <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label={title}>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-10">
+                    <NextImage
+                        src={SECTOR_IMAGES[slug]?.hero || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"}
+                        alt={title}
+                        fill
+                        priority
+                        className="object-cover object-center z-0 opacity-40 grayscale-[0.2]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/70 to-[#0A192F] z-10" />
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
                             <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
                             <span className="text-white/20">/</span>
@@ -175,6 +211,25 @@ export default async function SectorDetailPage({ params, searchParams }: {
                                     </Link>
                                 </div>
                             </aside>
+                        </div>
+                    </div>
+                </section>
+
+                {/* VISUAL GALLERY */}
+                <section className="py-24 bg-[#0A192F] border-t border-white/5">
+                    <div className="container mx-auto px-5 lg:px-16">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {SECTOR_IMAGES[slug]?.secondary.map((img, i) => (
+                                <div key={i} className="relative h-[400px] rounded-sm overflow-hidden group border border-white/5">
+                                    <NextImage
+                                        src={img}
+                                        alt={`${title} detail ${i + 1}`}
+                                        fill
+                                        className="object-cover transition-all duration-1000 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/20 to-transparent" />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </section>

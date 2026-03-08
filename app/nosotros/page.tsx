@@ -49,9 +49,9 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
                         alt="Lex Translations Team"
                         fill
                         priority
-                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                        className="object-cover object-center z-0 opacity-35 grayscale-[0.3]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/70 to-[#0A192F] z-10" />
 
                     <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8 font-medium">
@@ -145,6 +145,34 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
                                     <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.2em]">
                                         Carrera 18 # 1H-12 — Bogotá, Colombia
                                     </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Visuals Section */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-32">
+                            <div className="relative h-[400px] overflow-hidden rounded-sm group">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Modern Office"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent opacity-60" />
+                                <div className="absolute bottom-10 left-10">
+                                    <p className="text-white font-serif text-2xl font-bold">Infraestructura Global</p>
+                                </div>
+                            </div>
+                            <div className="relative h-[400px] overflow-hidden rounded-sm group">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop"
+                                    alt="Expert Team"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] to-transparent opacity-60" />
+                                <div className="absolute bottom-10 left-10">
+                                    <p className="text-white font-serif text-2xl font-bold">Rigor Profesional</p>
                                 </div>
                             </div>
                         </div>

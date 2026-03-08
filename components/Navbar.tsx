@@ -97,17 +97,22 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
                                     <ChevronDown size={12} className="transition-transform duration-300 group-hover:rotate-180 text-[#D4AF37]" />
                                     <span className="absolute left-0 -bottom-1.5 h-[1px] w-0 bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
                                 </button>
-                                <div className="absolute top-full left-0 mt-5 hidden w-64 flex-col overflow-hidden rounded-xl bg-[#0A192F] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#D4AF37]/20 group-hover:flex transition-all animate-in fade-in slide-in-from-top-2 duration-300" role="menu">
-                                    {NAV_ITEMS.servicios.items.map((item, idx) => (
-                                        <Link
-                                            key={item.slug || `srv-${idx}`}
-                                            href={item.href ? (item.href.includes('?') ? `${item.href}&lang=${locale}` : `${item.href}?lang=${locale}`) : `/servicios/${item.slug}?lang=${locale}`}
-                                            className="px-6 py-4 text-[13px] text-gray-300 font-medium hover:bg-[#D4AF37]/10 hover:text-white transition-all border-b border-white/5 last:border-0"
-                                            role="menuitem"
-                                        >
-                                            {item[locale]}
-                                        </Link>
-                                    ))}
+                                <div className="absolute top-full left-0 mt-5 hidden w-64 flex-col overflow-visible group-hover:flex transition-all animate-in fade-in slide-in-from-top-2 duration-300 pt-2" role="menu">
+                                    {/* Bridge to prevent gap */}
+                                    <div className="absolute -top-5 left-0 right-0 h-5 bg-transparent" />
+
+                                    <div className="flex flex-col w-full overflow-hidden rounded-xl bg-[#0A192F] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#D4AF37]/20">
+                                        {NAV_ITEMS.servicios.items.map((item, idx) => (
+                                            <Link
+                                                key={item.slug || `srv-${idx}`}
+                                                href={item.href ? (item.href.includes('?') ? `${item.href}&lang=${locale}` : `${item.href}?lang=${locale}`) : `/servicios/${item.slug}?lang=${locale}`}
+                                                className="px-6 py-4 text-[13px] text-gray-300 font-medium hover:bg-[#D4AF37]/10 hover:text-white transition-all border-b border-white/5 last:border-0"
+                                                role="menuitem"
+                                            >
+                                                {item[locale]}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             </li>
 
@@ -118,20 +123,25 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
                                     <ChevronDown size={12} className="transition-transform duration-300 group-hover:rotate-180 text-[#D4AF37]" />
                                     <span className="absolute left-0 -bottom-1.5 h-[1px] w-0 bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
                                 </button>
-                                <div className="absolute top-full left-0 mt-5 hidden w-56 flex-col overflow-hidden rounded-xl bg-[#0A192F] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#D4AF37]/20 group-hover:flex transition-all animate-in fade-in slide-in-from-top-2 duration-300" role="menu">
-                                    {NAV_ITEMS.sectores.items.map((item, idx) => (
-                                        <Link
-                                            key={item.slug || `sec-${idx}`}
-                                            href={item.href
-                                                ? (item.href.includes('?') ? `${item.href}&lang=${locale}` : `${item.href}?lang=${locale}`)
-                                                : (item.slug ? `/sectores/${item.slug}?lang=${locale}` : `/sectores?lang=${locale}`)
-                                            }
-                                            className="px-6 py-4 text-[13px] text-gray-300 font-medium hover:bg-[#D4AF37]/10 hover:text-white transition-all border-b border-white/5 last:border-0"
-                                            role="menuitem"
-                                        >
-                                            {item[locale]}
-                                        </Link>
-                                    ))}
+                                <div className="absolute top-full left-0 mt-5 hidden w-56 flex-col overflow-visible group-hover:flex transition-all animate-in fade-in slide-in-from-top-2 duration-300 pt-2" role="menu">
+                                    {/* Bridge to prevent gap */}
+                                    <div className="absolute -top-5 left-0 right-0 h-5 bg-transparent" />
+
+                                    <div className="flex flex-col w-full overflow-hidden rounded-xl bg-[#0A192F] shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#D4AF37]/20">
+                                        {NAV_ITEMS.sectores.items.map((item, idx) => (
+                                            <Link
+                                                key={item.slug || `sec-${idx}`}
+                                                href={item.href
+                                                    ? (item.href.includes('?') ? `${item.href}&lang=${locale}` : `${item.href}?lang=${locale}`)
+                                                    : (item.slug ? `/sectores/${item.slug}?lang=${locale}` : `/sectores?lang=${locale}`)
+                                                }
+                                                className="px-6 py-4 text-[13px] text-gray-300 font-medium hover:bg-[#D4AF37]/10 hover:text-white transition-all border-b border-white/5 last:border-0"
+                                                role="menuitem"
+                                            >
+                                                {item[locale]}
+                                            </Link>
+                                        ))}
+                                    </div>
                                 </div>
                             </li>
 
