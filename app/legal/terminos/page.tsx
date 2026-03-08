@@ -9,10 +9,10 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     return {
-        title: locale === 'es' ? 'Términos y Condiciones de Servicio | Traducciones Oficiales' : 'Terms and Conditions of Service | Official Translations',
+        title: locale === 'es' ? 'Términos y Condiciones de Servicio | Lex Translations' : 'Terms and Conditions of Service | Official Translations',
         description: locale === 'es'
-            ? 'Términos comerciales, responsabilidades y política de entregas para Traducciones Oficiales y Certificadas por Traducciones Oficiales S.A.S.'
-            : 'Commercial terms, responsibilities, and delivery policy for Official and Certified Translations by Traducciones Oficiales S.A.S.'
+            ? 'Términos comerciales, responsabilidades y política de entregas para Lex Translations y Certificadas por Lex Translations SAS'
+            : 'Commercial terms, responsibilities, and delivery policy for Official and Certified Translations by Lex Translations SAS'
     }
 }
 
@@ -62,8 +62,8 @@ export default async function TerminosPage({ searchParams }: { searchParams: Pro
                             <section>
                                 <p className="font-serif font-bold text-white text-xl mb-10 leading-relaxed">
                                     {locale === 'es'
-                                        ? 'Al solicitar o aprobar una cotización y efectuar el anticipo para iniciar un proyecto con Traducciones Oficiales S.A.S., el cliente acepta en su totalidad y de forma irrevocable las siguientes condiciones comerciales y legales que rigen el rigor de nuestra práctica profesional.'
-                                        : 'By requesting or approving a quote and making the advance payment to initiate a project with Traducciones Oficiales S.A.S., the client fully and irrevocably accepts the following commercial and legal conditions that govern the rigor of our professional practice.'}
+                                        ? 'Al solicitar o aprobar una cotización y efectuar el anticipo para iniciar un proyecto con Lex Translations SAS, el cliente acepta en su totalidad y de forma irrevocable las siguientes condiciones comerciales y legales que rigen el rigor de nuestra práctica profesional.'
+                                        : 'By requesting or approving a quote and making the advance payment to initiate a project with Lex Translations SAS, the client fully and irrevocably accepts the following commercial and legal conditions that govern the rigor of our professional practice.'}
                                 </p>
 
                                 <h2 className="text-2xl font-serif font-bold text-[#D4AF37] mb-6 tracking-tight">
@@ -86,8 +86,8 @@ export default async function TerminosPage({ searchParams }: { searchParams: Pro
                                         <span>
                                             <strong className="text-white font-bold">{locale === 'es' ? 'Falsedad o Inconsistencias Originales:' : 'Original Falsehood or Inconsistencies:'} </strong>
                                             {locale === 'es'
-                                                ? 'Traducciones Oficiales S.A.S. NO es responsable por la autenticidad, autoría, falsedad, omisiones de la fuente o ilegalidad intrínseca de los documentos proporcionados por el cliente. Traducimos bajo el principio de buena fe y nos abstenemos de alterar el sentido original por peticiones externas.'
-                                                : 'Traducciones Oficiales S.A.S. is NOT responsible for the authenticity, authorship, falsehood, source omissions, or intrinsic illegality of the documents provided by the client. We translate under the principle of good faith and abstain from altering the original meaning by external request.'}
+                                                ? 'Lex Translations SAS NO es responsable por la autenticidad, autoría, falsedad, omisiones de la fuente o ilegalidad intrínseca de los documentos proporcionados por el cliente. Traducimos bajo el principio de buena fe y nos abstenemos de alterar el sentido original por peticiones externas.'
+                                                : 'Lex Translations SAS is NOT responsible for the authenticity, authorship, falsehood, source omissions, or intrinsic illegality of the documents provided by the client. We translate under the principle of good faith and abstain from altering the original meaning by external request.'}
                                         </span>
                                     </li>
                                     <li className="flex gap-4">
@@ -149,8 +149,8 @@ export default async function TerminosPage({ searchParams }: { searchParams: Pro
 
                         <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[11px] text-gray-500 uppercase tracking-[0.2em] font-bold">
                             <div>
-                                <span className="text-white block mb-2 tracking-widest">Traducciones Oficiales S.A.S.</span>
-                                {locale === 'es' ? 'Calle 161 # 14B - 54, Oficina 1002 — Bogotá, CO' : '161 # 14B - 54 St, Office 1002 — Bogotá, CO'}
+                                <span className="text-white block mb-2 tracking-widest">Lex Translations SAS</span>
+                                {locale === 'es' ? 'Carrera 18 # 1H-12 — Bogotá, CO' : 'Carrera 18 # 1H-12 — Bogotá, CO'}
                             </div>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-[1px] bg-[#D4AF37]/30" />

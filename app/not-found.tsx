@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft, Home, MessageCircle, FileQuestion } from 'lucide-react'
+import { Home, MessageCircle, FileQuestion } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 

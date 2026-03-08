@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import Image from 'next/image'
 import {
     Mail, MapPin, CheckCircle, Facebook, Linkedin
 } from 'lucide-react'
@@ -8,6 +8,8 @@ import Footer from '@/components/Footer'
 import LeadForm from '@/components/LeadForm'
 import { type Locale } from '@/lib/i18n'
 
+import type { Metadata } from 'next'
+
 export async function generateMetadata({ searchParams }: {
     searchParams: Promise<{ lang?: string }>
 }): Promise<Metadata> {
@@ -15,7 +17,7 @@ export async function generateMetadata({ searchParams }: {
     const locale: Locale = lang === 'en' ? 'en' : 'es'
 
     return {
-        title: locale === 'es' ? 'Contacto | Traducciones Oficiales' : 'Contact Us | Official Translations',
+        title: locale === 'es' ? 'Contacto | Lex Translations' : 'Contact Us | Lex Translations',
         description: locale === 'es'
             ? 'Póngase en contacto con nosotros para sus necesidades de traducción oficial en Bogotá. Ofrecemos atención rápida por WhatsApp, email y formulario.'
             : 'Get in touch with us for your official translation needs in Bogota. We offer fast support via WhatsApp, email, and form.',
@@ -28,10 +30,10 @@ export default async function ContactoPage({ searchParams }: {
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
 
-    const PHONE_WA = '573123902406'
-    const PHONE_DISPLAY = '+57 312 3902406'
-    const EMAIL = 'informacion@traduccionescertificadas.com'
-    const ADDRESS = 'Carrera 14B #161-54 Torre 2/1002, Bogotá'
+    const PHONE_WA = '573028645014'
+    const PHONE_DISPLAY = '+57 302 8645014'
+    const EMAIL = 'lex@lextranslations.com'
+    const ADDRESS = 'Carrera 18 # 1H-12, Bogotá, Colombia'
 
     return (
         <>
@@ -40,8 +42,15 @@ export default async function ContactoPage({ searchParams }: {
             <main className="font-sans text-white/90 antialiased bg-[#0A192F]">
                 {/* HERO CONTACT */}
                 <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Contacto">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-10">
+                    <Image
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
+                        alt="Lex Translations Contact"
+                        fill
+                        priority
+                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
                             <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
                             <span className="text-white/20">/</span>

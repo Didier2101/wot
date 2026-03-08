@@ -20,13 +20,13 @@ const playfair = Playfair_Display({
 // ── Fetch company config ───────────────────────────────────────────────────
 async function getCompanyConfig(): Promise<Record<string, string>> {
   return {
-    company_name: 'Traducciones Oficiales',
-    company_phone: '+57 312 3902406',
-    company_email: 'informacion@traduccionescertificadas.com',
-    company_address: 'Carrera 14B #161-54 Torre 2/1002, Bogotá, Colombia',
-    seo_title: 'Traductores Oficiales en Bogotá | Traducciones Oficiales',
-    seo_description: 'Agencia de traducciones oficiales, juramentadas y certificadas en Bogotá desde 2010. Documentos jurídicos, académicos, técnicos y médicos. Entrega en 24–72 h.',
-    seo_keywords: 'traducciones bogotá, traducciones juramentadas, traductores oficiales colombia, traducción certificada',
+    company_name: 'Lex Translations',
+    company_phone: '+57 302 8645014',
+    company_email: 'lex@lextranslations.com',
+    company_address: 'Carrera 18 # 1H-12, Bogotá, Colombia',
+    seo_title: 'Lex Translations | Traductores Oficiales en Bogotá',
+    seo_description: 'Lex Translations: Agencia de traducciones oficiales, juramentadas y certificadas en Bogotá desde 2010. Excelencia lingüística en documentos jurídicos y técnicos.',
+    seo_keywords: 'traducciones bogotá, lex translations, traducciones juramentadas, traductores oficiales colombia',
     company_founded: '2010'
   }
 }
@@ -58,13 +58,13 @@ export async function generateMetadata(): Promise<Metadata> {
       url: siteUrl,
       title: config.seo_title,
       description: config.seo_description,
-      siteName: 'Traducciones Oficiales',
+      siteName: 'Lex Translations',
       images: [
         {
           url: `${siteUrl}/logo-nuevo.png`,
           width: 800,
           height: 600,
-          alt: 'Traducciones Oficiales Logo'
+          alt: 'Lex Translations Logo'
         }
       ]
     },
@@ -96,17 +96,17 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       {
         '@type': ['LocalBusiness', 'ProfessionalService'],
         '@id': `${siteUrl}/#organization`,
-        name: config.company_name ?? 'Traducciones Oficiales',
+        name: config.company_name ?? 'Lex Translations',
         description: config.seo_description,
         url: siteUrl,
         logo: `${siteUrl}/logo-nuevo.png`,
         image: `${siteUrl}/logo-nuevo.png`,
-        telephone: config.company_phone ?? '+57 312 3902406',
-        email: config.company_email ?? 'informacion@traduccionescertificadas.com',
+        telephone: config.company_phone ?? '+57 302 8645014',
+        email: config.company_email ?? 'lex@lextranslations.com',
         foundingDate: config.company_founded ?? '2010',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: config.company_address ?? 'Carrera 14B #161-54 Torre 2/1002',
+          streetAddress: config.company_address ?? 'Carrera 18 # 1H-12',
           addressLocality: 'Bogotá',
           addressRegion: 'Cundinamarca',
           postalCode: '110221',

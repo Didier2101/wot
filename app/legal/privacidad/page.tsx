@@ -9,10 +9,10 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     return {
-        title: locale === 'es' ? 'Política de Tratamiento de Datos Personales | Traducciones Oficiales' : 'Data Privacy Policy | Official Translations',
+        title: locale === 'es' ? 'Política de Tratamiento de Datos Personales | Lex Translations' : 'Data Privacy Policy | Official Translations',
         description: locale === 'es'
-            ? 'Política de Tratamiento de Datos Personales y Privacidad (Ley 1581 de 2012) de Traducciones Oficiales S.A.S.'
-            : 'Data Treatment and Privacy Policy of Traducciones Oficiales S.A.S.'
+            ? 'Política de Tratamiento de Datos Personales y Privacidad (Ley 1581 de 2012) de Lex Translations SAS'
+            : 'Data Treatment and Privacy Policy of Lex Translations SAS'
     }
 }
 
@@ -65,8 +65,8 @@ export default async function PrivacidadPage({ searchParams }: { searchParams: P
                                 </h2>
                                 <p>
                                     {locale === 'es'
-                                        ? 'En estricto cumplimiento de la Ley 1581 de 2012 e instrucciones de la SIC, Traducciones Oficiales S.A.S., con domicilio en Bogotá, actúa como el responsable del tratamiento de los datos personales proporcionados para servicios de traducción.'
-                                        : 'In strict compliance with Law 1581 of 2012 and SIC instructions, Traducciones Oficiales S.A.S., domiciled in Bogotá, acts as the controller for the processing of personal data provided for translation services.'}
+                                        ? 'En estricto cumplimiento de la Ley 1581 de 2012 e instrucciones de la SIC, Lex Translations SAS, con domicilio en Bogotá, actúa como el responsable del tratamiento de los datos personales proporcionados para servicios de traducción.'
+                                        : 'In strict compliance with Law 1581 of 2012 and SIC instructions, Lex Translations SAS, domiciled in Bogotá, acts as the controller for the processing of personal data provided for translation services.'}
                                 </p>
                             </section>
 
@@ -93,7 +93,7 @@ export default async function PrivacidadPage({ searchParams }: { searchParams: P
                                 <ul className="space-y-6">
                                     <li className="flex gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 shrink-0" />
-                                        <span>{locale === 'es' ? 'Conocer, actualizar y rectificar sus datos personales ante Traducciones Oficiales S.A.S.' : 'Know, update, and rectify personal data before Traducciones Oficiales S.A.S.'}</span>
+                                        <span>{locale === 'es' ? 'Conocer, actualizar y rectificar sus datos personales ante Lex Translations SAS' : 'Know, update, and rectify personal data before Lex Translations SAS'}</span>
                                     </li>
                                     <li className="flex gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] mt-2.5 shrink-0" />
@@ -123,15 +123,15 @@ export default async function PrivacidadPage({ searchParams }: { searchParams: P
                                 </h2>
                                 <p>
                                     {locale === 'es'
-                                        ? 'Para Habeas Data, escriba a informacion@traduccionescertificadas.com o visite nuestras instalaciones en Bogotá.'
-                                        : 'For Habeas Data, write to informacion@traduccionescertificadas.com or visit our facilities in Bogotá.'}
+                                        ? 'Para Habeas Data, escriba a lex@lextranslations.com o visite nuestras instalaciones en Bogotá.'
+                                        : 'For Habeas Data, write to lex@lextranslations.com or visit our facilities in Bogotá.'}
                                 </p>
                             </section>
 
                         </div>
 
                         <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[11px] text-gray-500 uppercase tracking-[0.2em] font-bold">
-                            <div>Traducciones Oficiales S.A.S.</div>
+                            <div>Lex Translations SAS</div>
                             <div className="flex items-center gap-4">
                                 <div className="w-10 h-[1px] bg-[#D4AF37]/30" />
                                 <span>{locale === 'es' ? 'Actualizado: Marzo 2026' : 'Updated: March 2026'}</span>

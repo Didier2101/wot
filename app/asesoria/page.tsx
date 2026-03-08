@@ -1,15 +1,17 @@
-import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { MessageCircle, CheckCircle, ArrowRight, Clock, FileText, Award, BadgeHelp } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import type { Locale } from '@/lib/i18n'
 
+import type { Metadata } from 'next'
+
 export async function generateMetadata({ searchParams }: { searchParams: Promise<{ lang?: string }> }): Promise<Metadata> {
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     return {
-        title: locale === 'es' ? 'Asesoría en Apostilla y Legalización | Traducciones Oficiales' : 'Apostille & Legalization Advisory | Official Translations',
+        title: locale === 'es' ? 'Asesoría en Apostilla y Legalización | Lex Translations' : 'Apostille & Legalization Advisory | Lex Translations',
         description: locale === 'es'
             ? 'Asesoría gratuita sobre apostilla, legalización y proceso de traducción oficial en Colombia. Te guiamos paso a paso para embajadas, notarías y trámites internacionales.'
             : 'Free advisory on apostille, legalization and official translation process in Colombia. We guide you step by step for embassies, notaries and international procedures.',
@@ -73,8 +75,15 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
             <main className="font-sans antialiased text-slate-800">
                 {/* HERO */}
                 <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Asesoría">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-10">
+                    <Image
+                        src="https://images.unsplash.com/photo-1507679799987-c7377ec48696?q=80&w=2071&auto=format&fit=crop"
+                        alt="Lex Translations Advisory"
+                        fill
+                        priority
+                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
                             <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
                             <span className="text-white/20">/</span>
@@ -106,7 +115,7 @@ export default async function AsesoriaPage({ searchParams }: { searchParams: Pro
                                 <ArrowRight size={18} />
                             </Link>
                             <Link
-                                href={`https://wa.me/573123902406?text=${encodeURIComponent(locale === 'es' ? 'Hola, necesito asesoría sobre apostilla y traducción' : 'Hello, I need advisory on apostille and translation')}`}
+                                href={`https://wa.me/573028645014?text=${encodeURIComponent(locale === 'es' ? 'Hola, necesito asesoría sobre apostilla y traducción' : 'Hello, I need advisory on apostille and translation')}`}
                                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]"
                                 target="_blank" rel="noopener noreferrer"
                             >

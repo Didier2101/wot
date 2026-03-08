@@ -31,7 +31,7 @@ export async function generateMetadata({ params, searchParams }: {
         description: sector.description[locale],
         keywords: sector.metadata.keywords,
         alternates: {
-            canonical: `https://www.traduccionescertificadas.com.co/sectores/${slug}?lang=${locale}`
+            canonical: `https://kavvo.store/sectores/${slug}?lang=${locale}`
         }
     }
 }
@@ -59,10 +59,10 @@ export default async function SectorDetailPage({ params, searchParams }: {
         "description": description,
         "provider": {
             "@type": "LocalBusiness",
-            "name": "Traducciones Oficiales",
+            "name": "Lex Translations",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Carrera 14B #161-54 Torre 2/1002",
+                "streetAddress": "Carrera 18 # 1H-12",
                 "addressLocality": "Bogotá",
                 "addressCountry": "CO"
             }
@@ -117,7 +117,7 @@ export default async function SectorDetailPage({ params, searchParams }: {
                                 <ArrowRight size={18} />
                             </Link>
                             <Link
-                                href={`https://wa.me/573123902406?text=Hola, necesito traducción especializada para el sector ${title}`}
+                                href={`https://wa.me/573028645014?text=Hola, necesito traducción especializada para el sector ${title}`}
                                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]"
                                 target="_blank" rel="noopener noreferrer"
                             >

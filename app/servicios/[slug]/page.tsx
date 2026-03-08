@@ -56,7 +56,7 @@ export async function generateMetadata({
     const service = contentData.servicios.find(s => s.slug === slug)
     if (!service) return {}
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.traduccionescertificadas.com.co'
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kavvo.store'
 
     return {
         title: service.metadata.seo_title[locale],
@@ -94,10 +94,10 @@ export default async function ServicePage({
 
     if (!service) notFound()
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.traduccionescertificadas.com.co'
-    const phoneWa = '573123902406'
-    const phone = '+57 312 3902406'
-    const email = 'informacion@traduccionescertificadas.com'
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://kavvo.store'
+    const phoneWa = '573028645014'
+    const phone = '+57 302 8645014'
+    const email = 'lex@lextranslations.com'
 
     const otherServices = contentData.servicios
         .filter((sv) => sv.slug !== slug)
@@ -111,13 +111,13 @@ export default async function ServicePage({
         description: service.description[locale],
         provider: {
             '@type': 'LocalBusiness',
-            name: 'Traducciones Oficiales',
+            name: 'Lex Translations',
             url: siteUrl,
             telephone: phone,
             email: email,
             address: {
                 '@type': 'PostalAddress',
-                streetAddress: 'Carrera 14B #161-54 Torre 2/1002',
+                streetAddress: 'Carrera 18 # 1H-12',
                 addressLocality: 'Bogotá',
                 addressRegion: 'Cundinamarca',
                 addressCountry: 'CO',

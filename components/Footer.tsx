@@ -20,7 +20,7 @@ export default function Footer({ locale }: FooterProps) {
                     <div>
                         <Image
                             src="/logo-nuevo.png"
-                            alt="Traducciones Oficiales Logo"
+                            alt="Lex Translations Logo"
                             width={160}
                             height={60}
                             className="mb-8 object-contain"
@@ -34,7 +34,7 @@ export default function Footer({ locale }: FooterProps) {
                             <Link href="https://facebook.com/traduccionesoficiales" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all duration-300">
                                 <Facebook size={18} />
                             </Link>
-                            <Link href="https://wa.me/573123902406" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all duration-300">
+                            <Link href="https://wa.me/573028645014" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-sm bg-white/5 border border-white/10 flex items-center justify-center text-white hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all duration-300">
                                 <MessageCircle size={18} />
                             </Link>
                         </div>
@@ -61,15 +61,15 @@ export default function Footer({ locale }: FooterProps) {
                         <ul className="flex flex-col gap-6">
                             <li className="flex gap-4 items-start">
                                 <MapPin size={20} className="text-[#D4AF37] shrink-0 opacity-80" />
-                                <span className="text-gray-400 text-sm font-medium leading-relaxed">Carrera 14B #161-54 Suite 1002<br />Centro Empresarial Atabanza</span>
+                                <span className="text-gray-400 text-sm font-medium leading-relaxed">Carrera 18 # 1H-12<br />Bogotá, Colombia</span>
                             </li>
                             <li className="flex gap-4 items-center">
                                 <Phone size={20} className="text-[#D4AF37] shrink-0 opacity-80" />
-                                <span className="text-gray-400 text-sm font-medium">+57 312 390 2406</span>
+                                <span className="text-gray-400 text-sm font-medium">+57 302 8645014</span>
                             </li>
                             <li className="flex gap-4 items-center">
                                 <Mail size={20} className="text-[#D4AF37] shrink-0 opacity-80" />
-                                <Link href="mailto:informacion@traduccionescertificadas.com" className="text-gray-400 hover:text-[#D4AF37] text-sm transition-all duration-300 font-medium">informacion@traduccionescertificadas.com</Link>
+                                <Link href="mailto:lex@lextranslations.com" className="text-gray-400 hover:text-[#D4AF37] text-sm transition-all duration-300 font-medium">lex@lextranslations.com</Link>
                             </li>
                         </ul>
                     </div>
@@ -77,7 +77,7 @@ export default function Footer({ locale }: FooterProps) {
 
                 <div className="border-t border-white/5 py-10 flex justify-between items-center flex-wrap gap-6">
                     <p className="text-gray-500 text-[11px] font-bold uppercase tracking-[0.2em]">
-                        © {year} <span className="text-gray-400">Traducciones Oficiales</span> — Excellence in linguistics
+                        © {year} <span className="text-gray-400">Lex Translations</span> — Excellence in linguistics
                     </p>
                     <div className="flex gap-10">
                         <Link href={`/legal/privacidad?lang=${locale}`} className="text-gray-500 hover:text-[#D4AF37] text-[11px] font-bold uppercase tracking-[0.2em] transition-all duration-300">

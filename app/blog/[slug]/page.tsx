@@ -27,7 +27,7 @@ export async function generateMetadata({ params, searchParams }: {
         description: post.description[locale],
         keywords: post.metadata.keywords,
         alternates: {
-            canonical: `https://www.traduccionescertificadas.com.co/blog/${slug}?lang=${locale}`
+            canonical: `https://kavvo.store/blog/${slug}?lang=${locale}`
         }
     }
 }
@@ -57,20 +57,20 @@ export default async function BlogPostPage({ params, searchParams }: {
         "@type": "BlogPosting",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": `https://www.traduccionescertificadas.com.co/blog/${slug}?lang=${locale}`
+            "@id": `https://kavvo.store/blog/${slug}?lang=${locale}`
         },
         "headline": title,
         "description": description,
         "author": {
             "@type": "Organization",
-            "name": "Traducciones Oficiales"
+            "name": "Lex Translations"
         },
         "publisher": {
             "@type": "Organization",
-            "name": "Traducciones Oficiales",
+            "name": "Lex Translations",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.traduccionescertificadas.com.co/logo-nuevo.png"
+                "url": "https://kavvo.store/logo-nuevo.png"
             }
         },
         "datePublished": post.fecha
@@ -140,7 +140,7 @@ export default async function BlogPostPage({ params, searchParams }: {
                                 ? 'Nuestros traductores oficiales están listos para revisar sus documentos y darle una cotización exacta.'
                                 : 'Our official translators are ready to review your documents and give you an exact quote.'}
                         </p>
-                        <Link href="https://wa.me/573123902406" className="inline-flex items-center gap-2 px-8 py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-[0_4px_14px_rgba(37,211,102,0.3)] hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
+                        <Link href="https://wa.me/573028645014" className="inline-flex items-center gap-2 px-8 py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-[0_4px_14px_rgba(37,211,102,0.3)] hover:-translate-y-1" target="_blank" rel="noopener noreferrer">
                             <MessageCircle size={20} />
                             {locale === 'es' ? 'Escríbanos por WhatsApp' : 'Write us on WhatsApp'}
                         </Link>

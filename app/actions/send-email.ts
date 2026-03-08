@@ -88,7 +88,7 @@ export async function sendEmailAction(prevState: unknown, formData: FormData) {
             html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #e2e8f0; border-radius: 10px;">
           <h2 style="color: #1a3a6c;">Nueva Solicitud de Cotización</h2>
-          <p>Has recibido un nuevo contacto desde tu sitio web de Traducciones Oficiales</p>
+          <p>Has recibido un nuevo contacto desde tu sitio web de Lex Translations</p>
           <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 10px;">👤 <strong>Nombre:</strong> ${nombre}</li>

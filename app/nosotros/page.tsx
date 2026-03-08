@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { MessageCircle, CheckCircle, Award, Clock, Users, ArrowRight } from 'lucide-react'
 import Navbar from '@/components/Navbar'
@@ -10,11 +11,11 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     return {
         title: locale === 'es'
-            ? 'Quiénes Somos | Traducciones Oficiales — Traductores Oficiales'
-            : 'About Us | Official Translations — Official Translators',
+            ? 'Quiénes Somos | Lex Translations — Traductores Oficiales'
+            : 'About Us | Lex Translations — Official Translators',
         description: locale === 'es'
-            ? 'Traducciones Oficiales S.A.S. — Más de una década de experiencia. Traductores oficiales certificados ante el Ministerio de Relaciones Exteriores. Bogotá, Colombia.'
-            : 'Traducciones Oficiales S.A.S. — Over a decade of experience. Official translators certified before the Colombian Ministry of Foreign Affairs.',
+            ? 'Lex Translations — Más de una década de experiencia. Traductores oficiales certificados ante el Ministerio de Relaciones Exteriores. Bogotá, Colombia.'
+            : 'Lex Translations — Over a decade of experience. Official translators certified before the Colombian Ministry of Foreign Affairs.',
     }
 }
 
@@ -43,8 +44,16 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
             <main className="font-sans antialiased text-gray-400 bg-[#0A192F]">
                 {/* HERO */}
                 <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Nosotros">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center">
+                    <Image
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                        alt="Lex Translations Team"
+                        fill
+                        priority
+                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8 font-medium">
                             <Link href={`/?lang=${locale}`} className="text-white/80 hover:text-white transition-colors">Home</Link>
                             <span className="text-white/40">/</span>
@@ -57,7 +66,7 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
 
                         <div className="inline-flex items-center gap-3 text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
                             <CheckCircle size={14} />
-                            TRADUCCIONES OFICIALES S.A.S.
+                            LEX TRANSLATIONS — EXCELLENCE
                         </div>
 
                         <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-serif font-bold mb-10 leading-tight tracking-tight">
@@ -76,7 +85,7 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
                                 <ArrowRight size={18} />
                             </Link>
                             <Link
-                                href="https://wa.me/573123902406"
+                                href="https://wa.me/573028645014"
                                 className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]"
                                 target="_blank" rel="noopener noreferrer"
                             >
@@ -131,10 +140,10 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
 
                                 <div className="pt-10 border-t border-white/5">
                                     <p className="font-serif font-bold text-white text-xl mb-3">
-                                        Centro Empresarial Atabanza
+                                        Lex Translations HQ
                                     </p>
                                     <p className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.2em]">
-                                        Carrera 14B #161-54 Suite 1002 — Bogotá
+                                        Carrera 18 # 1H-12 — Bogotá, Colombia
                                     </p>
                                 </div>
                             </div>
@@ -197,7 +206,7 @@ export default async function NosotrosPage({ searchParams }: { searchParams: Pro
                                 {locale === 'es' ? 'Ir al Formulario' : 'Go to Form'}
                                 <ArrowRight size={20} />
                             </Link>
-                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/573028645014" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
                                 WhatsApp Directo
                             </Link>

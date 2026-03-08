@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { MessageCircle, ArrowRight, Microscope, Stethoscope, GraduationCap, Briefcase, Scale, Cpu, Globe, CheckCircle } from 'lucide-react'
 import Navbar from '@/components/Navbar'
@@ -6,11 +6,13 @@ import Footer from '@/components/Footer'
 import type { Locale } from '@/lib/i18n'
 import contentData from '@/data/content.json'
 
+import type { Metadata } from 'next'
+
 export async function generateMetadata({ searchParams }: { searchParams: Promise<{ lang?: string }> }): Promise<Metadata> {
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     return {
-        title: locale === 'es' ? 'Sectores que Atendemos | Traducciones Oficiales' : 'Sectors We Serve | Official Translations',
+        title: locale === 'es' ? 'Sectores que Atendemos | Lex Translations' : 'Sectors We Serve | Lex Translations',
         description: locale === 'es'
             ? 'Traducción certificada para el sector jurídico, médico, académico, financiero, tecnológico y empresarial en Bogotá. Traductores especializados por industria.'
             : 'Certified translation for the legal, medical, academic, financial, tech and business sector in Bogotá. Industry-specialized translators.',
@@ -38,8 +40,15 @@ export default async function SectoresPage({ searchParams }: { searchParams: Pro
             <main className="font-sans antialiased text-gray-400 bg-[#0A192F]">
                 {/* HERO */}
                 <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Sectores">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(212,175,55,0.1)_0%,transparent_70%)] pointer-events-none" />
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-10">
+                    <Image
+                        src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                        alt="Lex Translations Sectors"
+                        fill
+                        priority
+                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
                         <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
                             <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
                             <span className="text-white/20">/</span>
@@ -121,7 +130,7 @@ export default async function SectoresPage({ searchParams }: { searchParams: Pro
                                 {locale === 'es' ? 'Ir al Formulario' : 'Go to Form'}
                                 <ArrowRight size={20} />
                             </Link>
-                            <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#D4AF37] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]" target="_blank" rel="noopener noreferrer">
+                            <Link href="https://wa.me/573028645014" className="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-sm bg-transparent border border-[#0A192F] text-[#D4AF37] font-bold text-[13px] uppercase tracking-[0.2em] transition-all duration-300 hover:bg-[#D4AF37] hover:text-[#0A192F]" target="_blank" rel="noopener noreferrer">
                                 <MessageCircle size={20} />
                                 WhatsApp Directo
                             </Link>

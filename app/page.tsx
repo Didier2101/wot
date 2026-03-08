@@ -54,7 +54,7 @@ const TESTIMONIALS = [
   },
 ]
 
-const PHONE_WA = '573123902406'
+const PHONE_WA = '573028645014'
 
 // ── Stars ──────────────────────────────────────────────────────────────────
 
@@ -103,7 +103,7 @@ function HomeContent() {
         <section className="relative min-h-[90vh] flex flex-col justify-center py-20 lg:py-32" id="inicio">
           <Image
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
-            alt="Traducciones Oficiales Bogota"
+            alt="Lex Translations Corporate"
             fill
             priority
             className="object-cover object-center z-0 opacity-40 grayscale-[0.5]"

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { MessageCircle, Clock, ArrowRight, BookOpen, CheckCircle } from 'lucide-react'
 import Navbar from '@/components/Navbar'
@@ -7,13 +7,15 @@ import type { Locale } from '@/lib/i18n'
 import { getDict } from '@/lib/i18n'
 import contentData from '@/data/content.json'
 
+import type { Metadata } from 'next'
+
 export async function generateMetadata({ searchParams }: { searchParams: Promise<{ lang?: string }> }): Promise<Metadata> {
     const { lang } = await searchParams
     const locale: Locale = lang === 'en' ? 'en' : 'es'
     const t = getDict(locale)
 
     return {
-        title: t.blog.h2 + ' | Traducciones Oficiales',
+        title: t.blog.h2 + ' | Lex Translations',
         description: t.blog.subtitle,
     }
 }
@@ -32,30 +34,39 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
         <>
             <Navbar locale={locale} currentPath="/blog" />
 
-            <main className="font-sans antialiased text-slate-800">
+            <main className="font-sans antialiased text-gray-400 bg-[#0A192F]">
                 {/* HERO DEL BLOG */}
-                <section className="bg-gradient-to-br from-[#0c1a35] via-[#1a3055] to-[#1e4a8a] py-16 lg:py-24" aria-label="Blog">
-                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center">
-                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/60 mb-8 font-medium">
-                            <Link href={`/?lang=${locale}`} className="text-white/80 hover:text-white transition-colors">Home</Link>
-                            <span className="text-white/40">/</span>
-                            <span className="text-white/95">{t.blog.sectionLabel}</span>
+                <section className="relative py-24 lg:py-32 overflow-hidden bg-[#0A192F]" aria-label="Blog">
+                    <Image
+                        src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?q=80&w=2070&auto=format&fit=crop"
+                        alt="Lex Translations Insights"
+                        fill
+                        priority
+                        className="object-cover object-center z-0 opacity-20 grayscale-[0.5]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] via-[#0A192F]/80 to-[#0A192F] z-10" />
+
+                    <div className="container mx-auto px-5 lg:px-16 max-w-5xl text-center relative z-20">
+                        <nav aria-label="breadcrumb" className="flex items-center justify-center gap-2 text-sm text-white/50 mb-10 font-medium tracking-widest uppercase text-[10px]">
+                            <Link href={`/?lang=${locale}`} className="hover:text-[#D4AF37] transition-colors">Home</Link>
+                            <span className="text-white/20">/</span>
+                            <span className="text-white/80">{t.blog.sectionLabel}</span>
                         </nav>
 
-                        <div className="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-yellow-400/10 border border-yellow-400/20 flex items-center justify-center text-yellow-400 mb-6 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+                        <div className="mx-auto w-16 h-16 rounded-sm bg-[#D4AF37]/10 border border-[#D4AF37]/20 flex items-center justify-center text-[#D4AF37] mb-8 shadow-2xl">
                             <BookOpen size={32} />
                         </div>
 
-                        <div className="inline-flex items-center gap-2 text-yellow-400 text-xs font-bold uppercase tracking-wider mb-6">
+                        <div className="inline-flex items-center gap-3 text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
                             <CheckCircle size={14} />
                             {t.blog.sectionLabel}
                         </div>
 
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-serif font-bold mb-6 leading-tight">
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-serif font-bold mb-10 leading-tight tracking-tight">
                             {t.blog.h2}
                         </h1>
 
-                        <p className="text-yellow-400/90 text-xl font-medium mb-6">
+                        <p className="text-gray-400 text-xl font-light mb-12 tracking-wide max-w-2xl mx-auto leading-relaxed">
                             {t.blog.subtitle}
                         </p>
                     </div>
@@ -125,7 +136,7 @@ export default async function BlogPage({ searchParams }: { searchParams: Promise
                                     <Link href={`/contacto?lang=${locale}`} className="inline-flex items-center justify-center gap-2 w-full py-4 bg-yellow-400 hover:bg-yellow-500 text-neutral-900 font-bold rounded-xl transition-all shadow-lg text-sm tracking-wider uppercase">
                                         {t.blog.sidebar.cta}
                                     </Link>
-                                    <Link href="https://wa.me/573123902406" className="inline-flex items-center justify-center gap-2 w-full py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-lg text-sm tracking-wider uppercase" target="_blank" rel="noopener noreferrer">
+                                    <Link href="https://wa.me/573028645014" className="inline-flex items-center justify-center gap-2 w-full py-4 bg-[#25d366] hover:bg-[#1eb358] text-white font-bold rounded-xl transition-all shadow-lg text-sm tracking-wider uppercase" target="_blank" rel="noopener noreferrer">
                                         <MessageCircle size={18} /> WhatsApp
                                     </Link>
                                 </div>

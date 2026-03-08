@@ -68,14 +68,14 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
                     <Link href={`/?lang=${locale}`} className="flex shrink-0 items-center gap-1.5 md:gap-2 no-underline group">
                         <Image
                             src="/logo-nuevo.png"
-                            alt="Traducciones Oficiales"
+                            alt="Lex Translations"
                             width={90} height={90}
                             priority={true}
                             loading="eager"
                             className="w-[52px] h-[52px] md:w-[72px] md:h-[72px] xl:w-[80px] xl:h-[80px] rounded-md object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
                         />
                         <div className="text-white font-serif text-[1.15rem] md:text-[1.5rem] font-bold leading-none tracking-tight uppercase">
-                            {locale === 'es' ? 'Traducciones Oficiales' : 'Official Translations'}
+                            {locale === 'es' ? 'Lex Translations' : 'Lex Translations'}
                         </div>
                     </Link>
 
@@ -137,9 +137,18 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
 
                             {/* Asesoría */}
                             <li>
-                                <Link href={`/asesoria?lang=${locale}`} className="group text-[#D4AF37] text-[13px] font-bold hover:text-white relative flex items-center transition-colors tracking-wide uppercase">
+                                <Link
+                                    href={`/asesoria?lang=${locale}`}
+                                    className={cn(
+                                        "group text-[13px] font-semibold hover:text-[#D4AF37] relative flex items-center transition-colors tracking-wide uppercase",
+                                        currentPath === '/asesoria' ? "text-[#D4AF37]" : "text-gray-200"
+                                    )}
+                                >
                                     {locale === 'es' ? 'Asesoría' : 'Advisory'}
-                                    <span className="absolute left-0 -bottom-1.5 h-[1px] w-0 bg-[#D4AF37] transition-all duration-300 group-hover:w-full"></span>
+                                    <span className={cn(
+                                        "absolute left-0 -bottom-1.5 h-[1px] bg-[#D4AF37] transition-all duration-300 group-hover:w-full",
+                                        currentPath === '/asesoria' ? "w-full" : "w-0"
+                                    )}></span>
                                 </Link>
                             </li>
 
@@ -234,7 +243,7 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
                         <div className="flex items-center gap-3">
                             <Image src="/logo-nuevo.png" alt="Logo" width={40} height={40} className="w-12 h-12 rounded-sm" />
                             <span className="font-serif font-bold text-white text-base uppercase tracking-widest leading-none">
-                                Traducciones<br />Oficiales
+                                Lex<br />Translations
                             </span>
                         </div>
                         <button
@@ -283,7 +292,7 @@ export default function Navbar({ locale, currentPath = '' }: NavbarProps) {
                         {/* Footer del menú */}
                         <div className="pt-10 border-t border-white/5 mt-auto">
                             <Link
-                                href={`https://wa.me/573123902406`}
+                                href={`https://wa.me/573028645014`}
                                 className="flex items-center justify-center gap-3 w-full py-5 rounded-sm bg-[#D4AF37] text-[#0A192F] font-bold text-[12px] uppercase tracking-widest shadow-xl transition-all hover:bg-white"
                                 target="_blank" rel="noopener noreferrer"
                                 onClick={() => setMobileOpen(false)}
